@@ -1,0 +1,15 @@
+{
+  "name": "cd106g2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gsap": "^2.1.2",
+    "scrollmagic": "^2.0.6"
+  }
+}
