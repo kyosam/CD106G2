@@ -1,0 +1,251 @@
+//===============
+// 基本參數
+//===============
+@import '../base/var';
+@import '../base/reset';
+@import '../base/common';
+@import '../base/font';
+
+//===============
+// 函式
+//===============
+@import '../mixin/mixin';
+
+
+//===============
+// 頁面組成元素
+//===============
+@import '../layout/header';
+@import '../layout/desktop';
+
+
+@mixin btns($btnColor, $bthBgc) {
+    cursor: pointer;
+    position: relative;    
+    top: 0;
+    transition: .3s;
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    font-family: '微軟正黑體';
+    font-size: 18px;
+    font-weight: bold;
+    color: $btnColor;
+    text-align: center;
+    vertical-align: middle;
+    background-color: $bthBgc;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0px 1px 0px #ccc,
+                0px 2px 0px #bbb,
+                0px 3px 0px #aaa,
+                0px 4px 0px #999;  
+    &:hover {
+        top: 4px;
+        box-shadow: 0px 1px 0px #ccc,
+                    0px 1px 0px #bbb,
+                    0px 2px 0px #aaa,
+                    0px 2px 0px #999,
+    }
+}
+
+
+body {
+    height: 100vh;
+    min-height: 550px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+a{
+    color: $black;
+    border-bottom: 2px solid $yellow;
+}
+
+.title{
+    @include sm-title(#000);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.desc{
+    @include bodyP();
+}
+
+.login-reg-panel {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 60%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    height: 550px;
+    background-color: $cardYellow;
+    border-radius: 20px;
+}
+
+.white-panel {
+    background-color: rgba(255, 255, 255, 1);
+    height: 550px;
+    position: absolute;
+    border-radius: 5px;
+    width: 50%;
+    right: calc(50% - 50px);
+    transition: .3s ease-in-out;
+    z-index: 0;
+}
+
+.login-reg-panel input[type="radio"] {
+    position: relative;
+    display: none;
+}
+
+
+.login-reg-panel #label-login,
+.login-reg-panel #label-register {
+    @include btns(#000, #fff); 
+    padding-top: 15px;
+    margin-top: 15px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.login-info-box {
+    padding: 0 100px;
+    top: 15%;
+    left: 0;
+    position: absolute;
+    text-align: center;
+    *{
+        margin: 50px 0;
+    }
+}
+
+.register-info-box {
+    // outline: 1px solid red;
+    padding: 0 10px;
+    top: 15%;
+    right: 5%;
+    position: absolute;
+    text-align: center;
+    *{
+        margin: 50px 0;
+    }
+}
+
+.right-log {
+    right: 50px !important;
+}
+
+.login-show,
+.register-show {
+    z-index: 1;
+    display: none;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    text-align: left;
+    padding: 40px;
+    @include bodyP;
+    font-size: 16px;
+}
+
+.show-log-panel {
+    display: block;
+    opacity: 0.9;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    display: block;
+    margin: 15px 0;
+    padding: 10px;
+    border: 1px solid #b5b5b5;
+    outline: none;
+}
+
+.login-show input[type="submit"] {
+    @include btns($white, $green);
+    max-width: 150px;
+    width: 100%;
+    margin-top: 25px;
+    left: 30%;
+    cursor: pointer;
+}
+
+
+.register-show input[type="submit"] {
+    @include btns(#f9f9f9, $green);
+    max-width: 150px;
+    margin-top: 5px;
+    width: 100%;
+    left: 30%;
+    cursor: pointer;
+}
+
+.login-reg-panel-rwd{
+    display: none;
+}
+
+@media (max-width:1200px) {
+    .login-reg-panel-rwd{
+        display: block;
+        outline: 2px solid $white;
+        width: 370px;
+        margin: 100px auto;
+
+        .register-rwd{
+            display: none;
+        }
+
+        .login-rwd,.register-rwd{
+            width:90%;
+            margin: 40px auto;
+        }
+
+        .swithBtn{
+            .signUpSwitchBtn,.loginSwitchBtn{
+                @include sm-title($black);
+                display: inline-block;
+                width: calc(50% - 2px);
+                height: 50px;
+                line-height:  50px;
+                vertical-align: middle;
+                text-align: center;
+
+            }
+        }
+        .active{
+            background-color: $yellow;
+        }
+        input[type="submit"]{
+            @include btns(#f9f9f9, $green);
+            max-width: 150px;
+            margin-top: 30px;
+            width: 100%;
+            left: 27%;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 90%;
+        }
+    }
+
+
+    .login-reg-panel{
+        display: none;
+    }
+}
+
+.go-to-member {
+    @include btns($white,$green);
+    display: block;
+    margin: 0 auto;
+    height: 50px;
+    line-height: 50px;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>森存者｜登入及註冊</title>
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="Shortcut Icon" type="image/x-icon" href="images/new/favicon.png" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    
+</head>
+
+<body>
+    <div class="login-reg-panel">
+        <div class="login-info-box">
+            <h3 class="title">嗨！很高興見到你回來！</h3>
+            <p class="desc">趕緊登入來規劃你的行程吧！</p>
+            <label id="label-register" for="log-reg-show">立即登入</label>
+            <input type="radio" name="active-log-panel" id="log-reg-show" checked="checked">
+        </div>
+
+        <div class="register-info-box">
+            <h3 class="title">呼嘎嚇嘎！唷！新朋友</h3>
+            <p class="desc">花個一分鐘註冊你的會員資料就可享受森存者提供的服務</p>
+            <label id="label-login" for="log-login-show">立即註冊</label>
+            <input type="radio" name="active-log-panel" id="log-login-show">
+        </div>
+
+        <div class="white-panel">
+            <div class="login-show">
+                <h3 class="title">會員登入</h3>
+                <label for="account">會員帳號</label>
+                <input type="text" name="account" placeholder="請輸入您的Email">
+                <label for="password">會員密碼</label>
+                <input type="password" name="password" placeholder="請輸入您的密碼">
+                <a href="javascript:;">忘記密碼</a>
+                <br>
+                <a class="go-to-member" href="member.html">登入</a>
+            </div>
+            <div class="register-show">
+                <h3 class="title">會員註冊</h3>
+                <label for="nikename">會員暱稱</label>
+                <input type="text" name="nikename" placeholder="請輸入您的暱稱">
+                <label for="nikename">會員帳號</label>
+                <input type="text" name="account" placeholder="請輸入您的Email">
+                <label for="password">會員密碼</label>
+                <input type="password" name="password" placeholder="請輸入您的密碼">
+                <label for="password">確認密碼</label>
+                <input type="password" name="password" placeholder="請再次輸入您的密碼">
+                <input type="submit" value="註冊">
+            </div>
+        </div>
+    </div>
+
+    <div class="login-reg-panel-rwd">
+        <div class="swithBtn">
+            <div class="loginSwitchBtn active"><a href="#">登入</a></div>
+            <div class="signUpSwitchBtn"><a href="#">註冊</a></div>
+        </div>
+        <div class="login-rwd">
+            <h3 class="title">會員登入</h3>
+            <label for="account">會員帳號</label>
+            <input type="text" name="account" placeholder="請輸入您的Email">
+            <label for="password">會員密碼</label>
+            <input type="password" name="password" placeholder="請輸入您的密碼">
+            <a href="javascript:;">忘記密碼</a>
+            <br>
+            <input type="submit" value="登入">
+        </div>
+        <div class="register-rwd">
+            <h3 class="title">會員註冊</h3>
+            <label for="nikename">會員暱稱</label>
+            <input type="text" name="nikename" placeholder="請輸入您的暱稱">
+            <label for="nikename">會員帳號</label>
+            <input type="text" name="account" placeholder="請輸入您的Email">
+            <label for="password">會員密碼</label>
+            <input type="password" name="password" placeholder="請輸入您的密碼">
+            <label for="password">確認密碼</label>
+            <input type="password" name="password" placeholder="請再次輸入您的密碼">
+            <input type="submit" value="註冊">
+        </div>
+    </div>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $('.login-info-box').fadeOut();
+            $('.login-show').addClass('show-log-panel');
+        });
+
+        $('.login-reg-panel input[type="radio"]').on('change', function () {
+            if ($('#log-login-show').is(':checked')) {
+                $('.register-info-box').fadeOut();
+                $('.login-info-box').fadeIn();
+
+                $('.white-panel').addClass('right-log');
+                $('.register-show').addClass('show-log-panel');
+                $('.login-show').removeClass('show-log-panel');
+
+            }
+            else if ($('#log-reg-show').is(':checked')) {
+                $('.register-info-box').fadeIn();
+                $('.login-info-box').fadeOut();
+                $('.white-panel').removeClass('right-log');
+                $('.login-show').addClass('show-log-panel');
+                $('.register-show').removeClass('show-log-panel');
+            }
+        });
+
+        $('.signUpSwitchBtn').click( function () {
+            $(this).addClass('active');
+            $(this).siblings().removeClass('active');
+            $('.login-rwd').hide();
+            $('.register-rwd').show();
+        });
+
+        $('.loginSwitchBtn').click( function () {
+            $(this).addClass('active');
+            $(this).siblings().removeClass('active');
+            $('.login-rwd').show();
+            $('.register-rwd').hide();
+        });
+
+    </script>
+</body>
+
+</html>

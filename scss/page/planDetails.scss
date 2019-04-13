@@ -1,0 +1,32 @@
+@import "../base/var";
+@import "../base/font";
+@import "../base/common";
+@import "../page/plan.scss";
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px; 
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f8e958; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #dc719d;
+    border-radius: 20px; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e13764; 
+  }
+
+  #go-to-pre-page {
+    @include btn($white,$pink);
+    width: 250px;
+    display: block;
+    margin: 0 auto;
+  }

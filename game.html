@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/hbgClick.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <link rel="Shortcut Icon" type="image/x-icon" href="images/new/favicon.png" />
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/svg_style.css">
+    <title>森存者｜尋找森存者</title>
+</head>
+<body>
+    <!-- header --> 
+    <nav>
+        <div class="icon" id="icon">
+            <div class="hamburger" id="hamburger"></div>  
+        </div>
+
+        <div id="small-forester_logo">
+                <a href="index.html"><h1><img src="images/logo.svg" alt="手機板森存者商標" ></h1></a>
+        </div>
+        <div id="header-member" >
+            <a href="login.html" ><img src="images/icon_user.png" alt="會員大頭像"></a>
+        </div>
+        
+        <div class="cloud">
+            <div class="doc doc--bg2">
+                <canvas id="canvas" width="1444" height="119"></canvas>
+            </div>
+        </div>
+        <!--  -->
+
+        <div class="header-background-cloud">
+            <span id="show_span" >
+                <ul><li></li>
+                    <li><a href="plan.html">活動規劃</a></li>
+                    <li><a href="order.html">線上訂票</a></li>
+                    <li><a href="index.html"><h1> <img id="forester_logo" src="images/logo.svg" alt="森存者商標"></h1></a></li>
+                    <li><a href="blog.html">手札分享</a></li>
+                    <li><a href="game.html">尋找森存者</a></li> 
+                    <li class="header-member"><a href="login.html" ><img src="images/icon_user.png" alt="會員大頭像"></a></li>
+                </ul>                 
+            </span>
+        </div>        
+    </nav>
+    <!-- header -->
+    <script src="js/header.js"></script>
+            
+    <div class="wrap">
+    
+    <div class="header-space"></div>
+    <!-- map -->
+    <div class="game-container">
+        <div class="game-map">
+            <img src="images/game/island-map.png" alt="營區地圖">
+        </div>
+        <!-- 地圖按鈕 -->
+        <div class="game-rule">
+            <img src="images/game/mapbtn.png" alt="遊戲規則按鈕">
+            <span>遊戲規則</span>
+        </div>
+
+        <div class="game-rule-content">
+            <div id="close">X</div>
+            <h2>遊戲規則</h2>
+            <p>看地圖尋找到營區裡的森存者，和他合照並上傳，即可獲得點數</p>
+        </div>
+    </div>
+    <script>
+    $("#close").click(function(){
+        $(".game-rule-content").hide();
+    });
+    $(".game-rule").click(function(){
+        $(".game-rule-content").show();
+    });
+    </script>
+    <!-- photo wall -->
+    <div class="photoWall">
+        <div class="photoWall-container">
+            <div class="photowall-heading">
+                <h2>照片牆</h2>
+            </div>
+            <div class="photoWall-upload">
+                <button>上傳與森存者合照</button>
+            </div>
+        </div>
+
+        <div id="container">
+            <div class="photo-item">
+                <div class="photo-img">
+                    <img src="images/event/Best-Survival-Schools.jpg" alt="活動圖片">
+                </div>
+            
+                <div class="photo-btn-container">
+                    <div class="photo-author">
+                        <img src="images/blog/big_head1.png" alt="大頭照">
+                        <span class="authorName">懂不懂</span>
+                    </div>
+        
+                    <div class="photoLikeBtn">
+                       <img src="images/blog/愛心.png" alt="like">
+                       <span class="likeNum" id="likeNum">100</span> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item">
+                <div class="photo-img">
+                    <img src="images/event/Best-Survival-Schools.jpg" alt="活動圖片">
+                </div>
+            
+                <div class="photo-btn-container">
+                    <div class="photo-author">
+                        <img src="images/blog/big_head1.png" alt="大頭照">
+                        <span class="authorName">懂不懂</span>
+                    </div>
+        
+                    <div class="photoLikeBtn">
+                       <img src="images/blog/愛心.png" alt="like">
+                       <span class="likeNum" id="likeNum">100</span> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item">
+                <div class="photo-img">
+                    <img src="images/event/Best-Survival-Schools.jpg" alt="活動圖片">
+                </div>
+            
+                <div class="photo-btn-container">
+                    <div class="photo-author">
+                        <img src="images/blog/big_head1.png" alt="大頭照">
+                        <span class="authorName">懂不懂</span>
+                    </div>
+        
+                    <div class="photoLikeBtn">
+                       <img src="images/blog/愛心.png" alt="like">
+                       <span class="likeNum" id="likeNum">100</span> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="photo-item">
+                <div class="photo-img">
+                    <img src="images/event/Best-Survival-Schools.jpg" alt="活動圖片">
+                </div>
+            
+                <div class="photo-btn-container">
+                    <div class="photo-author">
+                        <img src="images/blog/big_head1.png" alt="大頭照">
+                        <span class="authorName">懂不懂</span>
+                    </div>
+        
+                    <div class="photoLikeBtn">
+                       <img src="images/blog/愛心.png" alt="like">
+                       <span class="likeNum" id="likeNum">100</span> 
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+    </div>
+    <script>
+// 瀑布流
+ 
+        $('#container').masonry({
+            itemSelector: '.photo-item',
+            columnWidth: 0,
+            animate:true
+        });
+
+
+    </script>
+</div>
+</body>
+</html>

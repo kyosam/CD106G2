@@ -1,0 +1,551 @@
+@import "../base/_var.scss";
+@import "../base/_reset.scss";
+@import "../layout/_header.scss";
+@import "../layout/_desktop.scss";
+@import "../base/_common.scss";
+@import "../base/_font.scss";
+
+//step
+// *{
+//     outline: 1px solid gray;
+// }
+body{
+    font-family: '微軟正黑體';
+}
+.step_group{
+    margin: auto;
+    padding-top: 10px;
+    position: relative;
+    &::after{
+        content: '';
+        display: inline-block;
+        width: 80%;
+        height: 8px;
+        background-color: rgba(255, 255, 255, 0.74);
+        position: absolute;
+        top: 10px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        z-index: -1;
+    }
+    .step_process{
+        display: flex; 
+        justify-content: space-around;
+        li{
+            position: relative;
+        }
+        li::after{
+            content: '';
+            min-width: 85px;
+            min-height: 84px;
+            background-image: url(../images/lightCircle.png);
+            background-size: contain;
+            position: absolute;
+            top: -7px;
+            left: -7px;
+            animation: 20s linear rot infinite;
+        }
+    }
+    .step_process > li{
+        display: inline-block;
+        width: 70px; //本來100%
+        height: 70px; //本來100%
+        background-color: sandybrown;
+        border-radius: 50%;
+        color: #fff;
+        font-family: '微軟正黑體';
+        font-size: 15px; //20px
+        text-align: center;
+        line-height: 4.7; //5
+        border: 2px solid #fff;
+        position: relative;
+    }
+}
+@keyframes rot{
+    from{transform: rotate(0deg) infinite;}
+    to{transform: rotate(360deg);}
+}
+@media screen and (min-width:768px){
+    .step_group{
+        .step_process > li{
+            width: 100px;
+            height: 100px;
+            font-size: 20px;
+            line-height: 5;
+        }
+        .step_process{
+            li::after{
+                content: '';
+                min-width: 120px;
+                min-height: 119px;
+                background-image: url(../images/lightCircle.png);
+                background-size: contain;
+                position: absolute;
+                top: -10px;
+                left: -10px;
+                animation: 20s linear rot infinite;
+            }
+        }
+    }
+}
+
+// 月曆訂票
+.order_container{
+    display: flex;
+    margin-top: 5vh;
+    // display: none;
+    // 這邊是新增了
+    flex-wrap: wrap;
+    .calendar{
+        // width: 50%;
+        position: relative;
+        // 新增
+        padding: 0 2%;
+        img{
+            width: 100%;
+            height: 400px;
+        }
+        .box{
+            width: 90%;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            .calender_mon_title{
+                text-align: center;
+                margin-bottom: 25px;
+                color: #fff;
+                box-sizing: border-box;
+                font-size: 24px;
+                #show_year,#show_mon{
+                    font-size: 30px;
+                    margin: 0 15px;
+                }
+                span > i{
+                    font-size: 30px;
+                    margin: 0 30px;
+                    transition: .8s;
+                    &:hover{
+                        transform: scale(1.2);
+                        color: #8d4a16;
+                    }
+                }
+            }            
+        }
+    }
+}
+@media screen and (min-width:768px){
+    .order_container{
+        flex-wrap: nowrap;
+        .calendar{
+            width: 55%;
+            padding: 0;
+        }
+    }
+}
+// ------月曆------
+.body-list > ul {
+    width: 100%;
+    font-family: arial;
+    font-weight: bold;
+    font-size: 14px;
+}
+.body-list ul > li {
+    width: 14.2%;
+    height: 36px;
+    line-height: 36px;
+    font-size: 18px;
+    list-style-type: none;
+    display: block;
+    box-sizing: border-box;
+    float: left;
+    text-align: center;
+}
+.light {
+    color: #fff; /*浅灰色*/
+}
+.dark {
+    color: #8d4a16; /*今日後的字體顏色*/
+}
+.c_font {
+    color: #8d4a16; /*當日字體顏色*/
+}
+.c_box {
+    border: 1px solid #fff;
+    background: #ffbfcb; /*當日背景色*/
+}
+// ------月曆止------
+
+.ticket{
+    margin: auto;
+    // width: 37%;
+    // 新增
+    padding: 0 2%;
+    .ticket_disabled,.ticket_student,.ticket_adult{
+        margin: 10px 0;
+        position: relative;
+        img{
+            width: 100%;
+        }
+        .t_name{
+            position: absolute;
+            left: 15%;
+            top: 35%;
+            color: #fff;
+            font-family: '微軟正黑體';
+            font-size: 20px;
+        }
+        .t_disabled::after{
+            content: '4~6歲及65歲以上';
+            font-size: 14px;
+            display: flex;
+            margin-top: 3px;
+        }
+        .t_student::after{
+            content: '入營請出示學生證';
+            font-size: 14px;
+            display: flex;
+            margin-top: 3px;
+        }
+        .t_quantity{
+            position: absolute;
+            top: 28%;
+            right: 10%;
+            width: 40%;
+            display: flex;
+            .t_less,.t_add{
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: none;
+                background-color: #F0B81B;
+                outline: 0;
+                cursor: pointer;
+                margin: 0 5%;
+                i{
+                    font-size: 20px;
+                    color: #fff;
+                }
+            }
+            .t_num{
+                display: block;
+                width: 50%;
+                height: 40px;
+                background-color: #fff;
+                text-align: center;
+                font-size: 28px;
+                line-height: 1.4;
+                color: #706456;
+            }
+        }
+    }
+}
+.btn_group::after{
+    content: '';
+    display: block;
+    clear: both;    
+}
+#pre_btn,#next_btn{
+    @include btn(white,$pink);
+    line-height: 2.5;
+    // transform: translateX(-2vw);
+}
+#pre_btn{
+    float: left;
+}
+#next_btn{
+    float: right;
+}
+
+
+// 選擇活動
+.activity_container{
+    margin-top: 5vh;
+    display: none;
+    flex-wrap: wrap;
+    h3{
+        @include md-title(#fff);
+        text-align: center;
+        margin: 2vh auto 5vh;
+    }
+}
+.item > button{
+    width: 50px;
+    height: 30px;
+    display: block;
+    margin: 10px auto;
+    background-color: #706456;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    border-radius: 5px;
+    &:hover{
+        background-color: #fff;
+        color: #706456;
+    }
+}
+.activity_group{
+    display: flex;
+    border: 7px dashed #808080;
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+    .item{
+        width: 33.333333%;
+        h4{
+            @include sm-title(#fff);
+            text-align: center;
+            margin: 10px 0 20px 0;
+        }
+    }
+}
+.item_img{
+    margin-top: 15px;
+}
+.item_img img{
+    width: 100%;
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(37% at 50% 50%);
+}
+.activity_none{
+    width: 100%;
+}
+.activity_none span{
+    // width: 15%;
+    width: 50%;
+    display: block;
+    text-align: center;
+    font-family: '微軟正黑體';
+    font-weight: bold;
+    color: #706456;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 5vh auto;
+}
+.activity_none span::before{
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+    border: 3px solid #706456;
+    border-radius: 4px; 
+    margin-right: 10px;
+}
+@media screen and (min-width:768px){
+    .activity_none span{
+        width: 20%;
+    }
+}
+
+// 確認資訊
+.confirm_container{
+    margin-top: 5vh;
+    display: flex;
+    box-sizing: border-box;
+    //新增
+    flex-wrap: wrap;
+    display: none;
+    .confirm_box{
+        //width: 50%;
+        width: 100%;
+        height: 300px;
+        padding: 2%;
+        vertical-align: middle;
+        //新增
+        margin-bottom: 40px;
+        h3{
+            @include md-title(#fff);
+            text-align: center;
+            margin-bottom: 3vh; 
+        }
+        .confirm{
+            // height: 195px;
+            background-color: rgba(255, 255, 255, 0.4);
+            border-radius: 15px;
+            border: 7px dashed #808080;
+            table{
+                width: 100%;
+                font-size: 20px;
+                th{
+                    padding: 2%;
+                }
+                td{
+                    padding: 3%;
+                    text-align: center;
+                }
+            }
+        }
+        span{
+            display: inline-block;
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 25px;
+            font-size: 20px;
+        }
+    }
+    .show_total{
+        display: none;
+        text-align: center;
+        margin-top: 5vh;
+        color: #fff;
+        font-size: 22px;
+        .entrance,.total{
+            margin: 10px 0;
+        }
+    }
+}
+@media screen and (min-width:768px){
+    .confirm_container{
+        flex-wrap: nowrap;
+        .confirm_box{
+            width: 50%;
+            .confirm{
+                height: 205px;
+                overflow: scroll;
+            }
+        }
+    }
+}
+
+// 付款-----訂購條款
+.credit_container{
+    margin-top: 5vh;
+    display: flex;
+    //新增
+    flex-wrap: wrap;
+    display: none;
+    .ct_rule,.ct_credit{
+        width: 100%; //原本100%
+        box-sizing: border-box;
+        // padding: 20px;
+        padding: 5%;
+        h3{
+            @include md-title(#fff);
+            margin-bottom: 3vh; 
+        }
+    }
+}
+.ct_rule > p{
+    padding: 5px 0;
+}
+.ct_rule_check > label{
+    display: block;
+    position: relative;
+    padding: 4px 0px 4px 35px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+    input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+    .check_mark {
+        position: absolute;
+        top: 2px;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #eee;
+        border: 1px solid #706456;
+        border-radius: 4px; 
+    }
+}
+.ct_rule_check > p{
+    padding: 4px 0 4px 37px;
+}
+.ct_rule_check label input:checked ~ .check_mark {
+    background-color: #706456;
+}
+.check_mark:after {
+content: '';
+    position: absolute;
+    display: none;
+}
+.ct_rule_check label input:checked ~ .check_mark:after {
+    display: block;
+}
+.ct_rule_check label .check_mark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+// 付款-----信用卡資訊
+.ct_credit{
+    .ct_credit_txt{
+        ul{
+            font-size: 18px;
+            li:not(:first-child){
+                padding-top: 15px;
+            }
+            li span:first-child{
+                margin-right: 20px;
+            }
+            li{
+                input{
+                    width: 52%;
+                    height: 32px;
+                    border-radius: 4px;
+                    box-sizing: border-box;
+                }
+                input.credit{
+                    width: 12%;
+                    // width: 45px;
+                    padding: 0 2px;
+                }
+            }
+            .credit_month{
+                height: 32px;
+                margin-left: 8px;
+            }
+            .credit_year{
+                height: 32px;
+            }
+            li:nth-child(4) input {
+                width: 80px;
+                margin-left: 35px;
+            }
+            .ct_icon{
+                text-align: center;
+                i{
+                    font-size: 30px;
+                    padding: 0 5px;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:768px){
+    .credit_container{
+        flex-wrap: nowrap;
+        .ct_rule,.ct_credit{
+            width: 50%;
+            padding: 20px;
+        }
+        .ct_rule{
+            padding-left: 15%;
+        }
+    }
+}
+
+
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: flex;
+}

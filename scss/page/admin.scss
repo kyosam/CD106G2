@@ -1,0 +1,126 @@
+//===============
+// 基本參數
+//===============
+@import '../base/var';
+@import '../base/font';
+@import '../base/reset';
+@import '../base/common';
+
+//===============
+// 函式
+//===============
+@import '../mixin/mixin';
+
+//===============
+// 頁面組成元素
+//===============
+// @import 'layout/header';
+// @import 'layout/desktop';
+// @import 'layout/footer';
+p{
+    line-height: 1.5;
+    padding-bottom: 5px;
+}
+th{
+    font-weight: 700;
+}
+
+.navbar-brand {
+    img{
+        margin-left: 50px;
+        margin-bottom: 10px;
+        width: 50px;
+    }
+}
+
+#event{
+    img{
+        margin-bottom: 10px;
+        width: 50px;
+    }
+}
+
+table {
+    border: 1px solid rgba(200, 200, 200, 0.5);
+}
+
+main {
+    margin-top: 100px;
+    h2{
+        @include big-title($black);
+        padding-bottom: 5px;
+        margin-bottom: 15px;
+        border-bottom: 2px solid rgba(200, 200, 200, 0.5);
+    }
+}
+
+.gamephoto {
+    width: 200px;
+}
+
+.navbar.fixed-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+@media (min-width:768px) {
+    main {
+        margin-top: 50px;
+    }
+
+    .navbar.fixed-left {
+        bottom: 0;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+    }
+
+    .navbar.fixed-left .navbar-collapse {
+        flex-grow: 0;
+        flex-direction: column;
+        padding-left: 5%;
+        width: 100%;
+    }
+
+    .navbar.fixed-left .navbar-collapse .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+.pagination,
+.searchbar {
+    margin-bottom: 15px;
+}
+
+#qrcode{
+    
+    text-align: center;
+    .scranqrcode{
+        width:220px;
+        height: 220px;
+        margin: 100px auto 40px;
+        border: 1px solid black;
+        .fa-camera{
+            font-size: 200px;
+        }
+    }
+    h2{
+        text-align: left;  
+    }
+}
+
+#member,
+#order,
+#ticket,
+#event,
+#keyword,
+#qrcode,
+#game,
+#eventEvalReport,
+#gamePhotoReport,
+#noteCommReport {
+    display: none;
+}

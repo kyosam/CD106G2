@@ -1,0 +1,353 @@
+@charset "UTF-8";
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  overflow: hidden;
+}
+
+nav .cloud {
+  width: 100%;
+  position: fixed;
+  z-index: -10;
+  top: 0;
+  height: 12vh;
+}
+
+nav .cloud .doc--bg2 {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  width: 100%;
+  height: 12vh;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+}
+
+nav .cloud .doc--bg2 #canvas {
+  width: 100%;
+  height: 12vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -10;
+}
+
+nav #forester_logo {
+  width: 150px;
+}
+
+nav #small-forester_logo {
+  display: none;
+}
+
+nav #header-member {
+  display: none;
+}
+
+nav .header-background-cloud {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  z-index: 100;
+}
+
+nav .header-background-cloud ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  margin: 10px  auto;
+}
+
+nav .header-background-cloud ul span {
+  display: none;
+}
+
+nav .header-background-cloud ul li {
+  width: 16%;
+  display: inline-block;
+  text-align: center;
+  margin: auto;
+}
+
+nav .header-background-cloud ul li a {
+  font-size: 22px;
+  font-family: 微軟正黑體;
+  font-weight: bold;
+  color: #008c95;
+}
+
+nav .header-background-cloud ul li:nth-child(1) {
+  width: 5%;
+}
+
+nav .header-background-cloud ul .header-member {
+  width: 5%;
+}
+
+nav .header-background-cloud ul .header-member a img {
+  width: 50px;
+  text-align: center;
+  margin: auto;
+}
+
+@-webkit-keyframes upDown {
+  0% {
+    top: 0;
+  }
+  20% {
+    top: -3px;
+  }
+  40% {
+    top: -8px;
+  }
+  60% {
+    top: -5px;
+  }
+  80% {
+    top: -8px;
+  }
+  100% {
+    top: -4px;
+  }
+}
+
+@keyframes upDown {
+  0% {
+    top: 0;
+  }
+  20% {
+    top: -3px;
+  }
+  40% {
+    top: -8px;
+  }
+  60% {
+    top: -5px;
+  }
+  80% {
+    top: -8px;
+  }
+  100% {
+    top: -4px;
+  }
+}
+
+@-webkit-keyframes uupDown {
+  0% {
+    top: 0;
+  }
+  20% {
+    top: -7px;
+  }
+  40% {
+    top: -18px;
+  }
+  60% {
+    top: -5px;
+  }
+  80% {
+    top: -17px;
+  }
+  100% {
+    top: -5px;
+  }
+}
+
+@keyframes uupDown {
+  0% {
+    top: 0;
+  }
+  20% {
+    top: -7px;
+  }
+  40% {
+    top: -18px;
+  }
+  60% {
+    top: -5px;
+  }
+  80% {
+    top: -17px;
+  }
+  100% {
+    top: -5px;
+  }
+}
+
+/*手機漢堡堡*/
+@media screen and (max-width: 767px) {
+  nav #header-member {
+    display: inline-block;
+    position: fixed;
+    right: 1%;
+    top: 3%;
+    z-index: 1000;
+  }
+  nav #header-member img {
+    width: 50px;
+    height: 50px;
+  }
+  nav .header-background-cloud {
+    margin: auto;
+    z-index: -100;
+    position: relative;
+  }
+  nav .header-background-cloud span {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: 100000;
+  }
+  nav .header-background-cloud ul {
+    margin: auto;
+    display: block;
+    z-index: 10000;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0;
+  }
+  nav .header-background-cloud ul #forester_logo {
+    display: none;
+  }
+  nav .header-background-cloud ul li {
+    width: 100%;
+    margin: 20% auto;
+    text-align: center;
+    display: block;
+    z-index: 10;
+  }
+  nav .header-background-cloud ul li a {
+    font-size: 22px;
+    font-family: 微軟正黑體;
+    font-weight: bold;
+    color: #008c95;
+  }
+  nav .header-background-cloud ul .header-member {
+    display: none;
+  }
+  nav #small-forester_logo {
+    position: fixed;
+    display: inline-block;
+    top: 10px;
+    left: 43%;
+    bottom: 0%;
+    right: 0;
+    z-index: -1;
+    width: 100px;
+    height: 100px;
+  }
+  .icon {
+    position: fixed;
+    top: 3vh;
+    left: 15px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+  .hamburger {
+    width: 50px;
+    height: 5px;
+    background-color: #008c95;
+    position: absolute;
+    z-index: 1000;
+    top: 20px;
+  }
+  .hamburger::before, .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    background: #008c95;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    -webkit-transition: top .5s;
+    transition: top .5s;
+  }
+  .hamburger::before {
+    top: -10px;
+  }
+  .hamburger::after {
+    top: 10px;
+  }
+}
+
+.icon.active .hamburger {
+  background: rgba(0, 0, 0, 0);
+  -webkit-transition: top .5s;
+  transition: top .5s;
+}
+
+.icon.active .hamburger::before {
+  top: 0px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: top .5s;
+  transition: top .5s;
+}
+
+.icon.active .hamburger::after {
+  top: 0px;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  -webkit-transition: top .5s;
+  transition: top .5s;
+}
+
+@-webkit-keyframes show_span {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes show_span {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes noshow_span {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes noshow_span {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=header.css.map */

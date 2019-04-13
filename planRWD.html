@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/hbgClick.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/planRWD.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/svg_style.css">
+    <link rel="stylesheet" href="css/header.css">
+
+    <title>森存者｜活動規劃手機版</title>
+</head>
+
+<body>
+    <!-- header --> 
+    <nav>
+        <div class="icon" id="icon">
+            <div class="hamburger" id="hamburger"></div>  
+        </div>
+
+        <div id="small-forester_logo">
+                <a href="index.html"><h1><img src="images/logo.svg" alt="手機板森存者商標" ></h1></a>
+        </div>
+        <div id="header-member" >
+            <a href="login.html" ><img src="images/icon_user.png" alt="會員大頭像"></a>
+        </div>
+        
+        <div class="cloud">
+            <div class="doc doc--bg2">
+                <canvas id="canvas" width="1444" height="119"></canvas>
+            </div>
+        </div>
+        <!--  -->
+
+        <div class="header-background-cloud">
+            <span id="show_span" >
+                <ul><li></li>
+                    <li><a href="plan.html">活動規劃</a></li>
+                    <li><a href="order.html">線上訂票</a></li>
+                    <li><a href="index.html"><h1> <img id="forester_logo" src="images/logo.svg" alt="森存者商標"></h1></a></li>
+                    <li><a href="blog.html">手札分享</a></li>
+                    <li><a href="game.html">尋找森存者</a></li> 
+                    <li class="header-member"><a href="login.html" ><img src="images/icon_user.png" alt="會員大頭像"></a></li>
+                </ul>                 
+            </span>
+        </div>        
+    </nav>
+    <!-- header -->
+    <script src="js/header.js"></script>
+ 
+    
+    <div class="wrap">
+        <!-- 第一步：篩選霸 -->
+        <div class="plan-container-step-one">
+            <div class="choose-bar-container">
+                <h3><span class="plan-step">第一步</span>篩選霸拉拉看</h3>
+                <div class="bar-img-container">
+                    <div class="bar-img-box">
+                        <p class="value-item">親子值</p>                                
+                        <div class="bar-value">
+                            <span>0</span>
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                        </div>
+                        <div class="drag-img-box">
+                            <img src="images/value_family.png" alt="親子值">
+                            <div class="drag-value-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="bar-img-box">
+                        <p class="value-item">手作值</p>                                
+                        <div class="bar-value">
+                            <span>0</span>
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                        </div>
+                        <div class="drag-img-box">
+                            <img src="images/value_handmade.png" alt="手工值">
+                            <div class="drag-value-bar"></div>
+                        </div>
+                    </div>
+
+                    <div class="bar-img-box">
+                        <p class="value-item">求生值</p>                                
+                        <div class="bar-value">
+                            <span>0</span>
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                        </div>
+                        <div class="drag-img-box">
+                            <img src="images/value_survive.png" alt="求生值">
+                            <div class="drag-value-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="confirm-buy-btn-box">
+            <button id="next-btn-pick-my-event">挑選活動去</button>
+        </div>  
+
+        <!-- 第二步：活動拖拉 -->
+        <div class="plan-container-step-two">
+            <h3><span class="plan-step">第二步</span>選擇行程好簡單</h3>
+
+            <!-- 活動列表 -->
+            <div class="all-event-container">
+                <div class="event-detail-group">
+
+                    <!-- 刀具製作 makeKnife -->
+                    <div class="event-detail-box">
+                        <div class="event-cover cover-bgi-knife"></div>
+                        <div class="event-txt-box">
+                            <h4>刀具製作</h4>
+                            <table class="allPlan-value-table">
+                                <tr>
+                                    <td><img src="images/value_family.png" alt=""></td>
+                                    <td>2</td>
+                                    <td><img src="images/value_handmade.png" alt=""></td>
+                                    <td>3</td>
+                                    <td><img src="images/value_survive.png" alt=""></td>
+                                    <td>2</td>
+                                </tr>
+                            </table>                        
+                            <div class="value-pic-box">平均
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                            </div>    
+                            <div class="event-hour-price">
+                                <span class="event-hour">3小時</span>
+                                <span class="event-price">$1000</span>
+                            </div>                                
+                        </div>
+                    </div>
+        
+                    <!-- 結繩術 rope -->
+                    <div class="event-detail-box">
+                        <div class="event-cover cover-bgi-rope"></div>
+                        <div class="event-txt-box">
+                            <h4>結繩術</h4>
+                            <table class="allPlan-value-table">
+                                <tr>
+                                    <td><img src="images/value_family.png" alt=""></td>
+                                    <td>3</td>
+                                    <td><img src="images/value_handmade.png" alt=""></td>
+                                    <td>3</td>
+                                    <td><img src="images/value_survive.png" alt=""></td>
+                                    <td>1</td>
+                                </tr>
+                            </table>                        
+                            <div class="value-pic-box">平均
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                            </div>    
+                            <div class="event-hour-price">
+                                <span class="event-hour">1小時</span>
+                                <span class="event-price">$500</span>
+                            </div>                                
+                        </div>
+                    </div>
+        
+                    <!-- 器具術 appliance -->
+                    <div class="event-detail-box">
+                        <div class="event-cover cover-bgi-appliance"></div>
+                        <div class="event-txt-box">
+                            <h4>器具術</h4>
+                            <table class="allPlan-value-table">
+                                <tr>
+                                    <td><img src="images/value_family.png" alt=""></td>
+                                    <td>2</td>
+                                    <td><img src="images/value_handmade.png" alt=""></td>
+                                    <td>3</td>
+                                    <td><img src="images/value_survive.png" alt=""></td>
+                                    <td>1</td>
+                                </tr>
+                            </table>                        
+                            <div class="value-pic-box">平均
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                            </div>    
+                            <div class="event-hour-price">
+                                <span class="event-hour">2小時</span>
+                                <span class="event-price">$750</span>
+                            </div>                                
+                        </div>
+                    </div>
+
+                    <!-- 吹箭術 blowingArr -->
+                    <div class="event-detail-box">
+                        <div class="event-cover cover-bgi-blowingArr"></div>
+                        <div class="event-txt-box">
+                            <h4>吹箭術</h4>
+                            <table class="allPlan-value-table">
+                                <tr>
+                                    <td><img src="images/value_family.png" alt=""></td>
+                                    <td>1</td>
+                                    <td><img src="images/value_handmade.png" alt=""></td>
+                                    <td>2</td>
+                                    <td><img src="images/value_survive.png" alt=""></td>
+                                    <td>3</td>
+                                </tr>
+                            </table>                        
+                            <div class="value-pic-box">平均
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                            </div>    
+                            <div class="event-hour-price">
+                                <span class="event-hour">1小時</span>
+                                <span class="event-price">$500</span>
+                            </div>                                
+                        </div>
+                    </div>
+        
+                    <!-- 弓箭術 bowArr -->
+                    <div class="event-detail-box">
+                        <div class="event-cover cover-bgi-bowArr"></div>
+                        <div class="event-txt-box">
+                            <h4>弓箭術</h4>
+                            <table class="allPlan-value-table">
+                                <tr>
+                                    <td><img src="images/value_family.png" alt=""></td>
+                                    <td>1</td>
+                                    <td><img src="images/value_handmade.png" alt=""></td>
+                                    <td>3</td>
+                                    <td><img src="images/value_survive.png" alt=""></td>
+                                    <td>3</td>
+                                </tr>
+                            </table>                        
+                            <div class="value-pic-box">平均
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                            </div>    
+                            <div class="event-hour-price">
+                                <span class="event-hour">2小時</span>
+                                <span class="event-price">$750</span>
+                            </div>                                
+                        </div>
+                    </div>
+            
+                    <!-- 野炊術 wildCook -->
+                    <div class="event-detail-box">
+                        <div class="event-cover cover-bgi-wildCook"></div>
+                        <div class="event-txt-box">
+                            <h4>野炊術</h4>
+                            <table class="allPlan-value-table">
+                                <tr>
+                                    <td><img src="images/value_family.png" alt=""></td>
+                                    <td>3</td>
+                                    <td><img src="images/value_handmade.png" alt=""></td>
+                                    <td>2</td>
+                                    <td><img src="images/value_survive.png" alt=""></td>
+                                    <td>2</td>
+                                </tr>
+                            </table>                        
+                            <div class="value-pic-box">平均
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                            </div>    
+                            <div class="event-hour-price">
+                                <span class="event-hour">3小時</span>
+                                <span class="event-price">$1000</span>
+                            </div>                                
+                        </div>
+                    </div>
+
+                    <!-- 生火術 makeFire -->
+                    <div class="event-detail-box">
+                        <div class="event-cover cover-bgi-makeFire"></div>
+                        <div class="event-txt-box">
+                            <h4>生火術</h4>
+                            <table class="allPlan-value-table">
+                                <tr>
+                                    <td><img src="images/value_family.png" alt=""></td>
+                                    <td>0</td>
+                                    <td><img src="images/value_handmade.png" alt=""></td>
+                                    <td>3</td>
+                                    <td><img src="images/value_survive.png" alt=""></td>
+                                    <td>3</td>
+                                </tr>
+                            </table>                        
+                            <div class="value-pic-box">平均
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                            </div>    
+                            <div class="event-hour-price">
+                                <span class="event-hour">1小時</span>
+                                <span class="event-price">$500</span>
+                            </div>                                
+                        </div>
+                    </div>
+
+                    <!-- 可食動植物 eatable -->
+                    <div class="event-detail-box">
+                        <div class="event-cover cover-bgi-eatable"></div>
+                        <div class="event-txt-box">
+                            <h4>可食動植物</h4>
+                            <table class="allPlan-value-table">
+                                <tr>
+                                    <td><img src="images/value_family.png" alt=""></td>
+                                    <td>2</td>
+                                    <td><img src="images/value_handmade.png" alt=""></td>
+                                    <td>0</td>
+                                    <td><img src="images/value_survive.png" alt=""></td>
+                                    <td>3</td>
+                                </tr>
+                            </table>                        
+                            <div class="value-pic-box">平均
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                            </div>    
+                            <div class="event-hour-price">
+                                <span class="event-hour">2小時</span>
+                                <span class="event-price">$750</span>
+                            </div>                                
+                        </div>
+                    </div>
+
+                    <!-- 植物編織 weave -->
+                    <div class="event-detail-box">
+                        <div class="event-cover cover-bgi-weave"></div>
+                        <div class="event-txt-box">
+                            <h4>植物編織</h4>
+                            <table class="allPlan-value-table">
+                                <tr>
+                                    <td><img src="images/value_family.png" alt=""></td>
+                                    <td>3</td>
+                                    <td><img src="images/value_handmade.png" alt=""></td>
+                                    <td>3</td>
+                                    <td><img src="images/value_survive.png" alt=""></td>
+                                    <td>1</td>
+                                </tr>
+                            </table>                        
+                            <div class="value-pic-box">平均
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                            </div>    
+                            <div class="event-hour-price">
+                                <span class="event-hour">3小時</span>
+                                <span class="event-price">$1000</span>
+                            </div>                                
+                        </div>
+                    </div>
+
+                    <!-- 方位判定 direction -->
+                    <div class="event-detail-box">
+                        <div class="event-cover cover-bgi-direction"></div>
+                        <div class="event-txt-box">
+                            <h4>方位判定</h4>
+                            <table class="allPlan-value-table">
+                                <tr>
+                                    <td><img src="images/value_family.png" alt=""></td>
+                                    <td>2</td>
+                                    <td><img src="images/value_handmade.png" alt=""></td>
+                                    <td>1</td>
+                                    <td><img src="images/value_survive.png" alt=""></td>
+                                    <td>3</td>
+                                </tr>
+                            </table>                        
+                            <div class="value-pic-box">平均
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                            </div>    
+                            <div class="event-hour-price">
+                                <span class="event-hour">1小時</span>
+                                <span class="event-price">$500</span>
+                            </div>                                
+                        </div>
+                    </div>
+
+                    <!-- 基本求生 basicSur -->
+                    <div class="event-detail-box">
+                        <div class="event-cover cover-bgi-basicSur"></div>
+                        <div class="event-txt-box">
+                            <h4>基本求生</h4>
+                            <table class="allPlan-value-table">
+                                <tr>
+                                    <td><img src="images/value_family.png" alt=""></td>
+                                    <td>2</td>
+                                    <td><img src="images/value_handmade.png" alt=""></td>
+                                    <td>1</td>
+                                    <td><img src="images/value_survive.png" alt=""></td>
+                                    <td>3</td>
+                                </tr>
+                            </table>                        
+                            <div class="value-pic-box">平均
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                            </div>    
+                            <div class="event-hour-price">
+                                <span class="event-hour">3小時</span>
+                                <span class="event-price">$1000</span>
+                            </div>                                
+                        </div>
+                    </div>
+
+                    <!-- 陷阱製作 makeTrap -->
+                    <div class="event-detail-box">
+                        <div class="event-cover cover-bgi-makeTrap"></div>
+                        <div class="event-txt-box">
+                            <h4>陷阱製作</h4>
+                            <table class="allPlan-value-table">
+                                <tr>
+                                    <td><img src="images/value_family.png" alt=""></td>
+                                    <td>1</td>
+                                    <td><img src="images/value_handmade.png" alt=""></td>
+                                    <td>2</td>
+                                    <td><img src="images/value_survive.png" alt=""></td>
+                                    <td>2</td>
+                                </tr>
+                            </table>                        
+                            <div class="value-pic-box">平均
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                            </div>    
+                            <div class="event-hour-price">
+                                <span class="event-hour">2小時</span>
+                                <span class="event-price">$750</span>
+                            </div>                                
+                        </div>
+                    </div>
+
+                    <!-- 淨水術 cleanWater -->
+                    <div class="event-detail-box">
+                        <div class="event-cover cover-bgi-cleanWater"></div>
+                        <div class="event-txt-box">
+                            <h4>淨水術</h4>
+                            <table class="allPlan-value-table">
+                                <tr>
+                                    <td><img src="images/value_family.png" alt=""></td>
+                                    <td>2</td>
+                                    <td><img src="images/value_handmade.png" alt=""></td>
+                                    <td>2</td>
+                                    <td><img src="images/value_survive.png" alt=""></td>
+                                    <td>2</td>
+                                </tr>
+                            </table>                        
+                            <div class="value-pic-box">平均
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                            </div>    
+                            <div class="event-hour-price">
+                                <span class="event-hour">3小時</span>
+                                <span class="event-price">$750</span>
+                            </div>                                
+                        </div>
+                    </div>
+
+                    <!-- 隱蔽偽裝術 hide -->
+                    <div class="event-detail-box">
+                        <div class="event-cover cover-bgi-hide"></div>
+                        <div class="event-txt-box">
+                            <h4>隱蔽偽裝術</h4>
+                            <table class="allPlan-value-table">
+                                <tr>
+                                    <td><img src="images/value_family.png" alt=""></td>
+                                    <td>2</td>
+                                    <td><img src="images/value_handmade.png" alt=""></td>
+                                    <td>1</td>
+                                    <td><img src="images/value_survive.png" alt=""></td>
+                                    <td>2</td>
+                                </tr>
+                            </table>                        
+                            <div class="value-pic-box">平均
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                            </div>    
+                            <div class="event-hour-price">
+                                <span class="event-hour">2小時</span>
+                                <span class="event-price">$750</span>
+                            </div>                                
+                        </div>
+                    </div>
+
+                    <!-- 搭建庇身所 shelter -->
+                    <div class="event-detail-box">
+                        <div class="event-cover cover-bgi-shelter"></div>
+                        <div class="event-txt-box">
+                            <h4>搭建庇身所</h4>
+                            <table class="allPlan-value-table">
+                                <tr>
+                                    <td><img src="images/value_family.png" alt=""></td>
+                                    <td>0</td>
+                                    <td><img src="images/value_handmade.png" alt=""></td>
+                                    <td>3</td>
+                                    <td><img src="images/value_survive.png" alt=""></td>
+                                    <td>3</td>
+                                </tr>
+                            </table>                        
+                            <div class="value-pic-box">平均
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                            </div>    
+                            <div class="event-hour-price">
+                                <span class="event-hour">3小時</span>
+                                <span class="event-price">$1000</span>
+                            </div>                                
+                        </div>
+                    </div>
+
+                    <!-- 急救術 firstAid -->
+                    <div class="event-detail-box">
+                        <div class="event-cover cover-bgi-firstAid"></div>
+                        <div class="event-txt-box">
+                            <h4>急救術</h4>
+                            <table class="allPlan-value-table">
+                                <tr>
+                                    <td><img src="images/value_family.png" alt=""></td>
+                                    <td>3</td>
+                                    <td><img src="images/value_handmade.png" alt=""></td>
+                                    <td>0</td>
+                                    <td><img src="images/value_survive.png" alt=""></td>
+                                    <td>2</td>
+                                </tr>
+                            </table>                        
+                            <div class="value-pic-box">平均
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                            </div>    
+                            <div class="event-hour-price">
+                                <span class="event-hour">1小時</span>
+                                <span class="event-price">$500</span>
+                            </div>                                
+                        </div>
+                    </div>
+
+                    <!-- 自我防衛術 selfDef -->
+                    <div class="event-detail-box">
+                        <div class="event-cover cover-bgi-selfDef"></div>
+                        <div class="event-txt-box">
+                            <h4>自我防衛術</h4>
+                            <table class="allPlan-value-table">
+                                <tr>
+                                    <td><img src="images/value_family.png" alt=""></td>
+                                    <td>1</td>
+                                    <td><img src="images/value_handmade.png" alt=""></td>
+                                    <td>0</td>
+                                    <td><img src="images/value_survive.png" alt=""></td>
+                                    <td>3</td>
+                                </tr>
+                            </table>                        
+                            <div class="value-pic-box">平均
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                            </div>    
+                            <div class="event-hour-price">
+                                <span class="event-hour">2小時</span>
+                                <span class="event-price">$750</span>
+                            </div>                                
+                        </div>
+                    </div>
+
+                    <!-- 捕魚術 catchFish -->
+                    <div class="event-detail-box">
+                        <div class="event-cover cover-bgi-catchFish"></div>
+                        <div class="event-txt-box">
+                            <h4>捕魚術</h4>
+                            <table class="allPlan-value-table">
+                                <tr>
+                                    <td><img src="images/value_family.png" alt=""></td>
+                                    <td>2</td>
+                                    <td><img src="images/value_handmade.png" alt=""></td>
+                                    <td>2</td>
+                                    <td><img src="images/value_survive.png" alt=""></td>
+                                    <td>1</td>
+                                </tr>
+                            </table>                        
+                            <div class="value-pic-box">平均
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                                <img src="images/plan/fire.png" alt="">
+                            </div>    
+                            <div class="event-hour-price">
+                                <span class="event-hour">2小時</span>
+                                <span class="event-price">$750</span>
+                            </div>                                
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div class="confirm-buy-btn-box">
+            <button id="back-btn">回去活動篩選</button>
+            <button id="next-btn-name-cover">繼續行程命名</button>
+        </div>
+
+        <!-- 第三步：命名及封面照 -->
+        <div class="plan-container-step-three">
+            <h3><span class="plan-step">第三步</span>行程命名及封面照</h3>
+            <div class="name-cover-container">
+                <div class="name-your-plan-container">
+                    <div>我的行程名稱為：<input type="text"></div>
+                </div>
+                <div class="plan-cover-container">
+                    <p>選擇行程封面照片</p>
+                    <div class="choose-cover-box">
+                        <div class="big-cover-post">
+                            <img src="images/plan/cover_family.jpg" alt="">
+                        </div>
+                        <div class="small-cover-pick-box">
+                            <div class="small-cover-pic cover-pic-family"></div>
+                            <div class="small-cover-pic cover-pic-handmade"></div>
+                            <div class="small-cover-pic cover-pic-survive"></div>
+                        </div>
+                    </div>
+                    <div class="upload-cover-box">
+                        <span>上傳自己的照片</span>
+                        <input type="file" class="upload-cover-pic" name="" id="upload-cover-pic" value="上傳檔案">
+                    </div>
+                </div>
+            </div> 
+            <div class="clearfix"></div>
+        </div>
+        <div class="confirm-buy-btn-box">
+            <button id="back-btn">回去行程命名</button>
+            <button id="next-btn-confirm">確認行程內容</button>
+        </div>
+
+        <!-- 最後一步：確認行程 -->
+        <div class="plan-screen-confirmation">
+            <div class="plan-container-confirmation">
+                <h3><span class="plan-step">第四步</span>確認行程內容</h3>
+                <div class="confirmation-screen-flex-group">
+
+                    <div class="event-drop-area">
+                            <p>總時數為：<span></span></p>
+                            <p>總金額為：<span></span></p>
+                            <div class="event-drop-circle">1</div>
+                            <div class="event-drop-circle">2</div>
+                            <div class="event-drop-circle">3</div>
+                            <div class="event-drop-circle">4</div>
+                        </div>
+        
+                    <!-- <div class="event-drop-area confirmation-event-drop-area">
+                        <p>總時數為：</span><span></p>
+                        <p>總金額為：</span><span></p>
+
+                        <div class="confirmation-event-oder-details-container">
+                            <div class="confirmation-event-order">
+                                <span>1</span>
+                            </div>
+                            刀具製作 makeKnife
+                            <div class="event-detail-box confirmation-event-detail-box">
+                                <div class="event-cover cover-bgi-knife"></div>
+                                <div class="event-txt-box">
+                                    <h4>刀具製作</h4>
+                                    <table class="allPlan-value-table">
+                                        <tr>
+                                            <td><img src="images/value_family.png" alt=""></td>
+                                            <td>2</td>
+                                            <td><img src="images/value_handmade.png" alt=""></td>
+                                            <td>3</td>
+                                            <td><img src="images/value_survive.png" alt=""></td>
+                                            <td>2</td>
+                                        </tr>
+                                    </table>                        
+                                    <div class="value-pic-box">平均
+                                        <img src="images/plan/fire.png" alt="">
+                                        <img src="images/plan/fire.png" alt="">
+                                        <img src="images/plan/fire.png" alt="">
+                                        <img src="images/plan/fire.png" alt="">
+                                    </div>    
+                                    <div class="event-hour-price">
+                                        <span class="event-hour">3小時</span>
+                                        <span class="event-price">$1000</span>
+                                    </div>                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="confirmation-event-oder-details-container">
+                            <div class="confirmation-event-order">
+                                <span>2</span>
+                            </div>
+                            結繩術 rope
+                            <div class="event-detail-box confirmation-event-detail-box">
+                                <div class="event-cover cover-bgi-rope"></div>
+                                <div class="event-txt-box">
+                                    <h4>結繩術</h4>
+                                    <table class="allPlan-value-table">
+                                        <tr>
+                                            <td><img src="images/value_family.png" alt=""></td>
+                                            <td>3</td>
+                                            <td><img src="images/value_handmade.png" alt=""></td>
+                                            <td>3</td>
+                                            <td><img src="images/value_survive.png" alt=""></td>
+                                            <td>1</td>
+                                        </tr>
+                                    </table>                        
+                                    <div class="value-pic-box">平均
+                                        <img src="images/plan/fire.png" alt="">
+                                        <img src="images/plan/fire.png" alt="">
+                                        <img src="images/plan/fire.png" alt="">
+                                    </div>    
+                                    <div class="event-hour-price">
+                                        <span class="event-hour">1小時</span>
+                                        <span class="event-price">$500</span>
+                                    </div>                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="confirmation-event-oder-details-container">
+                            <div class="confirmation-event-order">
+                                <span>3</span>
+                            </div>
+
+                            器具術 appliance
+                            <div class="event-detail-box confirmation-event-detail-box">
+                                <div class="event-cover cover-bgi-appliance"></div>
+                                <div class="event-txt-box">
+                                    <h4>器具術</h4>
+                                    <table class="allPlan-value-table">
+                                        <tr>
+                                            <td><img src="images/value_family.png" alt=""></td>
+                                            <td>2</td>
+                                            <td><img src="images/value_handmade.png" alt=""></td>
+                                            <td>3</td>
+                                            <td><img src="images/value_survive.png" alt=""></td>
+                                            <td>1</td>
+                                        </tr>
+                                    </table>                        
+                                    <div class="value-pic-box">平均
+                                        <img src="images/plan/fire.png" alt="">
+                                        <img src="images/plan/fire.png" alt="">
+                                        <img src="images/plan/fire.png" alt="">
+                                    </div>    
+                                    <div class="event-hour-price">
+                                        <span class="event-hour">2小時</span>
+                                        <span class="event-price">$750</span>
+                                    </div>                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="confirmation-event-oder-details-container">
+                            <div class="confirmation-event-order">
+                                <span>4</span>
+                            </div>
+
+                            吹箭術 blowingArr
+                            <div class="event-detail-box confirmation-event-detail-box">
+                                <div class="event-cover cover-bgi-blowingArr"></div>
+                                <div class="event-txt-box">
+                                    <h4>吹箭術</h4>
+                                    <table class="allPlan-value-table">
+                                        <tr>
+                                            <td><img src="images/value_family.png" alt=""></td>
+                                            <td>1</td>
+                                            <td><img src="images/value_handmade.png" alt=""></td>
+                                            <td>2</td>
+                                            <td><img src="images/value_survive.png" alt=""></td>
+                                            <td>3</td>
+                                        </tr>
+                                    </table>                        
+                                    <div class="value-pic-box">平均
+                                        <img src="images/plan/fire.png" alt="">
+                                        <img src="images/plan/fire.png" alt="">
+                                        <img src="images/plan/fire.png" alt="">
+                                        <img src="images/plan/fire.png" alt="">
+                                    </div>    
+                                    <div class="event-hour-price">
+                                        <span class="event-hour">1小時</span>
+                                        <span class="event-price">$500</span>
+                                    </div>                                
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="confirmation-right-container">
+                        <div class="name-your-plan-container confirmation-name-your-plan-container">
+                            <div>行程名稱<input type="text"></div>
+                        </div>
+                        <div class="confirmation-cover-map-container">
+                            <div class="name-cover-container confirmation-name-cover-container">
+                                <div class="plan-cover-container confirmation-plan-cover-container">
+                                    <p>行程封面照片</p>
+                                    <div class="choose-cover-box">
+                                        <div class="big-cover-post confirmation-big-cover-post">
+                                            <img src="images/plan/cover_family.jpg" alt="">
+                                        </div>
+                                    </div>
+                                </div>    
+                            </div>
+                            <div class="check-map-box confirmation-check-map-box">
+                                <p>行程位置標示</p>
+                                <img src="images/Australia_map.png" alt="">
+                                <!-- <div>放置pin的圖與號碼
+                                <img src="" alt="">
+                                <span></span>
+                                </div>
+                                <div>放置pin的圖與號碼
+                                    <img src="" alt="">
+                                    <span></span>
+                                </div>
+                                <div>放置pin的圖與號碼
+                                    <img src="" alt="">
+                                    <span></span>
+                                </div> -->
+                            </div>        
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <div class="confirm-buy-btn-box">
+            <button id="btn-confirm-my-plan">儲存此次行程</button>
+            <button id="btn-confirm-and-buy-ticket">儲存並立即購票</button>
+        </div>
+        </div>
+    </div>
+<!-- footer -->
+    <!-- <div id="jsi-flying-fish-container" class="container"></div> -->
+<!-- footer -->
+        <!-- footer會再修改就先不放囉 -->
+    <!-- <script src="js/footer-flyfish.js"></script> -->
+
+
+</body>
+
+</html>
