@@ -6,36 +6,29 @@
 @import "../base/_font";
 
 //全部活動 allPlan的樣式
-.wrap {
-    // outline: 1px solid red;
-    position: relative;
-    margin: 0 auto;
-}
 
 .all-plan-title {
-    width: 30%;
     // outline: 1px solid red;
-    h2 {
-        @include big-title($black);
-        // outline: 1px solid red;
-        position: absolute;
-        top: 55px;
-        left: 115px;
-    }
+    position: relative;
     img {
-        position: relative;
-        top: -150px;
-        z-index: -1;
-        width: 370px;
+        display: block;
+        margin: 0 auto 70px;
+        max-width: 300px;
+        height: auto;
+        border: 2px solid red;
+    }
+    h2 {
+        display: none;
     }
 }
 
 .explain-icons {
     // width: 100%;
     position: absolute;
-    top: 40px;
+    top: 0px;
     right: 0px;
     display: flex;
+    outline: 2px solid red;
     .icons-all {
         align-items: flex-end;
         img {
@@ -47,7 +40,7 @@
         span {
             // outline: 1px solid red;
             @include bodyP;
-            color: $white;
+            // color: $white;
             display: block;
             margin-top: 10px;
             text-align: center;
@@ -99,7 +92,7 @@
             transform: scale(1.1);
             transition: all .5s ease-out;
             h2 {
-                color: #e13a8c;
+                color: $doubledarkGreen;
                 transition: all .5s ease-out;
             }        
         }           
@@ -165,9 +158,6 @@
         }
     }
 
-    .explain-icons {
-        top: 175px;
-    }
 
 
 

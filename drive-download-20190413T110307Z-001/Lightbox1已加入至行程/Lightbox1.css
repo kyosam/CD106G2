@@ -1,0 +1,62 @@
+#Lightbox_click {
+  width: 100px;
+  height: 100px;
+  background-color: #aa00aa;
+}
+
+#Lightbox1 {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.671);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#Lightbox1 .Lightbox1 {
+  width: 30%;
+  height: 30vh;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 10%;
+  padding: 5%;
+}
+
+#Lightbox1 .Lightbox1 p {
+  text-align: center;
+  margin: auto;
+}
+
+#Lightbox1 .Lightbox1 hr {
+  margin: 5%;
+}
+
+#Lightbox1 .Lightbox1 div {
+  margin: 20% 10%;
+  text-align: center;
+}
+
+#Lightbox1 .Lightbox1 div a {
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  margin: auto;
+  line-height: 30px;
+  display: inline-block;
+  border: 1px solid #000;
+}
+
+#Lightbox1 .Lightbox1 div a:nth-child(1) {
+  float: left;
+}
+
+#Lightbox1 .Lightbox1 div a:nth-child(2) {
+  float: right;
+}
+/*# sourceMappingURL=Lightbox1.css.map */

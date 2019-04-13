@@ -20,6 +20,10 @@ body {
   background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(248,219,219,1) 0%, rgba(229,248,250,1) 90% );
 }
 
+.RWD_plan_div {
+  display: none;
+}
+
 .header_title_background {
   // border: 2px solid red;
   img {
@@ -30,10 +34,7 @@ body {
     // border: 2px solid red;
   }
   h2 {
-    outline: 2px solid red;
-    // position: absolute;
-    // margin: 0 auto;
-    // top: 0;
+    display: none;
   }
 }
 
@@ -90,22 +91,9 @@ body {
       p{
       @include bodyP;
       }
-      .hot-event-img {
+      .hot-event-img img{
         width: 100%;
         height: 250px;
-        background-size: cover;
-        background-position: center bottom;
-        -webkit-clip-path: inset(0 0 0 0);
-        clip-path: inset(0 0 0 0);
-      }
-      .event-image-first {
-        background-image: url(../images/plan/fire.jpg);
-      }
-      .event-image-second {
-        background-image: url(../images/plan/eatout.jpg);
-      }
-      .event-image-third {
-        background-image: url(../images/plan/rope.jpg);
       }
       .euqal-add-box {
         width: 90%;
@@ -205,7 +193,20 @@ body {
   // outline: 1px solid blue;
   @include border-frame;
   width: 95%;
-  margin: 0 auto 50px;
+  margin: 0 auto 100px;
+  position: relative;
+  &::before {
+    content:'';
+    display: block;
+    width: 70px;
+    height: 70px;
+    // border: 2px solid red;
+    position: absolute;
+    top: -75px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
   h3 {
     @include md-title($black);
     margin: 10px;
@@ -214,15 +215,8 @@ body {
       display: block;
       width: 100%;
       height: 5px;
-      background-color: black;
+      background-color: $darkBrown;
       margin-top: 10px;
-    }
-    .plan-step {
-      @include bodyP;
-      margin-right: 10px;
-      color: #d63986;
-      font-weight: bold;
-      vertical-align: top;
     }
     .plan-explaination {
       @include bodyP;
@@ -232,6 +226,13 @@ body {
     }
   }
 }
+
+.plan-container-step-one::before {background-image: url(../../images/new/number1.png);}
+.plan-container-step-two::before {background-image: url(../../images/new/number2.png);}
+.plan-container-step-three::before {background-image: url(../../images/new/number3.png);}
+.plan-container-step-four::before {background-image: url(../../images/new/number4.png);}
+.plan-container-confirmation::before {background-image: url(../../images/new/number5.png);}
+
 
 // 活動規劃區：下左
 .second-screen-flex-group {
@@ -249,11 +250,14 @@ body {
     position: relative;
     top: 10px;
     right: 5%;
-    width: 100%;
     text-align: right;
+    width: 100%;
     span {
-      @include bodyP;
+      @include btn($black,$brightGreen);
       border-bottom: 2px solid $yellow;
+      width: 150px;
+      line-height: 50px;
+      margin-right: 20px;
       a {
         color: $black;
       }
@@ -306,22 +310,25 @@ body {
   margin: 2%;
   cursor: pointer;
   transition: .3s ease;
+  display: flex;
   &:hover {
     background-color: #fdf7bd;
     transition: .3s ease;
   }
+
   .event-cover {
     width: 41%;
     height: 100px;
     margin: 10px 10px 5px 10px;
     border-radius: 5px;
-    background-size: cover;
-    background-position: center bottom;
-    -webkit-clip-path: inset(0 0 0 0);
-    clip-path: inset(0 0 0 0);
-    // outline: 1px solid red;
     display: inline-block;
+    // outline: 1px solid red;
+    overflow: hidden;
+    img{
+      width: 100%;
+    }
   }
+
   .event-txt-box {
     // outline: 1px solid red;
     display: inline-block;
@@ -329,7 +336,7 @@ body {
     margin: 10px 0 10px 0;
     height: 100px;
     position: relative;
-    width: $width - 50%;
+    width: $width - 48%;
     h4 {
       @include md-title($blue);
     }
@@ -374,26 +381,6 @@ body {
   }
 }
 
-.event-detail-box {
-  .cover-bgi-knife {background-image: url(../images/plan/knife.jpg);}
-  .cover-bgi-rope {background-image: url(../images/plan/knife.jpg);}
-  .cover-bgi-appliance {background-image: url(../images/plan/knife.jpg);}
-  .cover-bgi-blowingArr {background-image: url(../images/plan/knife.jpg);}
-  .cover-bgi-bowArr {background-image: url(../images/plan/knife.jpg);}
-  .cover-bgi-wildCook {background-image: url(../images/plan/knife.jpg);}
-  .cover-bgi-makeFire {background-image: url(../images/plan/knife.jpg);}
-  .cover-bgi-eatable {background-image: url(../images/plan/knife.jpg);}
-  .cover-bgi-weave {background-image: url(../images/plan/knife.jpg);}
-  .cover-bgi-direction {background-image: url(../images/plan/knife.jpg);}
-  .cover-bgi-basicSur {background-image: url(../images/plan/knife.jpg);}
-  .cover-bgi-makeTrap {background-image: url(../images/plan/knife.jpg);}
-  .cover-bgi-cleanWater {background-image: url(../images/plan/knife.jpg);}
-  .cover-bgi-hide {background-image: url(../images/plan/knife.jpg);}
-  .cover-bgi-shelter {background-image: url(../images/plan/knife.jpg);}
-  .cover-bgi-firstAid {background-image: url(../images/plan/knife.jpg);}
-  .cover-bgi-selfDef {background-image: url(../images/plan/knife.jpg);}
-  .cover-bgi-catchFish {background-image: url(../images/plan/knife.jpg);}
-}
 
 // 三屏：地圖座標
 .check-map-box {
@@ -462,23 +449,13 @@ body {
         height: 100px;
         margin: 10px;
         border-radius: 5px;
-        background-size: cover;
-        background-position: center bottom;
-        -webkit-clip-path: inset(0 0 0 0);
-        clip-path: inset(0 0 0 0);
         border: 3px solid $brown;
         display: inline-block;
+        overflow: hidden;
+        img {
+          width: 120%;
+        }
       }
-      .cover-pic-family {
-        background-image: url(../images/plan/cover_family.jpg);
-      }
-      .cover-pic-handmade {
-        background-image: url(../images/plan/cover_handmade.jpg);
-      }
-      .cover-pic-survive {
-        background-image: url(../images/plan/cover_survive.jpg);
-      }
-
     }
   }
 }
@@ -583,8 +560,17 @@ body {
   display: flex;
   justify-content: space-around;
   height: 100px;
-  #confirm-my-plan {
+  margin-bottom: 100px;
+  #btn_confirm_my_plan {
     @include btn($red,$yellow);
+    width: 250px;
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    margin: 0 auto;
+  }
+  #btn_confirm_and_buy_ticket {
+    @include btn($white,$darkBlueGreen);
     width: 250px;
     height: 50px;
     line-height: 50px;
@@ -593,42 +579,241 @@ body {
   }
 }
 
+#add_to_plan_list{
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.671);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  z-index: 5;
+  // &::before {
+    // content:'';
+    // background-image:url(http://localhost/quding/photos/u14.png);
+    // background-size:1000px 200px;
+    // position: absolute;
+    // width:1000px;
+    // height:200px;
+    // z-index: 100;
+    // top: -110px;
+    // content:'';
+    // display: block;
+    // background-image:url(../../images/new/lightbox_up_frame.png); 
+    // background-repeat: no-repeat;
+    // // margin: 0 auto;
+    // // text-align: center;
+    // width: 100%;
+    // height: 300px;
+    // position: relative;
+    // top: 500px;
+    // outline: 2px solid red;
+  }
+
+  .lightbox-add-to-plan-list{
+      width: 30%;
+      height: 30vh;
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      border-radius: 13px;
+      padding: 2%;
+      // outline: 2px solid red;
+      img {
+        width: 50%;
+        display: block;
+        margin: auto;
+        // outline: 2px solid red;
+        position: relative;
+        top: -30px;
+        // height: 300px;
+      }
+      h4 {
+          @include md-title($blue);
+          text-align: center;
+          // outline: 2px solid red;
+
+      }
+      p{
+          text-align: center;
+          margin: auto;
+      }
+      hr{
+          margin: 2% 5%;
+      }
+      div{
+          margin: 10%; 
+          text-align: center;
+          a{
+              width: 100px;
+              height: 30px;
+              text-align: center;
+              margin: auto;
+              line-height: 30px;
+              display: inline-block;
+              border: 1px solid #000;  
+          }
+          a:nth-child(1){float: left;}
+          a:nth-child(2){float: right;}
+      }
+      
+  }
+  
+
+
 .footer-try-image {
   background: #fff;
 
   background-size: contain;
 }
 
+//================RWD=================
+@media screen and (max-width: 1200px){
+  .desk_plan_div {
+    display: none;
+  }
+  .RWD_plan_div {
+    display: block;
+  }
 
-@media screen and (max-width:768px){
-  .wrap {
-    margin: 0 auto;
-    .plan-screen-first {
-      margin: 0;
-      #hot-event-container label {
-        width: 90%;
-        transform: none;
+  .plan-container-step-one,
+  .plan-container-confirmation{
+    margin-bottom: 50px;
+  }
+
+  .plan-container-step-one, 
+  .plan-container-step-two, 
+  .plan-container-step-three, 
+  .plan-container-confirmation {
+      width: 90%;
+      // height: 70vh;
+  }
+  .plan-container-step-one,
+  .plan-container-step-two,
+  .plan-container-step-three,
+  .plan-container-step-four,
+  .plan-container-confirmation {
+      h3 {
+          .plan-step {
+              font-size: 18px;
+          }
       }
+  }
+  
+  .plan-container-step-one {
+      .bar-img-container {
+          // outline: 1px solid red;
+          display: block;
+          margin: 0 auto;
+          .bar-img-box {
+              width: 90%;
+              margin: 20px auto;
+              padding: 20px 5%;
+              background-color: antiquewhite;
+          }
+      }
+  }
+  
+  .plan-container-step-two {
+      .all-event-container {
+          width: 100%;
+      }
+  }
+
+  .all-event-container {
+    .check_all_plan {
+      @include btn($black,$brightGreen);
+      border-bottom: 2px solid $yellow;
+      width: 150px;
+      line-height: 50px;
+      display: block;
+      margin-left: 2%;
+      position: relative;
+      a {
+        color: $black;
+      }
+    }  
+  }
+
+
+  
+  .event-detail-box {
+      width: 100%;
+      .event-cover {
+          width: 30%;
+      }
+      .event-txt-box {
+          width: 60%;
+      }
+  }
+  
+  .plan-container-step-three {
+      .name-cover-container {
+          margin: 5%;
+          .name-your-plan-container {
+              width: 100%;
+          }
+          .plan-cover-container {
+              width: 100%;
+  
+          }
+      }
+  }
+  
+  .plan-cover-container {
+      .choose-cover-box {
+          margin-top: 3%;
+      }    
+  }
+  
+  .confirmation-check-map-box img {
+      margin: 3% 2% 30px 2%;
+  }
+  
+  
+  .event-drop-area {
+      width: 40%;
+      border: none;
+      .event-drop-circle {
+          width: 120px;
+          height: 120px;
+          line-height: 120px;
+      }
+  }
+  .confirmation-screen-flex-group{
+      .confirmation-right-container {
+          width: 56%;
+          margin-right: 2%;
+          padding-left: 2%;
+          .name-your-plan-container {
+              width: 98%;
+          }
+      }    
+  }
+  
+  .confirm-buy-btn-box{
+    #btn_confirm_my_plan {
+        @include btn($red,$yellow);
+        width: 150px;
+        display: block;
+        margin: 0 auto;
+      }
+    
+    #next-btn-pick-my-event,
+    #btn-confirm-and-buy-ticket {
+      @include btn($white,$darkBlueGreen);
+      width: 150px;
+      display: block;
+      margin: 0 auto;
     }
   }
 
-  #s1:checked ~ #slide3, #s2:checked ~ #slide1,
-  #s3:checked ~ #slide2 {
-    box-shadow:none;
-    transform: none;
-  }
 
-  #s1:checked ~ #slide1, #s2:checked ~ #slide2,
-  #s3:checked ~ #slide3 {
-    box-shadow:none;
-    transform: none;
-  }
-
-  #s1:checked ~ #slide2, #s2:checked ~ #slide3,
-  #s3:checked ~ #slide1 {
-    box-shadow:none;
-    transform: none;
-  }
+  .plan-container-confirmation::before {background-image: url(../../images/new/number4.png);}
 
   
 }

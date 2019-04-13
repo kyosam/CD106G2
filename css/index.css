@@ -290,8 +290,8 @@ body {
 
 .rotate-slider .slides .inner a:hover {
   top: 4px;
-  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 1px 0px #bbb, 0px 2px 0px #aaa, 0px 2px 0px #999;
-          box-shadow: 0px 1px 0px #ccc, 0px 1px 0px #bbb, 0px 2px 0px #aaa, 0px 2px 0px #999;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
 }
 
 /* LAYER 3 STYLING */
@@ -618,8 +618,8 @@ body {
 
 .layer4_btn a:hover {
   top: 4px;
-  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 1px 0px #bbb, 0px 2px 0px #aaa, 0px 2px 0px #999;
-          box-shadow: 0px 1px 0px #ccc, 0px 1px 0px #bbb, 0px 2px 0px #aaa, 0px 2px 0px #999;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
 }
 
 /* LAYER 5 STYLING */
@@ -905,8 +905,8 @@ body {
 
 .layer5_btn a:hover {
   top: 4px;
-  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 1px 0px #bbb, 0px 2px 0px #aaa, 0px 2px 0px #999;
-          box-shadow: 0px 1px 0px #ccc, 0px 1px 0px #bbb, 0px 2px 0px #aaa, 0px 2px 0px #999;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
 }
 
 /* FUNCTIONAL */

@@ -1,0 +1,84 @@
+
+#Lightbox_click{
+    width: 100px;
+    height: 100px;
+    background-color: #aaa;
+}
+#Lightbox4_login{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.671);
+    position: fixed;
+    top: 0;
+    left: 0;
+    // display: none;
+    #Lightbox4_login_close{
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        margin: auto;
+        position: absolute;
+        right:1%;
+        top: 1%;
+        border: 1px solid #000;
+        border-radius: 50%;
+        
+
+    }
+    .Lightbox4_login{
+        width: 60%;
+        height: 60vh;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 20px;
+        border: 5px solid #000;
+        border-radius: 20px;
+        .Lightbox4_login_leftbox{
+            width: 30%;
+            margin: 10% 10%;
+            text-align: center;
+            display: inline-block;
+            .Lightbox4_login_leftbox_text{
+                text-align:left;
+                margin: 10% 10%;
+                input{
+                    width: 100%;
+                }
+                input:last-child{
+                    height: 30px;
+                }
+                a{
+                    display: block;
+                    margin: 10% auto;
+                    text-align: center;
+                }
+            }
+
+            
+        }
+        .Lightbox4_login_rightbox{
+            width: 48%;
+            float: right;
+            border-left: 5px solid #000;
+            margin: auto;
+            text-align: center;
+            height: 100%;
+            p{
+                margin: 12%;
+                text-align: center;
+            }
+            input{
+                width: 40%;
+                height: 30px;
+            }
+
+        }
+        
+    }
+    
+}

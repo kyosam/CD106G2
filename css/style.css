@@ -387,9 +387,8 @@ nav .header-background-cloud ul li a {
 .wrap {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 200px auto 0;
   position: relative;
-  top: 300px;
   z-index: 1;
   outline: 2px solid red;
 }

@@ -1,0 +1,25 @@
+#copyurl {
+  opacity: 0;
+  width: 0.001px;
+  height: 0.001px;
+}
+
+#copyok {
+  width: 20%;
+  height: 20vh;
+  background-color: rgba(170, 170, 170, 0.192);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  display: none;
+}
+
+#copyok p {
+  margin: 0;
+  line-height: 20vh;
+}
+/*# sourceMappingURL=Lightbox5.css.map */
