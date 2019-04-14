@@ -10,6 +10,7 @@
     <link rel="Shortcut Icon" type="image/x-icon" href="images/new/favicon.png" />
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/hbgClick.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <title>森存者｜手札內頁</title>
 </head>
 <body>
@@ -51,7 +52,13 @@
     
 
     <div class="wrap">
-    <!--blogContent  -->    
+    <!-- bg fly -->
+    <div id="scene1">
+            <div data-depth="0.5" class="fly1"><img src="images/blog/drop.png" alt="蝴蝶"></div>
+    </div>
+        <script>
+            parallaxInstance = new Parallax( document.getElementById( "scene1" ));
+        </script>  
     <div class="blogContent">
         <div class="blogContent-heading">
             <h2>原來山泉水這麼甜!!</h2>
@@ -64,11 +71,25 @@
             </div>
 
             <div class="blogContent-share">
-                <img src="images/blog/Share.png" alt="分享"> 
+                <input type="text" name="" id="copyurl" value="www.google.com" >   
+                <img src="images/blog/Share.png" alt="分享" id="copybtn">
             </div>
 
         </div>
-            
+        <script>
+                //燈箱
+                var copybtn=document.getElementById("copybtn");
+           
+               copybtn.addEventListener("click",function(){
+           
+               var copyurl = document.getElementById("copyurl");    
+               copyurl.select();    
+               document.execCommand("copy");
+               document.getElementById("copyok").style.display="inline-block"; 
+           
+               setTimeout(function(){ document.getElementById("copyok").style.display="none";  }, 3000);
+               });
+        </script>    
 
         <!-- 內文 -->
         <div class="blogContent-photo">
@@ -218,12 +239,18 @@
             <button>加入我的行程</button>
          </div>
         
-
+<!-- bg fly -->
+<div id="scene2">
+        <div data-depth="0.5" class="fly1"><img src="images/blog/fly1.gif" alt="蝴蝶"></div>
+</div>
+    <script>
+        parallaxInstance = new Parallax( document.getElementById( "scene2" ));
+    </script>  
          <div class="comment">
         <div class="comment-item">
             <div class="comment-author">
                 <img src="images/blog/big_head2.png" alt="大頭貼">
-                <div>懂不懂</div>
+                <div>董董</div>
             </div>
             
             <div class="comment-SendContent">
@@ -231,13 +258,13 @@
                 <div class="comment-date">2019-04-09</div>
             </div>
 
-            <button>檢舉</button>
+            <img src="images/game/alert.png" alt="檢舉" class="commentRep">
         </div>
         
         
             <div class="comment-input">
                 <form>
-                    <textarea name="" id=""></textarea>
+                    <textarea name="comment" placeholder="輸入你的留言"></textarea>
                     <input type="button" class="content-send" value="留言">
                 </form>
             </div>
@@ -246,12 +273,23 @@
         
     </div>
         <div class="blogContent-seemore">
+            <!-- bg fly -->
+            <div id="scene3">
+                <div data-depth="0.5" class="fly1"><img src="images/blog/fly1.gif" alt="蝴蝶"></div>
+            </div>
+            <script>
+                parallaxInstance = new Parallax( document.getElementById( "scene3" ));
+            </script> 
                 <button>加入我的行程</button>
-                <button>看看其他手札</button>
+                <button id="readMoreBlog">看看其他手札</button>
         </div>
     
     </div>
 </div>
 
+<!-- copylink lightbox -->
+<div id="copyok">
+        <p>複製成功<br>3秒後關閉。</p>
+</div>
 </body>
 </html>

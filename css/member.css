@@ -405,9 +405,8 @@ nav .header-background-cloud ul li a {
 .wrap {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 200px auto 0;
   position: relative;
-  top: 300px;
   z-index: 1;
   outline: 2px solid red;
 }
@@ -445,7 +444,7 @@ body {
 }
 
 i {
-  color: #232323;
+  color: #403d04;
 }
 
 .wrapper {
@@ -480,14 +479,14 @@ input[type="button"] {
   font-family: '微軟正黑體';
   font-size: 18px;
   font-weight: bold;
-  color: #232323;
+  color: #403d04;
   text-align: center;
   vertical-align: middle;
   background-color: #fff;
   border-radius: 10px;
   border: none;
-  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
-          box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
+  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
+          box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
   height: 35px;
   width: 60px;
   margin-left: 5px;
@@ -548,14 +547,14 @@ input[type="button"]:hover {
   font-family: '微軟正黑體';
   font-size: 24px;
   font-weight: bold;
-  color: #4aa1d6;
+  color: #718cc6;
   letter-spacing: 1.5;
 }
 
 .memberInfo #bonus-point {
   font-family: '微軟正黑體';
   font-size: 34px;
-  color: #b74848;
+  color: #eb715f;
   font-weight: bold;
   letter-spacing: 1.5;
   font-weight: bold;
@@ -575,7 +574,7 @@ input[type="button"]:hover {
 }
 
 .memberInfo .get-bonus-point-box table .fas {
-  color: #92be40;
+  color: #3ba261;
   font-size: 30px;
 }
 
@@ -593,7 +592,7 @@ input[type="button"]:hover {
   font-family: '微軟正黑體';
   font-size: 24px;
   font-weight: bold;
-  color: #232323;
+  color: #403d04;
   letter-spacing: 1.5;
   font-weight: bold;
   border-radius: 13px;
@@ -626,7 +625,7 @@ input[type="button"]:hover {
   font-family: '微軟正黑體';
   font-size: 24px;
   font-weight: bold;
-  color: #232323;
+  color: #403d04;
   letter-spacing: 1.5;
   text-align: left;
   padding-right: 40px;
@@ -644,14 +643,14 @@ input[type="button"]:hover {
   font-family: '微軟正黑體';
   font-size: 18px;
   font-weight: bold;
-  color: #232323;
+  color: #403d04;
   text-align: center;
   vertical-align: middle;
   background-color: #fff;
   border-radius: 10px;
   border: none;
-  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
-          box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
+  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
+          box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
   height: 40px;
 }
 
@@ -685,7 +684,7 @@ input[type="button"]:hover {
   color: #232323;
   letter-spacing: 1.5;
   line-height: 1.5;
-  color: #232323;
+  color: #403d04;
   font-weight: bold;
   cursor: pointer;
 }
@@ -708,7 +707,7 @@ input[type="button"]:hover {
   color: #232323;
   letter-spacing: 1.5;
   line-height: 1.5;
-  color: #232323;
+  color: #403d04;
   font-weight: bold;
 }
 
@@ -732,11 +731,11 @@ input[type="button"]:hover {
 }
 
 .plans .planInfo .planBorder .share-blog-url-box .share-blog {
-  border-bottom: 2px solid #e13a8c;
+  border-bottom: 2px solid #f7bac2;
 }
 
 .plans .planInfo .planBorder .share-blog-url-box .share-url {
-  border-bottom: 2px solid #e13a8c;
+  border-bottom: 2px solid #f7bac2;
 }
 
 .blogs {
@@ -762,20 +761,20 @@ input[type="button"]:hover {
 }
 
 .blogs table thead {
-  border: 1px solid #232323;
+  border: 1px solid #403d04;
 }
 
 .blogs table thead .blogtitle {
   font-family: '微軟正黑體';
   font-size: 24px;
   font-weight: bold;
-  color: #232323;
+  color: #403d04;
   letter-spacing: 1.5;
 }
 
 .blogs table .blog > td {
   padding-top: 40px;
-  border-bottom: 1px solid #232323;
+  border-bottom: 1px solid #403d04;
 }
 
 .orders {
@@ -801,26 +800,26 @@ input[type="button"]:hover {
 }
 
 .orders table thead {
-  border: 1px solid #232323;
+  border: 1px solid #403d04;
 }
 
 .orders table thead .ordertitle {
   font-family: '微軟正黑體';
   font-size: 24px;
   font-weight: bold;
-  color: #232323;
+  color: #403d04;
   letter-spacing: 1.5;
 }
 
 .orders table .order > td {
   padding-top: 40px;
-  border-bottom: 1px solid #232323;
+  border-bottom: 1px solid #403d04;
 }
 
 .orders table .orderlist > td {
   display: none;
   padding: 5px;
-  border: 1px solid #232323;
+  border: 1px solid #403d04;
 }
 
 .orders table .orderlist > td * {
