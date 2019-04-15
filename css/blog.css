@@ -391,11 +391,6 @@ nav .header-background-cloud ul li a {
   position: relative;
   z-index: 1;
   outline: 2px solid red;
-  width: 100%;
-  max-width: 1200px;
-  margin: 200px auto 0;
-  position: relative;
-  z-index: 1;
 }
 
 body {
@@ -541,11 +536,7 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   padding: 5%;
 }
 
-<<<<<<< HEAD
-.blogRanking .blogRanking-article .blogRanking-article-left span {
-=======
 .blogRanking .blogRanking-article .blogRanking-article-left .readMore {
->>>>>>> tzuping
   color: #718cc6;
   cursor: pointer;
   font-family: '微軟正黑體';
@@ -634,19 +625,7 @@ div, h1, h2, h3, h4, h5, h6, p, span {
 }
 
 .blogRanking .blogRanking-article .blogRanking-event-wrap .blogRanking-event .blogRanking-event-info .avgScore span {
-<<<<<<< HEAD
-  color: #3ba261;
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  color: #3ba261;
-=======
-  color: green;
->>>>>>> order
-=======
   color: #67be8d;
->>>>>>> tzuping
->>>>>>> 479dbb4f22703baf2a244710941750031ca4fa3c
 }
 
 .blogRanking .blogRanking-article .blogRanking-event-wrap .blogRanking-event .blogRanking-event-info .avgScore img {
@@ -729,23 +708,8 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   background-color: #ffdb3f;
   border-radius: 10px;
   border: none;
-<<<<<<< HEAD
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
   -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
           box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-=======
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
->>>>>>> order
-=======
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
->>>>>>> tzuping
->>>>>>> 479dbb4f22703baf2a244710941750031ca4fa3c
   width: 150px;
 }
 
@@ -793,8 +757,8 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   background-color: #f7bac2;
   border-radius: 10px;
   border: none;
-  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
-          box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
+  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
+          box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
   position: absolute;
   top: 46%;
   right: 46%;
@@ -809,8 +773,6 @@ div, h1, h2, h3, h4, h5, h6, p, span {
 
 .blogShare button a {
   color: #eb715f;
-<<<<<<< HEAD
-=======
 }
 
 .blogShare .blogShare-beforehover {
@@ -899,7 +861,6 @@ div, h1, h2, h3, h4, h5, h6, p, span {
     bottom: 45%;
     border-color: transparent #fff transparent transparent;
   }
->>>>>>> tzuping
 }
 
 .blogForum {
