@@ -387,11 +387,9 @@ nav .header-background-cloud ul li a {
 .wrap {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 200px auto 0;
   position: relative;
-  top: 300px;
   z-index: 1;
-  outline: 2px solid red;
 }
 
 body {
@@ -692,8 +690,8 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   background-color: #f7bac2;
   border-radius: 10px;
   border: none;
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
 }
 
 .blogShare .blogSummit form .blogShare-btnContainer button:hover {
