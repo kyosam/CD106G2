@@ -6,15 +6,10 @@
 @import "../base/_font.scss";
 
 
-*{
-    // outline: #000 1px solid ;
-}
-//header-space
-.header-space{
-    height: 150px;
-}
+// *{
+//     outline: #000 1px solid ;
+// }
 
-//
 .game-container{
     max-width: $dt;
     margin: auto;
@@ -23,6 +18,9 @@
         text-align: center;
         img{
             width: 60%;
+            @media screen and (max-width:$mb){
+                width: 100%;
+        }
         }
     }
     .game-rule{
@@ -34,18 +32,29 @@
         // text-align: center;
         img{
             width: 100%;
+            opacity: 0.7;
+            @media screen and (max-width:$mb){
+                width: 50px;
+                height: 60px;
+        }
         }
         span{
-            @include bodyP;
-            color: $black;
+            @include md-title($black);
+            font-size: 20px;
+            font-weight: bolder;
             position: absolute;
-            bottom: 40%;
-            left: 20%;
+            bottom: 38%;
+            left: 12%;
+            @media screen and (max-width:$mb){
+                bottom: 20%;
+                left: -12%
+        }
         }
     }
     .game-rule-content{
         background-image: url(../images/blog/paper.png);
         background-repeat: no-repeat;
+        background-size: cover;
         padding: 5%;
         width: 50%;
         position: absolute;
@@ -56,10 +65,11 @@
         margin: auto;
         animation:fly 1s;
         max-width: $dt;
+        text-align: center;
         div{
             position: absolute;
-            right: 5%;
-            top: 0;
+            right: 4%;
+            top: 8%;
             display: flex;
             justify-content:flex-end;
             cursor: pointer;
@@ -69,9 +79,44 @@
         h2{
             @include big-title($red);
             margin: 10px 0;
+            text-align: start;
         }
         p{
             @include bodyP;
+            text-align: start;
+        }
+        img{
+            width: 40%;
+            margin-top: 6%;
+            @media screen and (max-width:$mb){
+                display: none;
+            }
+        }
+        .game-rule-bearTalk{
+            @include md-title($black);
+            display: inline-block;
+            padding: 12px;
+            width: 200px;
+            height: 50px;
+            border-radius: 20px;
+            background-color: $white;
+            position: absolute;
+            left: 65%;
+            top:30%;
+            @media screen and (max-width:$mb){
+                display: none;
+            }
+            &::after{
+                content: "";
+                display: block;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 5px 20px 5px 0;
+                border-color: transparent $white transparent transparent;
+                position: relative;
+                left: -15%;
+            }
         }
     }
 }
@@ -81,17 +126,28 @@
 }
 .photoWall{
     max-width: $dt;
-    margin: 5% auto;
+    margin: 5%;
     padding: 5%;
+    .header_title_background {
+        img {
+          display: block;
+          margin: 0 auto 50px;
+          max-width: 300px;
+          height: auto;
+        }
+        h2 {
+          display: none;
+        }
+      }
     .photoWall-container{
         display: flex;
-        justify-content: space-between;
+        justify-content: flex-end;
         .photowall-heading{
             @include md-title($black);
         }
         .photoWall-upload{
             button{
-                @include btn($red,$yellow);
+                @include btn($white,$doubledarkGreen);
                 width: 180px;
             }
             
@@ -100,7 +156,8 @@
     #container{
         display: flex;
         justify-content: space-evenly;
-        margin: 5%;
+        margin: 8% 0%;
+        padding: 3%;
         text-align: center;
     }
         .photo-item{
@@ -109,13 +166,24 @@
                 margin: 5%;
             }
             cursor: pointer;
-            width: 240px;
+            width: 27%;
+            margin: 2%;
             background-color: #fff;
             position: relative;
             border-radius: 10px;
-            margin: 2%;
+            &::before{
+                content: "";
+                display: block;
+                background-image: url(../images/game/edit_blog_up_frame.png);
+                width: 100%;
+                height: 26%;
+                background-size: cover;
+                position: absolute;
+                top: -20%;
+                left: 0;
+            }
             .photo-img{
-                width: 200px;
+                width: 100%;
                 margin: auto;
                 text-align: center;
                 img{
@@ -123,15 +191,15 @@
                     padding-top: 10px;
                 }
             }
+            .photo-author{
+                display: block;
+                margin: 10px;
             .photo-btn-container{
                 display: flex;
                 justify-content: space-between;
                 margin: 10% 0;
             }
-            .photo-author{
-                vertical-align: middle;
-                display: flex;
-                margin: 10px;
+            
             span{
                 @include bodyP;
                 vertical-align: middle;
@@ -143,8 +211,12 @@
                 margin: 0 5px;
             }
             }
-            .photoLikeBtn{
-                margin:10px;
+            .photoBtn{
+                display: flex;
+                justify-content: space-evenly;
+                vertical-align: middle;
+                margin: 10px 0;
+                // margin:10px;
                 span{
                     vertical-align: 5px;
                 }
@@ -152,7 +224,65 @@
                     width: 25px;
                     height: 25px;
                 }
+                div{
+                    cursor: pointer;
+                    margin: 0 auto;
+                    width: 50%;
+                    // display: flex;
+                    justify-content: space-around;
+                    border-radius: 10px;
+                    &:hover{
+                        background-color: $orange;
+                        transition: 1s;
+                    }
+                }
             }
         }
 
+}
+
+//背景
+#scene1{
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    .fly1{
+        position: absolute;
+        right: -5vw;
+        img{
+            width: 100px;
+            opacity: 0.8;
+        }
+    }
+}
+#scene2{
+    position: absolute;
+    width: 20%;
+    left: -0.8%;
+    z-index: -2;
+    .fly1{
+        position: absolute;
+        left: -5vw;
+        img{
+            width: 100px;
+            opacity: 0.8;
+        }
+    }
+}
+#scene3{
+    position: absolute;
+    right: -0.8%;
+    z-index: -2;
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    .fly1{
+        position: absolute;
+        img{
+            width: 80px;
+            opacity: 0.8;
+        }
+    }
 }
