@@ -396,6 +396,7 @@ nav .header-background-cloud ul li a {
   margin: 200px auto 0;
   position: relative;
   z-index: 1;
+  outline: 2px solid red;
 }
 
 body {

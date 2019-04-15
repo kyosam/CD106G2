@@ -396,6 +396,7 @@ nav .header-background-cloud ul li a {
   margin: 200px auto 0;
   position: relative;
   z-index: 1;
+  outline: 2px solid red;
 }
 
 body {
@@ -648,19 +649,7 @@ div, h1, h2, h3, h4, h5, h6, p, span {
 }
 
 .blogContent .blogContent-event-wrap .blogContent-event .blogContent-event-info .avgScore span {
-<<<<<<< HEAD
   color: #3ba261;
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  color: #3ba261;
-=======
-  color: green;
->>>>>>> order
-=======
-  color: #3ba261;
->>>>>>> tzuping
->>>>>>> 479dbb4f22703baf2a244710941750031ca4fa3c
 }
 
 .blogContent .blogContent-event-wrap .blogContent-event .blogContent-event-info .avgScore img {
@@ -744,23 +733,8 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   background-color: #ffdb3f;
   border-radius: 10px;
   border: none;
-<<<<<<< HEAD
   -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
           box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-=======
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
->>>>>>> order
-=======
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
->>>>>>> tzuping
->>>>>>> 479dbb4f22703baf2a244710941750031ca4fa3c
   width: 150px;
 }
 
@@ -837,27 +811,6 @@ div, h1, h2, h3, h4, h5, h6, p, span {
 .blogContent .comment .comment-item .commentRep {
   width: 50px;
   height: 50px;
-<<<<<<< HEAD
-  display: inline-block;
-  font-family: '微軟正黑體';
-  font-size: 18px;
-  font-weight: bold;
-  color: #eb715f;
-  text-align: center;
-  vertical-align: middle;
-  background-color: #ffdb3f;
-  border-radius: 10px;
-  border: none;
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-  margin: 10px;
-}
-
-.blogContent .comment .comment-item button:hover {
-  top: 4px;
-  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
-          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
-=======
   margin: 5px;
   position: relative;
   top: 75px;
@@ -869,7 +822,6 @@ div, h1, h2, h3, h4, h5, h6, p, span {
     height: 20px;
     top: 0;
   }
->>>>>>> tzuping
 }
 
 .blogContent .comment .comment-input {
@@ -925,23 +877,8 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   background-color: #ffdb3f;
   border-radius: 10px;
   border: none;
-<<<<<<< HEAD
   -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
           box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-=======
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
->>>>>>> order
-=======
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
->>>>>>> tzuping
->>>>>>> 479dbb4f22703baf2a244710941750031ca4fa3c
   position: relative;
   top: -40%;
   margin: 10px;
@@ -989,23 +926,8 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   background-color: #ffdb3f;
   border-radius: 10px;
   border: none;
-<<<<<<< HEAD
   -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
           box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-=======
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
->>>>>>> order
-=======
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
->>>>>>> tzuping
->>>>>>> 479dbb4f22703baf2a244710941750031ca4fa3c
   width: 150px;
 }
 
@@ -1040,8 +962,8 @@ div, h1, h2, h3, h4, h5, h6, p, span {
 
 .blogContent-seemore #readMoreBlog:hover {
   top: 4px;
-  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 1px 0px #bbb, 0px 2px 0px #aaa, 0px 2px 0px #999;
-          box-shadow: 0px 1px 0px #ccc, 0px 1px 0px #bbb, 0px 2px 0px #aaa, 0px 2px 0px #999;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
 }
 
 #copyurl {
