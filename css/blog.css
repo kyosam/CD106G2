@@ -448,14 +448,14 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   margin: auto;
   margin-bottom: 5%;
   padding: 2.5%;
-  background-image: url(../images/blog/paper.png);
+  background-image: url(../images/blogShare/paper_big_edited-01.png);
   background-size: cover;
   background-position-x: 30%;
 }
 
 @media screen and (max-width: 768px) {
   .blogRanking {
-    background-color: #f6d5a7;
+    background-color: #FFD19B;
     background-image: none;
   }
 }
@@ -788,10 +788,9 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   font-family: '微軟正黑體';
   font-size: 18px;
   font-weight: bold;
-  color: #eb715f;
   text-align: center;
   vertical-align: middle;
-  background-color: #ffdb3f;
+  background-color: #f7bac2;
   border-radius: 10px;
   border: none;
   -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
@@ -941,7 +940,7 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   width: 25%;
   margin: 50px 20px;
   padding: 2.5%;
-  background-color: #f6d5a7;
+  background-color: rgba(255, 209, 155, 0.6);
   border-radius: 10px;
 }
 
@@ -1190,6 +1189,7 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  top: -1.6%;
 }
 
 #scene1 .fly1 {
