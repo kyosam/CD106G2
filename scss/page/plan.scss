@@ -2,6 +2,8 @@
 @import "../base/font";
 @import "../base/common";
 
+
+
 // 一屏：三項熱門活動介紹
 
 // body{
@@ -15,9 +17,70 @@
 //   background-position: bottom; 
 // }
 
-body {
-  background-repeat: no-repeat;
-  background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(248,219,219,1) 0%, rgba(229,248,250,1) 90% );
+
+#backgounrd_animation {
+  width: 100%;
+  // outline: 5px solid red;
+  img {
+    position: absolute;
+  }
+  // .head_tree_group_left {
+  //   #head_trunk_left {
+  //     // position: relative;
+  //     width: 15%;
+  //     top: 26.5%;
+  //     left: 6%;
+  //     opacity: 0;
+  //   }
+  //   #head_tree_left_leaf {
+  //     width: 20%;
+  //     // top: ;
+  //     left: 3%;
+  //   }    
+  // }
+  // .head_tree_group_right {
+  //   // outline: 2px solid red;
+  //   #head_trunk_right {
+  //     width: 6%;
+  //     top: 28%;
+  //     right: 8%;
+  //   }
+  //   #head_tree_right_leaf {
+  //     width: 11.5%;
+  //     right: 5%;
+  //     // top: -20px;
+  //   }    
+  // }
+  .head_tree_group_left {
+    #head_trunk_left {
+      // position: relative;
+      width: 15%;
+      top: 30%;
+      left: 6%;
+      opacity: 0;
+    }
+    #head_tree_left_leaf {
+      width: 20%;
+      // top: ;
+      left: 0;
+      opacity: 0;
+    }    
+  }
+  .head_tree_group_right {
+    // outline: 2px solid red;
+    #head_trunk_right {
+      width: 6%;
+      top: 28%;
+      right: 3%;
+      opacity: 0;
+    }
+    #head_tree_right_leaf {
+      width: 11.5%;
+      right: 0;
+      // top: -20px;
+      opacity: 0;
+    }    
+  }
 }
 
 .RWD_plan_div {
@@ -586,28 +649,8 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  display: block;
+  display: none;
   z-index: 5;
-  // &::before {
-    // content:'';
-    // background-image:url(http://localhost/quding/photos/u14.png);
-    // background-size:1000px 200px;
-    // position: absolute;
-    // width:1000px;
-    // height:200px;
-    // z-index: 100;
-    // top: -110px;
-    // content:'';
-    // display: block;
-    // background-image:url(../../images/new/lightbox_up_frame.png); 
-    // background-repeat: no-repeat;
-    // // margin: 0 auto;
-    // // text-align: center;
-    // width: 100%;
-    // height: 300px;
-    // position: relative;
-    // top: 500px;
-    // outline: 2px solid red;
   }
 
   .lightbox-add-to-plan-list{
@@ -643,19 +686,19 @@ body {
           margin: auto;
       }
       hr{
-          margin: 2% 5%;
+          margin: 3% 5%;
       }
-      div{
-          margin: 10%; 
+      .btn-box-index-order{
+          margin: 7% 10%; 
           text-align: center;
-          a{
-              width: 100px;
-              height: 30px;
-              text-align: center;
-              margin: auto;
-              line-height: 30px;
-              display: inline-block;
-              border: 1px solid #000;  
+          #btn-go-to-index {
+            @include btn($red,$yellow);
+            line-height: 50px;
+
+          }
+          #btn-go-to-order {
+              @include btn($white,$darkBlueGreen);
+              line-height: 50px;
           }
           a:nth-child(1){float: left;}
           a:nth-child(2){float: right;}
@@ -673,7 +716,7 @@ body {
 
 //================RWD=================
 @media screen and (max-width: 1200px){
-  .desk_plan_div {
+  #desk_plan_div {
     display: none;
   }
   .RWD_plan_div {

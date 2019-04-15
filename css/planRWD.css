@@ -35,9 +35,38 @@ button {
   clear: both;
 }
 
-body {
-  background-repeat: no-repeat;
-  background-image: radial-gradient(circle farthest-corner at 10% 20%, #f8dbdb 0%, #e5f8fa 90%);
+#backgounrd_animation {
+  width: 100%;
+}
+
+#backgounrd_animation img {
+  position: absolute;
+}
+
+#backgounrd_animation .head_tree_group_left #head_trunk_left {
+  width: 15%;
+  top: 30%;
+  left: 6%;
+  opacity: 0;
+}
+
+#backgounrd_animation .head_tree_group_left #head_tree_left_leaf {
+  width: 20%;
+  left: 0;
+  opacity: 0;
+}
+
+#backgounrd_animation .head_tree_group_right #head_trunk_right {
+  width: 6%;
+  top: 28%;
+  right: 3%;
+  opacity: 0;
+}
+
+#backgounrd_animation .head_tree_group_right #head_tree_right_leaf {
+  width: 11.5%;
+  right: 0;
+  opacity: 0;
 }
 
 .RWD_plan_div {
@@ -831,7 +860,7 @@ body {
   margin-bottom: 100px;
 }
 
-.confirm-buy-btn-box #confirm-my-plan {
+.confirm-buy-btn-box #btn_confirm_my_plan {
   cursor: pointer;
   position: relative;
   top: 0;
@@ -858,10 +887,165 @@ body {
   margin: 0 auto;
 }
 
-.confirm-buy-btn-box #confirm-my-plan:hover {
+.confirm-buy-btn-box #btn_confirm_my_plan:hover {
   top: 4px;
   -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
           box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+}
+
+.confirm-buy-btn-box #btn_confirm_and_buy_ticket {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  font-family: '微軟正黑體';
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #367473;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  display: block;
+  margin: 0 auto;
+}
+
+.confirm-buy-btn-box #btn_confirm_and_buy_ticket:hover {
+  top: 4px;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+}
+
+#add_to_plan_list {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.671);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 5;
+}
+
+.lightbox-add-to-plan-list {
+  width: 30%;
+  height: 30vh;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 13px;
+  padding: 2%;
+}
+
+.lightbox-add-to-plan-list img {
+  width: 50%;
+  display: block;
+  margin: auto;
+  position: relative;
+  top: -30px;
+}
+
+.lightbox-add-to-plan-list h4 {
+  font-family: '微軟正黑體';
+  font-size: 28px;
+  font-weight: bold;
+  color: #718cc6;
+  letter-spacing: 1.5;
+  text-align: center;
+}
+
+.lightbox-add-to-plan-list p {
+  text-align: center;
+  margin: auto;
+}
+
+.lightbox-add-to-plan-list hr {
+  margin: 3% 5%;
+}
+
+.lightbox-add-to-plan-list .btn-box-index-order {
+  margin: 7% 10%;
+  text-align: center;
+}
+
+.lightbox-add-to-plan-list .btn-box-index-order #btn-go-to-index {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  font-family: '微軟正黑體';
+  font-size: 18px;
+  font-weight: bold;
+  color: #eb715f;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #ffdb3f;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  line-height: 50px;
+}
+
+.lightbox-add-to-plan-list .btn-box-index-order #btn-go-to-index:hover {
+  top: 4px;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+}
+
+.lightbox-add-to-plan-list .btn-box-index-order #btn-go-to-order {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  font-family: '微軟正黑體';
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #367473;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  line-height: 50px;
+}
+
+.lightbox-add-to-plan-list .btn-box-index-order #btn-go-to-order:hover {
+  top: 4px;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+}
+
+.lightbox-add-to-plan-list .btn-box-index-order a:nth-child(1) {
+  float: left;
+}
+
+.lightbox-add-to-plan-list .btn-box-index-order a:nth-child(2) {
+  float: right;
 }
 
 .footer-try-image {
@@ -870,7 +1054,7 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
-  .desk_plan_div {
+  #desk_plan_div {
     display: none;
   }
   .RWD_plan_div {
@@ -982,7 +1166,7 @@ body {
   .confirmation-screen-flex-group .confirmation-right-container .name-your-plan-container {
     width: 98%;
   }
-  #btn-confirm-my-plan {
+  .confirm-buy-btn-box #btn_confirm_my_plan {
     cursor: pointer;
     position: relative;
     top: 0;
@@ -1006,13 +1190,13 @@ body {
     display: block;
     margin: 0 auto;
   }
-  #btn-confirm-my-plan:hover {
+  .confirm-buy-btn-box #btn_confirm_my_plan:hover {
     top: 4px;
     -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
             box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
   }
-  #next-btn-pick-my-event,
-  #btn-confirm-and-buy-ticket {
+  .confirm-buy-btn-box #next-btn-pick-my-event,
+  .confirm-buy-btn-box #btn-confirm-and-buy-ticket {
     cursor: pointer;
     position: relative;
     top: 0;
@@ -1036,8 +1220,8 @@ body {
     display: block;
     margin: 0 auto;
   }
-  #next-btn-pick-my-event:hover,
-  #btn-confirm-and-buy-ticket:hover {
+  .confirm-buy-btn-box #next-btn-pick-my-event:hover,
+  .confirm-buy-btn-box #btn-confirm-and-buy-ticket:hover {
     top: 4px;
     -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
             box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
