@@ -11,6 +11,7 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
     <script src="js/hbgClick.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <title>森存者｜分享手札</title>
 </head>
 <body>
@@ -51,20 +52,30 @@
     <script src="js/header.js"></script> 
     
     <div class="wrap">
-
-     <div class="blogShare-heading">
-        <h2>分享手札</h2>
+     <!-- bg fly -->
+     <div id="scene1">
+        <div data-depth="0.8" class="fly1"><img src="images/blog/fly1.gif" alt="蝴蝶"></div>
     </div>
+       <script>
+          parallaxInstance = new Parallax( document.getElementById( "scene1" ));
+      </script> 
+    <div class="header_title_background"><img src="images/blogShare/title_back_edit.png" alt=""></div> 
     <!-- blog share -->
+     <!-- bg fly -->
+     <div id="scene2">
+        <div data-depth="0.6" class="fly1"><img src="images/blog/drop.png" alt="fly"></div>
+    </div>
+       <script>
+          parallaxInstance = new Parallax( document.getElementById( "scene2" ));
+      </script>
     <div class="blogShare">
         <div class="blogShare-board">
-            <img src="images/blogShare/board.png" alt="board">
+            <img src="images/blogShare/edit_blog_paper-01.png" alt="board">
         </div>
-        <!-- heading -->
        
         <div class="previewPlan">
             <div class="selectPlan">
-                <div>選擇你選分享的行程</div>
+                <div>選擇你想分享的行程</div>
                     <select name="YourPlan">
                 　      <option value="plan-1">plan-1</option>
                 　      <option value="plan-2">plan-2</option>
@@ -117,12 +128,17 @@
                            <button>發布手札</button>
                        </div>
                 </form>
-        </div>
-       
-        
-
-
+              <!-- bg fly -->
+                <div id="scene3">
+                    <div data-depth="0.2" class="fly1"><img src="images/blog/fly1.gif" alt="蝴蝶"></div>
+                </div>
+                <script>
+                    parallaxInstance = new Parallax( document.getElementById( "scene3" ));
+                </script> 
     </div>
+        </div>
+  
+     
 </div>
 
 </body>
