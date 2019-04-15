@@ -408,6 +408,12 @@ nav .header-background-cloud ul li a {
   margin: 200px auto 0;
   position: relative;
   z-index: 1;
+  outline: 2px solid red;
+  width: 100%;
+  max-width: 1200px;
+  margin: 200px auto 0;
+  position: relative;
+  z-index: 1;
 }
 
 body {
@@ -573,11 +579,7 @@ input[type="button"]:hover {
 }
 
 .memberInfo .get-bonus-point-box table .fas {
-<<<<<<< HEAD
-  color: #3ba261;
-=======
   color: #367473;
->>>>>>> order
   font-size: 30px;
 }
 

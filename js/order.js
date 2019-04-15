@@ -1,4 +1,4 @@
-上一步,下一步功能
+//上一步,下一步功能
 var index = $(".step.active").index(".step"),
 stepsCount = $(".step").length,
 prevBtn = $("#pre_btn"),

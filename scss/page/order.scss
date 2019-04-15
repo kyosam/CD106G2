@@ -320,7 +320,7 @@ body{
 }
 .step.active{
     display: flex;
-// }
+}
 // #step2,#step1{
 //     display: none;
 // }
@@ -431,7 +431,7 @@ body{
     display: flex;
     box-sizing: border-box;
     flex-wrap: wrap;
-    // display: none;
+    display: none;
     .confirm_box{
         width: 100%;
         height: 300px;

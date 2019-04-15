@@ -390,6 +390,12 @@ nav .header-background-cloud ul li a {
   margin: 200px auto 0;
   position: relative;
   z-index: 1;
+  outline: 2px solid red;
+  width: 100%;
+  max-width: 1200px;
+  margin: 200px auto 0;
+  position: relative;
+  z-index: 1;
 }
 
 body {
@@ -849,10 +855,6 @@ body {
   display: flex;
 }
 
-#step2, #step1 {
-  display: none;
-}
-
 .activity_container {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -988,6 +990,7 @@ body {
           box-sizing: border-box;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  display: none;
 }
 
 .confirm_container .confirm_box {
