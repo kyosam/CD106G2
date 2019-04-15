@@ -207,8 +207,8 @@ button {
   background-color: #ffdb3f;
   border-radius: 10px;
   border: none;
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
   width: 200px;
 }
 
@@ -434,8 +434,8 @@ button {
   background-color: #dae24b;
   border-radius: 10px;
   border: none;
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
   border-bottom: 2px solid #ffdb3f;
   width: 150px;
   line-height: 50px;
@@ -728,8 +728,8 @@ button {
   background-color: #367473;
   border-radius: 10px;
   border: none;
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
   width: 250px;
   height: 50px;
   line-height: 50px;
@@ -878,8 +878,8 @@ button {
   background-color: #ffdb3f;
   border-radius: 10px;
   border: none;
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
   width: 250px;
   height: 50px;
   line-height: 50px;
@@ -911,8 +911,13 @@ button {
   background-color: #367473;
   border-radius: 10px;
   border: none;
+<<<<<<< HEAD
   -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
           box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+=======
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+>>>>>>> fd37077d60073c4d09bf173ede95431e51cf7243
   width: 250px;
   height: 50px;
   line-height: 50px;
@@ -933,7 +938,11 @@ button {
   position: fixed;
   top: 0;
   left: 0;
+<<<<<<< HEAD
   display: none;
+=======
+  display: block;
+>>>>>>> fd37077d60073c4d09bf173ede95431e51cf7243
   z-index: 5;
 }
 
@@ -974,6 +983,7 @@ button {
 }
 
 .lightbox-add-to-plan-list hr {
+<<<<<<< HEAD
   margin: 3% 5%;
 }
 
@@ -1045,6 +1055,31 @@ button {
 }
 
 .lightbox-add-to-plan-list .btn-box-index-order a:nth-child(2) {
+=======
+  margin: 2% 5%;
+}
+
+.lightbox-add-to-plan-list div {
+  margin: 10%;
+  text-align: center;
+}
+
+.lightbox-add-to-plan-list div a {
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  margin: auto;
+  line-height: 30px;
+  display: inline-block;
+  border: 1px solid #000;
+}
+
+.lightbox-add-to-plan-list div a:nth-child(1) {
+  float: left;
+}
+
+.lightbox-add-to-plan-list div a:nth-child(2) {
+>>>>>>> fd37077d60073c4d09bf173ede95431e51cf7243
   float: right;
 }
 
@@ -1108,8 +1143,8 @@ button {
     background-color: #dae24b;
     border-radius: 10px;
     border: none;
-    -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-            box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+    -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+            box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
     border-bottom: 2px solid #ffdb3f;
     width: 150px;
     line-height: 50px;
@@ -1184,8 +1219,8 @@ button {
     background-color: #ffdb3f;
     border-radius: 10px;
     border: none;
-    -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-            box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+    -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+            box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
     width: 150px;
     display: block;
     margin: 0 auto;
@@ -1214,8 +1249,8 @@ button {
     background-color: #367473;
     border-radius: 10px;
     border: none;
-    -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-            box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+    -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+            box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
     width: 150px;
     display: block;
     margin: 0 auto;
@@ -1354,8 +1389,8 @@ button {
   background-color: #ffdb3f;
   border-radius: 10px;
   border: none;
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
   width: 150px;
   display: block;
   margin: 0 auto;
@@ -1389,8 +1424,8 @@ button {
   background-color: #f7bac2;
   border-radius: 10px;
   border: none;
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
   width: 150px;
   display: block;
   margin: 0 auto;

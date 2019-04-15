@@ -12,6 +12,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="js/masonry.pkgd.min.js"></script>
     <script src="js/hbgClick.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <title>森存者｜手札分享</title>
 </head>
 <body>
@@ -52,13 +53,15 @@
     <script src="js/header.js"></script>
     
     <div class="wrap">
-    <div class="header-space"></div>
-    <!-- blog rank -->
-    <div class="blog-heading">
-        <!-- <h2>熱門手札</h2> -->
+    <!-- bg fly -->
+    <div id="scene1">
+            <div data-depth="1.2" class="fly1"><img src="images/blog/fly1.gif" alt="蝴蝶"></div>
     </div>
+       <script>
+          parallaxInstance = new Parallax( document.getElementById( "scene1" ));
+      </script>
     <div class="blogRanking">
-        <h2>原來山泉水這麼甜!!</h2>
+        <a href="blogContent.html"><h2>原來山泉水這麼甜!!</h2></a>
         <div class="blogRanking-info">
             <div class="blogRanking-author">
                 <img src="images/blog/big_head1.png" alt="大頭貼">
@@ -66,16 +69,32 @@
                 <span>2019-04-09</span>
             </div>
             <div class="blogRanking-share">
-                <img src="images/blog/Share.png" alt="分享"> 
+                <input type="text" name="" id="copyurl" value="www.google.com" > 
+                <!-- <button type="button" id="copybtn"><img src="images/blog/Share.png" alt="分享"></button> -->
+                <img src="images/blog/Share.png" alt="分享" id="copybtn">
             </div>
         </div>
-        
+        <script>
+         //燈箱
+         var copybtn=document.getElementById("copybtn");
+    
+        copybtn.addEventListener("click",function(){
+    
+        var copyurl = document.getElementById("copyurl");    
+        copyurl.select();    
+        document.execCommand("copy");
+        document.getElementById("copyok").style.display="inline-block"; 
+    
+        setTimeout(function(){ document.getElementById("copyok").style.display="none";  }, 3000);
+        });
+        </script>
         <div class="blogRanking-article">
             <div class="blogRanking-article-left">
                 <div class="blogRanking-photo">
                     <img src="images/event/Best-Survival-Schools.jpg" alt="手札圖片">
                 </div>
-                <p>這個活動真是太神奇了，我們把髒兮兮的泥巴水變成可以喝的清水，一定要推一下的拉!!!一定要推一下的拉!!!一定要推一下的拉!!!一定要推一下的拉!!!一定要推一下的拉!!!一定要推一下的拉!!! <a href="javascript:"><span>繼續閱讀</span></a> </p>
+                <p>這個活動真是太神奇了，我們把髒兮兮的泥巴水變成可以喝的清水，一定要推一下的拉!!!一定要推一下的拉!!!一定要推一下的拉!!!一定要推一下的拉!!!一定要推一下的拉!!!一定要推一下的拉!!!
+                    <a href="blogContent.html"><span class="readMore" >繼續閱讀</span></a> </p>
             </div>
             
           
@@ -219,25 +238,70 @@
             <button>加入我的行程</button>
         </div>
     </div>
-   
-    <!-- blog share -->
-    <div class="blogShare">
-        <button class="blogShareBtn"><a href="blogShare.html">分享手札</a></button>
-        <img src="images/blog/chameleon-blue.png" alt="手札分享" class="blogShareImg">
+   <!-- bg fly -->
+    <div id="scene2">
+        <div data-depth="0.6" class="fly1"><img src="images/blog/fly1.gif" alt="蝴蝶"></div>
     </div>
     <script>
+        parallaxInstance = new Parallax( document.getElementById( "scene2" ));
+    </script>
+    <!-- blog share -->
+    <div class="blogShare">
+        <button class="blogShareBtn"><a href="blogShare.html">編著手札</a></button>
+        <img src="images/blog/back.png" alt="手札分享" class="blogShareImg" data-mobile="images/blog/bear.png" data-desktop="images/blog/back.png">
+        <div class="blogShare-beforehover">
+            你是不是很想寫下你的美好經驗！
+        </div>
+        <div class="blogShare-afterhover">
+            點下去就可以實現你的願望！
+        </div>
+    </div>
+    <script>
+    //jquery rwd
+    $(function(){ 
+    var device = $(window).width() > 767 ? "desktop" : "mobile";
+    $(".blogShareImg").each(function() {
+    $(this).attr("src", $(this).data(device));
+    });
+    //改變尺寸
+    $(window).resize(function()
+    { 
+    var device = $(window).width() > 767 ? "desktop" : "mobile";
+    $("img").each(function() {
+    $(this).attr("src", $(this).data(device));
+    });
+    }); 
+    });
     //換圖片
     $(document).ready(function(){
          $(".blogShareBtn").hover(
             function() {
-               $(".blogShareImg").attr("src","images/blog/chameleon-green.png");
+               $(".blogShareImg").attr("src","images/blog/bear.png");
             },
             function() {
-               $(".blogShareImg").attr("src","images/blog/chameleon-blue.png");
+               $(".blogShareImg").attr("src","images/blog/back.png");
+            }
+         );
+      });
+      $(document).ready(function(){
+         $(".blogShareBtn").hover(
+            function() {
+               $(".blogShare-beforehover").css("visibility","hidden");
+               $(".blogShare-afterhover").css("visibility","inherit");
+            },
+            function() {
+                $(".blogShare-beforehover").css("visibility","inherit");
+               $(".blogShare-afterhover").css("visibility","hidden");
             }
          );
       });
     </script>
+    <div id="scene3">
+        <div data-depth="1" class="fly1"><img src="images/blog/fly1.gif" alt="蝴蝶"></div>
+    </div>
+        <script>
+            parallaxInstance = new Parallax( document.getElementById( "scene3" ));
+        </script>
     <!-- blog forum -->
     <div class="blogForum">
         <div class="blogForum-optContainer">
@@ -247,24 +311,30 @@
                 <option value="optNew">依時間排列</option>
             </select>
         </div>
+     <div id="scene4">
+        <div data-depth="1" class="fly1"><img src="images/blog/fly1.gif" alt="蝴蝶"></div>
+    </div>
+        <script>
+            parallaxInstance = new Parallax( document.getElementById( "scene4" ));
+        </script>
 
         <!-- 瀑布文章 -->
         <div id="container">
             <div class="blog-item">
                 <div class="blog-img">
-                    <img src="images/event/Best-Survival-Schools.jpg" alt="手札圖片">
+                   <a href="blogContent.html"><img src="images/event/Best-Survival-Schools.jpg" alt="手札圖片"></a>
                 </div>
                 
                 <div class="blog-info">
                     <div class="blog-author">
-                       <img src="images/event/Best-Survival-Schools.jpg" alt="大頭照">
-                       <span class="authorName">sam</span>
+                       <img src="images/blog/big_head1.png" alt="大頭照">
+                       <span class="authorName">董董</span>
                     </div>  
                      <span class="blogDate">2019-04-09</span>
                 </div>
                 
                 <div class="blog-name">
-                    <h2>手札名稱</h2>
+                    <a href="blogContent.html"><h2>原來山泉水這麼甜!!</h2></a>
                 </div>
                 
                 <!-- event -->
@@ -449,21 +519,33 @@
 
     </div>
     <script>
-// 瀑布流
- 
+        // 瀑布流
         $('#container').masonry({
             itemSelector: '.blog-item',
             columnWidth: 0,
             animate:true
         });
 
+        //燈箱
+        var copybtn=document.getElementById("copybtn");
+    
+        copybtn.addEventListener("click",function(){
+        
+        var copyurl = document.getElementById("copyurl");    
+        copyurl.select();    
+        document.execCommand("copy");
+        document.getElementById("copyok").style.display="inline-block"; 
+        
+        setTimeout(function(){ document.getElementById("copyok").style.display="none";  }, 3000);
+        });
 
     </script>
- 
     </div>
     
     
-    
-    <!-- footer -->
+<!-- copylink lightbox -->
+<div id="copyok">
+        <p>複製成功<br>3秒後關閉。</p>
+</div>
 </body>
 </html>

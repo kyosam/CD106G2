@@ -6,11 +6,12 @@
 @import "../base/_font.scss";
 
 //step
-// *{
-//     outline: 1px solid gray;
-// }
+*{
+    outline: 1px solid gray;
+}
 body{
-    font-family: '微軟正黑體';
+    font-family: "微軟正黑體", Arial;
+    box-sizing: border-box;
 }
 .step_group{
     margin: auto;
@@ -95,13 +96,10 @@ body{
 .order_container{
     display: flex;
     margin-top: 5vh;
-    // display: none;
-    // 這邊是新增了
+    display: none;
     flex-wrap: wrap;
     .calendar{
-        // width: 50%;
         position: relative;
-        // 新增
         padding: 0 2%;
         img{
             width: 100%;
@@ -140,8 +138,11 @@ body{
     .order_container{
         flex-wrap: nowrap;
         .calendar{
-            width: 55%;
+            width: 50%;
             padding: 0;
+        }
+        .ticket{
+            width: 50%;
         }
     }
 }
@@ -180,68 +181,123 @@ body{
 
 .ticket{
     margin: auto;
-    // width: 37%;
-    // 新增
-    padding: 0 2%;
-    .ticket_disabled,.ticket_student,.ticket_adult{
-        margin: 10px 0;
-        position: relative;
-        img{
-            width: 100%;
-        }
-        .t_name{
-            position: absolute;
-            left: 15%;
-            top: 35%;
-            color: #fff;
-            font-family: '微軟正黑體';
-            font-size: 20px;
-        }
-        .t_disabled::after{
-            content: '4~6歲及65歲以上';
-            font-size: 14px;
-            display: flex;
-            margin-top: 3px;
-        }
-        .t_student::after{
-            content: '入營請出示學生證';
-            font-size: 14px;
-            display: flex;
-            margin-top: 3px;
-        }
-        .t_quantity{
-            position: absolute;
-            top: 28%;
-            right: 10%;
-            width: 40%;
-            display: flex;
-            .t_less,.t_add{
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                border: none;
-                background-color: #F0B81B;
-                outline: 0;
-                cursor: pointer;
-                margin: 0 5%;
-                i{
-                    font-size: 20px;
-                    color: #fff;
-                }
+    .ticket_group{
+        display: flex;
+        justify-content: space-around;
+        //新增
+        flex-wrap: wrap;
+        flex-direction: column;
+
+        .t_content{
+            margin: 20px 5px 5px 5px;
+            // position: relative;//桌機
+            //新增
+            img{
+                width: 100%;
+                height: 360px;
+                //新增
+                display: none;
             }
-            .t_num{
-                display: block;
-                width: 50%;
-                height: 40px;
-                background-color: #fff;
-                text-align: center;
-                font-size: 28px;
-                line-height: 1.4;
-                color: #706456;
+            .t_w{
+                //桌機
+                // position: absolute;
+                // top: 0;
+                // right: 0;
+                // bottom: 0;
+                // left: 0;
+                //桌機止
+                margin: auto;
+                //新增
+                display: flex;
+                .t_txt{
+                    border-radius: 10px;
+                    padding: 20px 0px;
+                    // margin: 55px 6px 5px;//桌機
+                    font-size: 18px;
+                    text-align: center;
+                    background-color: #f4e6c1;
+                    color: #8d4a16;
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: center;
+                    >span{
+                        display: inline-block;
+                        line-height: 2;
+                        letter-spacing: 2px;
+                        width: 100%;
+                        font-size: 18px;
+                        font-weight: 600;
+                    }
+                }
+                .t_quantity{
+                    width: 100%;
+                    text-align: center;
+                    display: flex;
+                    // margin-top: 75px;//桌機
+                    //新增
+                    align-items: center;
+                    .t_less,.t_add{
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        border: none;
+                        background-color: #F0B81B;
+                        outline: 0;
+                        cursor: pointer;
+                        margin: 0 5%;
+                        i{
+                            font-size: 20px;
+                            color: #fff;
+                        }
+                    }
+                    .t_num{
+                        display: block;
+                        width: 50%;
+                        height: 38px;
+                        background-color: #fff;
+                        line-height: 2.3;
+                    }
+                }
             }
         }
     }
 }
+@media screen and (min-width:768px){
+    .ticket{
+        .ticket_group{
+            //新增
+            flex-wrap: nowrap;
+            flex-direction: row;
+            .t_content{
+                position: relative;//桌機
+                img{
+                    //新增
+                    display: block;
+                }
+                .t_w{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+                    //新增
+                    display: block;
+                    .t_txt{
+                        margin: 55px 6px 5px;//桌機
+                    }
+                    .t_quantity{
+                        margin-top: 75px;//桌機
+                        //新增
+                        align-items: flex-start;
+                    }
+                }
+            }
+        }
+    }
+}
+
 .btn_group::after{
     content: '';
     display: block;
@@ -259,84 +315,113 @@ body{
     float: right;
 }
 
+.step{
+    display: none;
+}
+.step.active{
+    display: flex;
+}
+// #step2,#step1{
+//     display: none;
+// }
 
 // 選擇活動
 .activity_container{
-    margin-top: 5vh;
-    display: none;
     flex-wrap: wrap;
+    //新增
     h3{
-        @include md-title(#fff);
+        @include md-title(#403c04);
         text-align: center;
-        margin: 2vh auto 5vh;
+        margin: 5vh auto;
     }
-}
-.item > button{
-    width: 50px;
-    height: 30px;
-    display: block;
-    margin: 10px auto;
-    background-color: #706456;
-    outline: none;
-    border: none;
-    font-size: 16px;
-    color: #fff;
-    border-radius: 5px;
-    &:hover{
-        background-color: #fff;
-        color: #706456;
-    }
-}
-.activity_group{
-    display: flex;
-    border: 7px dashed #808080;
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 20px;
-    .item{
-        width: 33.333333%;
-        h4{
-            @include sm-title(#fff);
+    .activity_group{
+        display: flex;
+        //新增
+        flex-direction: column;
+        .a_item{
+            box-sizing: border-box;
+            // width: 33.333333%;//桌機
             text-align: center;
-            margin: 10px 0 20px 0;
+            margin: 5px;
+            position: relative;
+            h4{
+                @include sm-title($doubledarkGreen);
+                text-align: center;
+                margin: 20px 0;
+            }
+            button{
+                width: 50px;
+                height: 30px;
+                display: block;
+                margin: 10px auto 30px;
+                background-color: #706456;
+                outline: none;
+                border: none;
+                font-size: 16px;
+                color: #fff;
+                border-radius: 5px;
+                &:hover{
+                    background-color: #fff;
+                    color: #706456;
+                    border: 1px solid #706456;
+                }
+            }
+            &::before{
+                content: '';
+                display: block;
+                background-image: url(/images/order/ActivityFrame.png);
+                background-size: 70% 100%;
+                height: 100%;
+                background-position: center;
+                width: 100%;
+                position: absolute;
+                z-index: -1;
+                background-repeat: no-repeat;
+                box-sizing: inherit;
+            }
+            .item_img{
+                padding-top: 15%;
+                >img{
+                    width: 50%;
+                }
+            }
+        }
+    }
+    .activity_none{
+        // width: 100%;
+        margin: auto;
+        p{
+            text-align: center;
+            span{
+                display: inline-block;
+                text-align: center;
+                font-weight: bold;
+                color: #706456;
+                cursor: pointer;
+                font-size: 20px;
+                margin: 20px auto;
+                &::before{
+                    content: '';
+                    display: inline-block;
+                    width: 15px;
+                    height: 15px;
+                    background-color: transparent;
+                    border: 3px solid #706456;
+                    border-radius: 4px; 
+                    margin-right: 10px;
+                }
+            }
         }
     }
 }
-.item_img{
-    margin-top: 15px;
-}
-.item_img img{
-    width: 100%;
-    -webkit-clip-path: circle(50% at 50% 50%);
-    clip-path: circle(37% at 50% 50%);
-}
-.activity_none{
-    width: 100%;
-}
-.activity_none span{
-    // width: 15%;
-    width: 50%;
-    display: block;
-    text-align: center;
-    font-family: '微軟正黑體';
-    font-weight: bold;
-    color: #706456;
-    cursor: pointer;
-    font-size: 20px;
-    margin: 5vh auto;
-}
-.activity_none span::before{
-    content: '';
-    display: inline-block;
-    width: 15px;
-    height: 15px;
-    background-color: transparent;
-    border: 3px solid #706456;
-    border-radius: 4px; 
-    margin-right: 10px;
-}
 @media screen and (min-width:768px){
-    .activity_none span{
-        width: 20%;
+    .activity_container{
+        .activity_group{
+            flex-direction: row;
+            .a_item{
+                width: 33.333333%;//桌機
+            }
+        }
     }
 }
 
@@ -345,27 +430,36 @@ body{
     margin-top: 5vh;
     display: flex;
     box-sizing: border-box;
-    //新增
     flex-wrap: wrap;
     display: none;
     .confirm_box{
-        //width: 50%;
         width: 100%;
         height: 300px;
-        padding: 2%;
+        // padding: 2%;
         vertical-align: middle;
-        //新增
-        margin-bottom: 40px;
+        // margin-bottom: 40px;
+        margin: 2%;
+        position: relative;
+        &::after{
+            content: '';
+            background-image: url(/images/order/woodFrame.png);
+            // display: block;
+            width: 100%;
+            height: 20%;
+            background-size: contain;
+            background-repeat: repeat-x;
+            position: absolute;
+            bottom: 2%;
+        }
         h3{
-            @include md-title(#fff);
+            @include md-title(#403c04);
             text-align: center;
             margin-bottom: 3vh; 
         }
         .confirm{
-            // height: 195px;
             background-color: rgba(255, 255, 255, 0.4);
             border-radius: 15px;
-            border: 7px dashed #808080;
+            // border: 7px dashed #808080;
             table{
                 width: 100%;
                 font-size: 20px;
@@ -405,6 +499,7 @@ body{
             .confirm{
                 height: 205px;
                 overflow: scroll;
+                overflow-x: hidden;
             }
         }
     }
@@ -542,10 +637,14 @@ content: '';
 
 
 
-.step {
-    display: none;
-}
 
-.step.active {
-    display: flex;
+
+
+
+
+
+.box111{
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
 }

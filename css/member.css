@@ -409,6 +409,11 @@ nav .header-background-cloud ul li a {
   position: relative;
   z-index: 1;
   outline: 2px solid red;
+  width: 100%;
+  max-width: 1200px;
+  margin: 200px auto 0;
+  position: relative;
+  z-index: 1;
 }
 
 body {
@@ -485,8 +490,8 @@ input[type="button"] {
   background-color: #fff;
   border-radius: 10px;
   border: none;
-  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
-          box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
+  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
+          box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
   height: 35px;
   width: 60px;
   margin-left: 5px;
@@ -574,7 +579,19 @@ input[type="button"]:hover {
 }
 
 .memberInfo .get-bonus-point-box table .fas {
+<<<<<<< HEAD
+  color: #367473;
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
   color: #3ba261;
+=======
+  color: #367473;
+>>>>>>> order
+=======
+  color: #3ba261;
+>>>>>>> tzuping
+>>>>>>> 479dbb4f22703baf2a244710941750031ca4fa3c
   font-size: 30px;
 }
 
@@ -649,8 +666,8 @@ input[type="button"]:hover {
   background-color: #fff;
   border-radius: 10px;
   border: none;
-  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
-          box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
+  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
+          box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
   height: 40px;
 }
 
