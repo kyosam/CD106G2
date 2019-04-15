@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="css/svg_style.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="Shortcut Icon" type="image/x-icon" href="images/new/favicon.png" />
+    <script src="js/parallax.js"></script>
+    <script src="js/TweenMax.min.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/hbgClick.js"></script>
     <title>森存者｜線上訂票</title>
@@ -60,11 +62,10 @@
                 <li>付款</li>
             </ul>
         </div>
-
         <!-- 月曆訂票 -->
         <div id="step1" class="step active order_container">
             <div class="calendar">
-                <img src="images/order/board.png" alt="board">
+                <img src="images/order/map_background.png" alt="board">
                 <div class="box">
                     <div class="calender_mon_title">
                         <span id="prev"><i class="fas fa-chevron-left"></i></span>
@@ -91,31 +92,63 @@
                 </div>
             </div>
             <div class="ticket">
-                <div class="ticket_disabled">
-                    <img src="images/order/ticket.png" alt="ticket_board">
-                    <span class="t_name t_disabled">愛心票</span>
-                    <div class="t_quantity">
-                        <button class="t_less"><i class="fas fa-minus"></i></button>
-                        <span class="t_num">1</span>
-                        <button class="t_add"><i class="fas fa-plus"></i></button>
+                <div class="ticket_group">
+                    <div class="t_content">
+                        <img src="images/order/ticketBg.png" alt="ticketBg">
+                        <div class="t_w">
+                            <div class="t_txt">
+                                <span class="species">全票</span>
+                                <span class="age">18歲以上</span>
+                                <span class="price">1200 元</span>
+                            </div>
+                            <div class="t_quantity">
+                                <button class="t_less">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <span class="t_num">1</span>
+                                <button class="t_add">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="ticket_student">
-                    <img src="images/order/ticket.png" alt="ticket_board">
-                    <span class="t_name t_student">學生票</span>
-                    <div class="t_quantity">
-                        <button class="t_less"><i class="fas fa-minus"></i></button>
-                        <span class="t_num">1</span>
-                        <button class="t_add"><i class="fas fa-plus"></i></button>
+                    <div class="t_content">
+                        <img src="images/order/ticketBg.png" alt="ticketBg">
+                        <div class="t_w">
+                            <div class="t_txt">
+                                <span class="species">半票</span>
+                                <span class="age">12~17歲</span>
+                                <span class="price">1000 元</span>
+                            </div>
+                            <div class="t_quantity">
+                                <button class="t_less">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <span class="t_num">1</span>
+                                <button class="t_add">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="ticket_adult">
-                    <img src="images/order/ticket.png" alt="ticket_board">
-                    <span class="t_name">成人票</span>
-                    <div class="t_quantity">
-                        <button class="t_less"><i class="fas fa-minus"></i></button>
-                        <span class="t_num">1</span>
-                        <button class="t_add"><i class="fas fa-plus"></i></button>
+                    <div class="t_content">
+                        <img src="images/order/ticketBg.png" alt="ticketBg">
+                        <div class="t_w">
+                            <div class="t_txt">
+                                <span class="species">兒童票</span>
+                                <span class="age">4~11歲</span>
+                                <span class="price">700 元</span>
+                            </div>
+                            <div class="t_quantity">
+                                <button class="t_less">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <span class="t_num">1</span>
+                                <button class="t_add">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -123,30 +156,30 @@
         <div id="step2" class="step activity_container">
             <h3>匯入我的行程</h3>
             <div class="activity_group">
-                <div class="item">
+                <div class="a_item">
                     <div class="item_img">
-                        <img src="images/order/fire.jpg" alt="取火術">
+                        <img src="images/order/fire.jpg" alt="fire">
                     </div>
                     <h4>取火術</h4>
                     <button>選擇</button>
                 </div>
-                <div class="item">
+                <div class="a_item">
                     <div class="item_img">
-                        <img src="images/order/Fishing.png" alt="捕魚術">
+                        <img src="images/order/Fishing.png" alt="Fishing">
                     </div>
                     <h4>捕魚術</h4>
                     <button>選擇</button>
                 </div>
-                <div class="item">
+                <div class="a_item">
                     <div class="item_img">
-                        <img src="images/order/building.png" alt="搭建術">
+                        <img src="images/order/building.png" alt="building">
                     </div>
                     <h4>搭建術</h4>
                     <button>選擇</button>
                 </div>
             </div>
             <div class="activity_none">
-                <span>不規劃行程</span>
+                <p><span>不規劃行程</span></p>
             </div>
         </div>
         <div id="step3" class="step confirm_container">
@@ -327,55 +360,9 @@
             <div id="pre_btn" style="display:none">上一步</div>
             <div id="next_btn">下一步</div>
         </div> 
-    </div> 
+    </div>
     <script src="js/calendar.js"></script>
-    <script>
-        // $(document).ready(function(){
-        //     $('#next_btn').click(function(){
-        //         $('#step1').toggle(false);
-        //         $('#step2').toggle(true);
-        //         $('#pre_btn').toggle(true);
-        //     });
-
-        //     $('#pre_btn').click(function(){
-        //         $('#step1').toggle(true);
-        //         $('#step2').toggle(false);
-        //         $('#pre_btn').toggle(false);
-        //     });
-
-        // });
-        var index = $(".step.active").index(".step"),
-        stepsCount = $(".step").length,
-        prevBtn = $("#pre_btn"),
-        nextBtn = $("#next_btn");
-
-        prevBtn.click(function() {
-            nextBtn.css("display", "block");
-
-            if (index > 0) {
-                index--;    
-                $(".step").removeClass("active").eq(index).addClass("active");
-            };
-
-            if (index === 0) {
-                $(this).css("display","none");
-            }
-
-            nextBtn.text("下一步");
-        });
-
-        nextBtn.click(function() {
-            prevBtn.css("display", "block");
-
-            if (index < stepsCount - 1) {
-                index++;
-                $(".step").removeClass("active").eq(index).addClass("active");
-            };
-
-            if (index === stepsCount - 1) {
-                $(this).text("送出");
-            }
-        });
-    </script>
+    <script src="js/order.js"></script>
+    <script src="js/order_tweenMax.js"></script>
 </body>
 </html>

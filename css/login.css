@@ -408,7 +408,6 @@ nav .header-background-cloud ul li a {
   margin: 200px auto 0;
   position: relative;
   z-index: 1;
-  outline: 2px solid red;
 }
 
 body {
@@ -520,8 +519,8 @@ a {
   background-color: #fff;
   border-radius: 10px;
   border: none;
-  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
-          box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
+  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
+          box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
   padding-top: 15px;
   margin-top: 15px;
   height: 30px;
@@ -610,11 +609,15 @@ input[type="password"] {
   color: #fff;
   text-align: center;
   vertical-align: middle;
+<<<<<<< HEAD
   background-color: #3ba261;
+=======
+  background-color: green;
+>>>>>>> order
   border-radius: 10px;
   border: none;
-  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
-          box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
+  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
+          box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
   max-width: 150px;
   width: 100%;
   margin-top: 25px;
@@ -643,11 +646,15 @@ input[type="password"] {
   color: #f9f9f9;
   text-align: center;
   vertical-align: middle;
+<<<<<<< HEAD
   background-color: #3ba261;
+=======
+  background-color: green;
+>>>>>>> order
   border-radius: 10px;
   border: none;
-  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
-          box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
+  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
+          box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
   max-width: 150px;
   margin-top: 5px;
   width: 100%;
@@ -710,11 +717,15 @@ input[type="password"] {
     color: #f9f9f9;
     text-align: center;
     vertical-align: middle;
+<<<<<<< HEAD
     background-color: #3ba261;
+=======
+    background-color: green;
+>>>>>>> order
     border-radius: 10px;
     border: none;
-    -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
-            box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
+    -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
+            box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
     max-width: 150px;
     margin-top: 30px;
     width: 100%;
@@ -751,11 +762,15 @@ input[type="password"] {
   color: #fff;
   text-align: center;
   vertical-align: middle;
+<<<<<<< HEAD
   background-color: #3ba261;
+=======
+  background-color: green;
+>>>>>>> order
   border-radius: 10px;
   border: none;
-  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
-          box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
+  -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
+          box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
   display: block;
   margin: 0 auto;
   height: 50px;

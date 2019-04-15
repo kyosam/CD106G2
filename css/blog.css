@@ -390,7 +390,6 @@ nav .header-background-cloud ul li a {
   margin: 200px auto 0;
   position: relative;
   z-index: 1;
-  outline: 2px solid red;
 }
 
 body {
@@ -611,7 +610,11 @@ div, h1, h2, h3, h4, h5, h6, p, span {
 }
 
 .blogRanking .blogRanking-article .blogRanking-event-wrap .blogRanking-event .blogRanking-event-info .avgScore span {
+<<<<<<< HEAD
   color: #3ba261;
+=======
+  color: green;
+>>>>>>> order
 }
 
 .blogRanking .blogRanking-article .blogRanking-event-wrap .blogRanking-event .blogRanking-event-info .avgScore img {
@@ -693,8 +696,13 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   background-color: #ffdb3f;
   border-radius: 10px;
   border: none;
+<<<<<<< HEAD
   -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
           box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+=======
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+>>>>>>> order
   width: 150px;
 }
 
