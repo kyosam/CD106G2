@@ -409,11 +409,6 @@ nav .header-background-cloud ul li a {
   position: relative;
   z-index: 1;
   outline: 2px solid red;
-  width: 100%;
-  max-width: 1200px;
-  margin: 200px auto 0;
-  position: relative;
-  z-index: 1;
 }
 
 body {
@@ -452,16 +447,6 @@ i {
   color: #403d04;
 }
 
-.wrapper {
-  letter-spacing: 1.5;
-  line-height: 1.5;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  width: 100%;
-  max-width: 1200px;
-  margin: 150px auto;
-}
-
 input[type="text"],
 input[type="password"] {
   width: 200px;
@@ -482,7 +467,7 @@ input[type="button"] {
   height: 50px;
   display: inline-block;
   font-family: '微軟正黑體';
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   color: #403d04;
   text-align: center;
@@ -529,13 +514,10 @@ input[type="button"]:hover {
   color: #232323;
   letter-spacing: 1.5;
   line-height: 1.5;
-  border-radius: 13px;
-  border: 5px solid #947f70;
-  background-color: #fff;
   text-align: center;
-  padding: 30px;
+  padding: 30px 0px 0px 0px;
   max-width: 300px;
-  height: 480px;
+  height: 500px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -543,9 +525,10 @@ input[type="button"]:hover {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  background-image: url(../../images/member/member_info_frame.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left top;
 }
 
 .memberInfo #memId {
@@ -565,9 +548,12 @@ input[type="button"]:hover {
   font-weight: bold;
 }
 
-.memberInfo img {
-  margin-left: 20px;
-  border-radius: 100px;
+.memberInfo .member-info-box {
+  margin-top: 47px;
+}
+
+.memberInfo .member-info-box img {
+  padding-left: 20px;
 }
 
 .memberInfo .get-bonus-point-box table {
@@ -579,32 +565,40 @@ input[type="button"]:hover {
 }
 
 .memberInfo .get-bonus-point-box table .fas {
-<<<<<<< HEAD
-  color: #367473;
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
   color: #3ba261;
-=======
-  color: #367473;
->>>>>>> order
-=======
-  color: #3ba261;
->>>>>>> tzuping
->>>>>>> 479dbb4f22703baf2a244710941750031ca4fa3c
   font-size: 30px;
 }
 
+.memberInfo .get-bonus-point-box table img {
+  margin-left: 20px;
+  border-radius: 100px;
+}
+
 .list {
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 80%;
+}
+
+.list .tablinks-member {
+  background-color: #947f70;
+  color: #fff;
 }
 
 .list .tablinks, .list a {
   display: inline-block;
   padding: 10px 20px;
-  margin-right: 2%;
+  margin-top: 0;
   text-align: center;
   font-family: '微軟正黑體';
   font-size: 24px;
@@ -612,9 +606,12 @@ input[type="button"]:hover {
   color: #403d04;
   letter-spacing: 1.5;
   font-weight: bold;
+  font-size: 16px;
   border-radius: 13px;
   border: 5px solid #947f70;
   background-color: #fff;
+  border-radius: 13px 13px 0px 0px;
+  border-bottom: 0px;
 }
 
 .member {
@@ -626,6 +623,7 @@ input[type="button"]:hover {
   margin-top: 20px;
   padding-top: 10px;
   text-align: center;
+  outline: 5px solid #947f70;
   background-image: url(../images/4/paper.png);
   background-size: cover;
 }
@@ -658,7 +656,7 @@ input[type="button"]:hover {
   height: 50px;
   display: inline-block;
   font-family: '微軟正黑體';
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   color: #403d04;
   text-align: center;
@@ -687,6 +685,7 @@ input[type="button"]:hover {
   margin-top: 20px;
   background-image: url(../images/4/paper.png);
   background-size: cover;
+  outline: 5px solid #947f70;
 }
 
 .plans .planInfo {
@@ -726,6 +725,7 @@ input[type="button"]:hover {
   line-height: 1.5;
   color: #403d04;
   font-weight: bold;
+  text-align: justify;
 }
 
 .plans .planInfo .planBorder .fa-trash-alt {
@@ -766,15 +766,12 @@ input[type="button"]:hover {
   display: none;
   background-image: url(../images/4/paper.png);
   background-size: cover;
+  outline: 5px solid #947f70;
 }
 
 .blogs table {
   width: 90%;
   margin-left: 5%;
-}
-
-.blogs table td {
-  padding: 0 0 10px 5px;
 }
 
 .blogs table thead {
@@ -787,10 +784,16 @@ input[type="button"]:hover {
   font-weight: bold;
   color: #403d04;
   letter-spacing: 1.5;
+  font-size: 16px;
+}
+
+.blogs table thead .blogtitle .width3 {
+  width: 130px;
 }
 
 .blogs table .blog > td {
-  padding-top: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   border-bottom: 1px solid #403d04;
 }
 
@@ -805,15 +808,12 @@ input[type="button"]:hover {
   display: none;
   background-image: url(../images/4/paper.png);
   background-size: cover;
+  outline: 5px solid #947f70;
 }
 
 .orders table {
   width: 90%;
   margin-left: 5%;
-}
-
-.orders table td {
-  padding: 0 0 10px 5px;
 }
 
 .orders table thead {
@@ -826,6 +826,7 @@ input[type="button"]:hover {
   font-weight: bold;
   color: #403d04;
   letter-spacing: 1.5;
+  font-size: 16px;
 }
 
 .orders table .order > td {
@@ -849,133 +850,207 @@ input[type="button"]:hover {
 
 .col-sm-1 {
   width: 8.33333%;
+  text-align: center;
+  margin: auto;
 }
 
 .col-sm-2 {
   width: 16.66667%;
+  text-align: center;
+  margin: auto;
 }
 
 .col-sm-3 {
   width: 25%;
+  text-align: center;
+  margin: auto;
 }
 
 .col-sm-4 {
   width: 33.33333%;
+  text-align: center;
+  margin: auto;
 }
 
 .col-sm-5 {
   width: 41.66667%;
+  text-align: center;
+  margin: auto;
 }
 
 .col-sm-6 {
   width: 50%;
+  text-align: center;
+  margin: auto;
 }
 
 .col-sm-7 {
   width: 58.33333%;
+  text-align: center;
+  margin: auto;
 }
 
 .col-sm-8 {
   width: 66.66667%;
+  text-align: center;
+  margin: auto;
 }
 
 .col-sm-9 {
   width: 75%;
+  text-align: center;
+  margin: auto;
 }
 
 .col-sm-10 {
   width: 83.33333%;
+  text-align: center;
+  margin: auto;
 }
 
 .col-sm-11 {
   width: 91.66667%;
+  text-align: center;
+  margin: auto;
 }
 
 .col-sm-12 {
   width: 100%;
+  text-align: center;
+  margin: auto;
 }
 
 @media screen and (min-width: 768px) {
   .col-md-1 {
     width: 8.33333%;
+    text-align: center;
+    margin: auto;
   }
   .col-md-2 {
     width: 16.66667%;
+    text-align: center;
+    margin: auto;
   }
   .col-md-3 {
     width: 25%;
+    text-align: center;
+    margin: auto;
   }
   .col-md-4 {
     width: 33.33333%;
+    text-align: center;
+    margin: auto;
   }
   .col-md-5 {
     width: 41.66667%;
+    text-align: center;
+    margin: auto;
   }
   .col-md-6 {
     width: 50%;
+    text-align: center;
+    margin: auto;
   }
   .col-md-7 {
     width: 58.33333%;
+    text-align: center;
+    margin: auto;
   }
   .col-md-8 {
     width: 66.66667%;
+    text-align: center;
+    margin: auto;
   }
   .col-md-9 {
     width: 75%;
+    text-align: center;
+    margin: auto;
   }
   .col-md-10 {
     width: 83.33333%;
+    text-align: center;
+    margin: auto;
   }
   .col-md-11 {
     width: 91.66667%;
+    text-align: center;
+    margin: auto;
   }
   .col-md-12 {
     width: 100%;
+    text-align: center;
+    margin: auto;
+  }
+  .col-md-5 {
+    margin-top: 0px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .col-lg-1 {
     width: 8.33333%;
+    text-align: center;
+    margin: auto;
   }
   .col-lg-2 {
     width: 16.66667%;
+    text-align: center;
+    margin: auto;
   }
   .col-lg-3 {
     width: 25%;
+    text-align: center;
+    margin: auto;
   }
   .col-lg-4 {
     width: 33.33333%;
+    text-align: center;
+    margin: auto;
   }
   .col-lg-5 {
     width: 41.66667%;
+    text-align: center;
+    margin: auto;
   }
   .col-lg-6 {
     width: 50%;
+    text-align: center;
+    margin: auto;
   }
   .col-lg-7 {
     width: 58.33333%;
+    text-align: center;
+    margin: auto;
   }
   .col-lg-8 {
     width: 66.66667%;
+    text-align: center;
+    margin: auto;
   }
   .col-lg-9 {
     width: 75%;
+    text-align: center;
+    margin: auto;
   }
   .col-lg-10 {
     width: 83.33333%;
+    text-align: center;
+    margin: auto;
   }
   .col-lg-11 {
     width: 91.66667%;
+    text-align: center;
+    margin: auto;
   }
   .col-lg-12 {
     width: 100%;
+    text-align: center;
+    margin: auto;
   }
 }
 
 @media screen and (max-width: 768px) {
   .list {
-    margin: 50px 0;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;

@@ -32,7 +32,7 @@
     height: 50px;
     display: inline-block;
     font-family: '微軟正黑體';
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     color: $btnColor;
     text-align: center;
@@ -57,22 +57,31 @@
 @mixin grid($num) {
     @for $i from 1 through $num {
         .col-sm-#{$i} {
-            width: ($i / $num) * 100%
+            width: ($i / $num) * 100%;
+            text-align: center;
+            margin: auto;
         }
     }
 
     @media screen and (min-width:768px){
         @for $i from 1 through $num {
             .col-md-#{$i} {
-                width: ($i / $num) * 100%
+                width: ($i / $num) * 100%;
+                text-align: center;
+                margin: auto;
             }
+        }
+        .col-md-5{
+            margin-top: 0px;
         }
     }
 
     @media screen and (min-width:1200px){
         @for $i from 1 through $num {
             .col-lg-#{$i} {
-                width: ($i / $num) * 100%
+                width: ($i / $num) * 100%;
+                text-align: center;
+                margin: auto;
             }
         }
     }
@@ -89,16 +98,16 @@ i{
 }
 
 
-.wrapper {
-    // outline: 1px solid #555;
-    letter-spacing: 1.5;
-    line-height: 1.5;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    width: 100%;
-    max-width: 1200px;
-    margin: 150px auto;
-}
+// .wrapper {
+//     // outline: 1px solid #555;
+//     letter-spacing: 1.5;
+//     line-height: 1.5;
+//     padding-top: 20px;
+//     padding-bottom: 20px;
+//     width: 100%;
+//     max-width: 1200px;
+//     margin: 150px auto;
+// }
 
 input[type="text"],
 input[type="password"]{
@@ -134,14 +143,18 @@ input[type="button"]{
 
 .memberInfo{
     @include bodyP;
-    @include border-frame;
+    // @include border-frame;
     text-align: center;
-    padding: 30px;
+    padding: 30px 0px 0px 0px;
     max-width: 300px;
-    height: 480px;
+    height: 500px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
+    background-image: url(../../images/member/member_info_frame.svg);
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: left top;
     #memId {
         @include sm-title($blue);
     }
@@ -149,9 +162,11 @@ input[type="button"]{
         @include big-title($red);
         font-weight: bold;
     }
-    img{
-        margin-left: 20px;
-        border-radius: 100px;
+    .member-info-box{
+        margin-top: 47px;
+        img{
+            padding-left: 20px;
+        }
     }
     .get-bonus-point-box {
         table {
@@ -161,16 +176,29 @@ input[type="button"]{
                 padding: 3px;
             }
             .fas {
-                color: $doubledarkGreen;
+                color: $green;
                 font-size: 30px;
-            }    
+            } 
+            img{
+                margin-left: 20px;
+                border-radius: 100px;
+            }   
         }
     }
 }
 
 
 .list{
-    justify-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 80%;
+    // outline: 2px solid red;
+    .tablinks-member{
+        background-color:#947f70;
+        color:#fff;
+    }
     .tablinks,a{
         // background-image: url(../images/bk_wood2.png);
         // background-size: 120px;
@@ -178,11 +206,15 @@ input[type="button"]{
         display: inline-block;
         // width: 160px;
         padding: 10px 20px;
-        margin-right: 2%;
+        // margin-right: 2%;
+        margin-top: 0;
         text-align: center;
         @include sm-title($black);
         font-weight: bold;
+        font-size: 16px;
         @include border-frame;
+        border-radius: 13px 13px 0px 0px;
+        border-bottom: 0px;
     }
 }
 
@@ -193,6 +225,7 @@ input[type="button"]{
     margin-top: 20px;
     padding-top: 10px;
     text-align: center;
+    outline: 5px solid $brown;
     background-image: url(../images/4/paper.png);
     background-size: cover;
     // background-position: 180px;
@@ -221,6 +254,7 @@ input[type="button"]{
     margin-top: 20px;
     background-image: url(../images/4/paper.png);
     background-size: cover;
+    outline: 5px solid $brown;
     .planInfo{
         padding: 15px;
         margin-top: 40px;
@@ -244,6 +278,7 @@ input[type="button"]{
                 @include bodyP;
                 color: $black;
                 font-weight: bold;
+                text-align:justify;
             }
             .fa-trash-alt{
                 float:right;
@@ -275,22 +310,35 @@ input[type="button"]{
     display: none;
     background-image: url(../images/4/paper.png);
     background-size: cover;
+    outline: 5px solid $brown;
     table{
         width: 90%;
         margin-left: 5%; 
         td{
-            padding: 0 0 10px 5px;
+            // padding: 0 0 10px 5px;
         }
         thead{
             border: 1px solid $black; 
             .blogtitle{
                  @include sm-title($black);
+                 font-size: 16px;
+                //  .width1{
+                //     width: 250px;
+                // }
+                // .width2{
+                //     width: 150px;
+                // }
+                .width3{
+                     width: 130px;
+                 }
             }
         }    
 
         .blog > td{
-            padding-top: 40px;
+            padding-top: 20px;
+            padding-bottom: 20px;
             border-bottom: 1px solid $black;
+            // font-size: 16px;
         }  
         
 
@@ -304,16 +352,18 @@ input[type="button"]{
     display:none;
     background-image: url(../images/4/paper.png);
     background-size: cover;
+    outline: 5px solid $brown;
     table{
         width:90%;
         margin-left: 5%; 
         td{
-            padding: 0 0 10px 5px;
+            // padding: 0 0 10px 5px;
         }
         thead{
             border: 1px solid $black; 
             .ordertitle{
                  @include sm-title($black);
+                 font-size: 16px;
             }
         }    
 
@@ -342,7 +392,7 @@ input[type="button"]{
 
 @media screen and (max-width:768px){
     .list{
-        margin: 50px 0;
+        // margin: 50px 0;
         justify-content: center;
     }
 }

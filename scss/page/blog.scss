@@ -20,7 +20,8 @@
     margin: auto;
     margin-bottom: 5%;
     padding: 2.5%;
-    background-image: url(../images/blog/paper.png);
+    background-image: url(../images/blogShare/paper_big_edited-01.png);
+    // background-image: url(../images/blogShare/edit_blog_paper-01.svg);
     background-size: cover;
     background-position-x: 30%;
     h2{
@@ -230,10 +231,9 @@
         font-family: '微軟正黑體';
         font-size: 18px;
         font-weight: bold;
-        color: $red;
         text-align: center;
         vertical-align: middle;
-        background-color: $yellow;
+        background-color: $pink;
         border-radius: 10px;
         border: none;
         box-shadow: 0px 1px 0px #ccc,
@@ -344,7 +344,7 @@
         }
         margin: 50px 20px;
         padding: 2.5%;
-        background-color: $blogrank;
+        background-color: rgba($blogrank, $alpha: 0.6);
         border-radius: 10px;
         &::before{
             content: "";
@@ -516,6 +516,7 @@
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    top: -1.6%;
     .fly1{
         position: absolute;
         right: -5vw;
