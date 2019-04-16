@@ -180,7 +180,7 @@ main h2 {
   text-align: left;
 }
 
-#member,
+/* #member,
 #order,
 #ticket,
 #event,
@@ -190,6 +190,6 @@ main h2 {
 #eventEvalReport,
 #gamePhotoReport,
 #noteCommReport {
-  display: none;
-}
+  display: block;
+} */
 /*# sourceMappingURL=admin.css.map */
