@@ -10,6 +10,7 @@
     <link rel="Shortcut Icon" type="image/x-icon" href="images/new/favicon.png" />
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/hbgClick.js"></script>
+    <script src="js/copyLink.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <title>森存者｜手札內頁</title>
 </head>
@@ -70,15 +71,15 @@
                 <span>2019-04-09</span>
             </div>
 
-            <div class="blogContent-share">
-                <input type="text" name="" id="copyurl" value="www.google.com" >   
+            <div class="blogRanking-share">
+                <input type="text" name="" id="copyurl" value="www.google.com" > 
+                <!-- <button type="button" id="copybtn"><img src="images/blog/Share.png" alt="分享"></button> -->
                 <img src="images/blog/Share.png" alt="分享" id="copybtn">
             </div>
 
         </div>
-        <script>
-                //燈箱
-                var copybtn=document.getElementById("copybtn");
+        <!-- <script>
+               var copybtn=document.getElementById("copybtn");
            
                copybtn.addEventListener("click",function(){
            
@@ -89,7 +90,7 @@
            
                setTimeout(function(){ document.getElementById("copyok").style.display="none";  }, 3000);
                });
-        </script>    
+        </script>     -->
 
         <!-- 內文 -->
         <div class="blogContent-photo">
@@ -289,7 +290,7 @@
 
 <!-- copylink lightbox -->
 <div id="copyok">
-        <p>複製成功<br>3秒後關閉。</p>
+        <p>複製成功3秒後關閉。</p>
 </div>
 </body>
 </html>

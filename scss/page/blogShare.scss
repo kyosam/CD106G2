@@ -129,9 +129,9 @@
             }
             text-align: center;
             background-color: #fff;
-            border: #111 1px solid;
             border-radius: 10px;
-            margin: 5px;
+            margin: 10px;
+            transition: 1s;
             &:hover{
                 background-color:$eventHover;
             }
@@ -145,6 +145,7 @@
             }
             h3{
                 @include bodyP;
+                padding: 2px;
             }
         }
     }

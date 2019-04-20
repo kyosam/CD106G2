@@ -611,9 +611,10 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   width: 40%;
   text-align: center;
   background-color: #fff;
-  border: #111 1px solid;
   border-radius: 10px;
-  margin: 5px;
+  margin: 10px;
+  -webkit-transition: 1s;
+  transition: 1s;
   cursor: pointer;
 }
 
@@ -645,6 +646,7 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   color: #232323;
   letter-spacing: 1.5;
   line-height: 1.5;
+  padding: 2px;
 }
 
 .blogShare .blogSummit {

@@ -522,7 +522,20 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   text-align: center;
 }
 
-.game-container .game-rule-content div {
+.game-container .game-rule-content::after {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 50%;
+  background-image: url(../images/blog/talk.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+}
+
+.game-container .game-rule-content #close {
   position: absolute;
   right: 4%;
   top: 8%;
@@ -535,6 +548,16 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   cursor: pointer;
   font-weight: bolder;
   font-size: 50px;
+}
+
+.game-container .game-rule-content #close::after {
+  content: '';
+  display: block;
+  background-image: url(../images/game/icon-close.png);
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  background-size: contain;
 }
 
 .game-container .game-rule-content h2 {
@@ -575,18 +598,35 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   letter-spacing: 1.5;
   display: inline-block;
   padding: 12px;
-  width: 200px;
+  width: 29%;
   height: 50px;
   border-radius: 20px;
   background-color: #fff;
   position: absolute;
-  left: 65%;
-  top: 30%;
+  left: 40%;
+  top: 40%;
+  line-height: 1.7;
 }
 
 @media screen and (max-width: 768px) {
   .game-container .game-rule-content .game-rule-bearTalk {
-    display: none;
+    left: 50%;
+    top: 45%;
+    border-radius: 50%;
+  }
+}
+
+.game-container .game-rule-content .game-rule-bearTalk > span {
+  display: block;
+  width: 100%;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .game-container .game-rule-content .game-rule-bearTalk > span {
+    display: block;
+    width: 80%;
+    font-size: 14px;
   }
 }
 
@@ -699,7 +739,7 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   cursor: pointer;
   width: 27%;
   margin: 2%;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
   position: relative;
   border-radius: 10px;
 }
@@ -774,6 +814,8 @@ div, h1, h2, h3, h4, h5, h6, p, span {
           justify-content: space-evenly;
   vertical-align: middle;
   margin: 10px 0;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .photoWall .photo-item .photoBtn span {
@@ -792,12 +834,16 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   border-radius: 10px;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .photoWall .photo-item .photoBtn div:hover {
-  background-color: #f3994f;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
   -webkit-transition: 1s;
   transition: 1s;
+  background-color: #eee;
 }
 
 #scene1 {
