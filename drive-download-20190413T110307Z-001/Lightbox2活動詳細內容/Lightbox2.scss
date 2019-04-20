@@ -1,0 +1,118 @@
+
+#Lightbox_click{
+    width: 100px;
+    height: 100px;
+    background-color: #aaa;
+}
+#Lightbox2{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.671);
+    position: fixed;
+    top: 0;
+    left: 0;
+    // display: none;
+    #Lightbox2_close{
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        margin: auto;
+        position: absolute;
+        right:1%;
+        top: 1%;
+        border: 1px solid #000;
+        border-radius: 50%;
+        
+
+    }
+    .Lightbox2{
+        width: 60%;
+        height: 60vh;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 20px;
+        padding: 1% 3%;
+        .Lightbox2_leftimg{
+            margin: 0 2%;
+            width: 46%;
+            height: 100%;
+            float: left;
+            background-color: #aaa;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+         
+        }
+        .Lightbox2_rightbox{  
+            margin: 0 2%;
+            width: 46%;
+            height: 100%;
+            float: right;
+            background-color: #aaa;
+            div:nth-child(1){
+                width: 100%;
+                height: 30%;
+                background-color: #a0a;
+                position: relative;
+                div:nth-child(1){ 
+                    position: absolute;
+                    bottom: 0;
+                    p{
+                        display: inline-block;
+                        margin: 2%;
+                        // float: left;
+                    }
+                    img{
+                        width: 20px;
+                        height: 20px;
+                        margin: 0;
+                        padding: 0;
+                    }
+                }
+                div:nth-child(2){
+                    width: 30%;
+                    background-color: #aaa;
+                    float: right;
+                    position: absolute;
+                    bottom: 10%;
+                    right: 0;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+            div:nth-child(2){      
+                width: 100%;
+                height: 60%;
+                background-color: #b0b;
+                p{
+                    display: inline-block;
+                    margin: 2%;
+                }
+            }
+
+            div:nth-child(3){       
+                width: 100%;
+                height: 10%;
+                background-color: #c0c;
+                p:nth-child(1){
+                    display: inline-block;
+                    float: left;
+                    margin: 2%;
+                }
+                p:nth-child(2){
+                    display: inline-block;
+                    float: right;
+                    margin: 2%;
+                }
+            }
+        }
+    }
+    
+}

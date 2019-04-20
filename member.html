@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/member.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"> -->
+    <link rel="stylesheet" href="css/svg_style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="Shortcut Icon" type="image/x-icon" href="images/new/favicon.png" />
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/hbgClick.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <title>森存者｜會員專區</title>
+</head>
+
+<body>
+    <!-- header --> 
+    <nav>
+        <div class="icon" id="icon">
+            <div class="hamburger" id="hamburger"></div>  
+        </div>
+
+        <div id="small-forester_logo">
+                <a href="index.html"><h1><img src="images/logo.svg" alt="手機板森存者商標" ></h1></a>
+        </div>
+        <div id="header-member" >
+            <a href="login.html" ><img src="images/icon_user.png" alt="會員大頭像"></a>
+        </div>
+        
+        <div class="cloud">
+            <div class="doc doc--bg2">
+                <canvas id="canvas" width="1444" height="119"></canvas>
+            </div>
+        </div>
+        <!--  -->
+
+        <div class="header-background-cloud">
+            <span id="show_span" >
+                <ul><li></li>
+                    <li><a href="plan.html">活動規劃</a></li>
+                    <li><a href="order.html">線上訂票</a></li>
+                    <li><a href="index.html"><h1> <img id="forester_logo" src="images/logo.svg" alt="森存者商標"></h1></a></li>
+                    <li><a href="blog.html">手札分享</a></li>
+                    <li><a href="game.html">尋找森存者</a></li> 
+                    <li class="header-member"><a href="login.html" ><img src="images/icon_user.png" alt="會員大頭像"></a></li>
+                </ul>                 
+            </span>
+        </div>        
+    </nav>
+    <!-- header -->
+    <script src="js/header.js"></script>
+
+
+        <div class="wrap">
+            <div class=" justify-content-space-evenly container">
+                <div class="memberInfo col-sm-12 col-md-4">
+                        <div class="member-info-box">
+                            <img src="images/member1.jpg" alt="member">
+                            <a href="#"><i class="fas fa-camera"></i></a>
+                            <p id="memId">liveforever</p>
+                            <p>liveforever@gmail.com</p>
+                        </div>
+                        <div class="bonus-point-explain-box">
+                            <p>您的成就點數為<span id="bonus-point">120</span>點</p>
+                            <p>10點成就點數可折抵消費現金1元</p>
+                        </div>
+                        <div class="get-bonus-point-box">
+                            <p>如何獲得成就點數</p>
+                            <table>
+                                <tr>
+                                    <td><i class="fas fa-pencil-alt"></i></td>
+                                    <td><i class="fas fa-gamepad"></i></td>
+                                    <td><i class="fas fa-eye"></i></td>
+                                </tr>
+                                <tr>
+                                    <td> 分享手札 </td>
+                                    <td> 線上小遊戲 </td>
+                                    <td> 搜救森存者 </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+            
+
+                <!-- ====================================== -->
+                <div class="col-sm-12 col-md-8">
+                    <div class="list col-sm-12">
+                        <a class="tablinks-member" href="#">我的資料</a>
+                        <a class="tablinks-plans" href="#">我的全部行程</a>
+                        <a class="tablinks-blogs" href="#">我的生存手札</a>
+                        <a class="tablinks-orders" href="#">訂票紀錄</a>
+                    </div>
+
+                    <form id="member" class="member col-sm-12 col-md-12">
+                        <table class="">
+                            <tr>
+                                <th>帳號</th>
+                                <td><input type="text" name="account" value="test"></td>
+                            </tr>
+                            <tr>
+                                <th>信箱</th>
+                                <td><input type="text" name="email" value="test@gmail.com"></td>
+                            </tr>
+                            <tr>
+                                <th>舊密碼</th>
+                                <td><input type="password" name="oldpsd" value="1234"></td>
+                            </tr>
+                            <tr>
+                                <th>新密碼</th>
+                                <td><input type="password" name="newpsd"></td>
+                            </tr>
+                            <tr>
+                                <th>確認密碼</th>
+                                <td><input type="password" name="newpsdagain"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <input type="button" value="修改">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+
+
+
+                    <div id="plans" class="plans col-sm-12 container">
+                        <div class="planInfo col-sm-12 col-md-4">
+                            <a href="blogContent.html">
+                                <div class="planBorder">
+                                    <img src="images/plan1.jpg" alt="plan1">
+    
+                                    <h4>行程名稱 : <span>我、小明與小明的阿姨</span><a href="javascript:;"><i class="far fa-trash-alt"></i></a></h4>
+                                    <p>建立日期 : <span>2019/03/14</span></p>
+                                    <div class="share-blog-url-box">
+                                        <a class="share-blog" href="#">分享行程至手札</a>
+                                        <a class="share-url" href="#">分享連結</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="planInfo col-sm-12 col-md-4">
+                            <a href="blogContent.html">                                
+                                <div class="planBorder">
+                                    <img src="images/plan2.jpg" alt="plan2">
+    
+                                    <h4>行程名稱 : <span>清明假期不掃墓的話</span><a href="javascript:;"><i class="far fa-trash-alt"></i></a></h4>
+                                    <p>建立日期 : <span>2019/03/14</span></p>
+                                    <div class="share-blog-url-box">
+                                        <a class="share-blog" href="#">分享行程至手札</a>
+                                        <a class="share-url" href="#">分享連結</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="planInfo col-sm-12 col-md-4">
+                            <a href="blogContent.html"> 
+                                <div class="planBorder">
+                                    <img src="images/plan3.jpg" alt="plan3">
+    
+                                    <h4>行程名稱 : <span>五年三班陳志與手工薯條</span><a href="javascript:;"><i class="far fa-trash-alt"></i></a></h4>
+                                    <p>建立日期 : <span>2019/03/14</span></p>
+                                    <div class="share-blog-url-box">
+                                        <a class="share-blog" href="#">分享行程至手札</a>
+                                        <a class="share-url" href="#">分享連結</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="planInfo col-sm-12 col-md-4">
+                            <a href="blogContent.html">                            
+                                <div class="planBorder">
+                                    <img src="images/plan1.jpg" alt="plan1">
+    
+                                    <h4>行程名稱 : <span>兩天三夜遠離都市計畫</span><a href="javascript:;"><i class="far fa-trash-alt"></i></a></h4>
+                                    <p>建立日期 : <span>2019/03/14</span></p>
+                                    <div class="share-blog-url-box">
+                                        <a class="share-blog" href="#">分享行程至手札</a>
+                                        <a class="share-url" href="#">分享連結</a>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="blogs" class="blogs col-sm-12 col-md-12">
+                        <table>
+                            <thead>
+                                <tr class="blogtitle">
+                                    <td class="">手札標題</td>
+                                    <td class="">最後編輯時間</td>
+                                    <td class="">異動</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="blog">
+                                    <td>【天冷必學】2019小君推薦大家生火術，有養眼的教練。</td>
+                                    <td>2019/03/14 11:03</td>
+                                    <td><input type="button" value="修改"><input type="button" value="刪除"></td>
+                                </tr>
+                                <tr class="blog">
+                                    <td> 野外求生。遊 | 不是的！這不是我印象中的毒蛇！ </td>
+                                    <td>2019/02/28 19:17</td>
+                                    <td><input type="button" value="修改"><input type="button" value="刪除"></td>
+                                </tr>
+                                <tr class="blog">
+                                    <td>【肚子不能餓】利用可食植物煮一頓美味的親子餐，喔一洗</td>
+                                    <td>2019/03/14 11:03</td>
+                                    <td><input type="button" value="修改"><input type="button" value="刪除"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="orders" class="orders col-sm-12 col-md-12">
+                        <div>
+                            <table>
+                                <thead>
+                                    <tr class="ordertitle">
+                                        <td>QR Code</td>
+                                        <td>行程名稱</td>
+                                        <td>建立時間</td>
+                                        <td>總金額</td>
+                                        <td></td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="order">
+                                        <td><i class="fas fa-qrcode fa-2x"></i><a href="#">列印</a></td>
+                                        <td>清明假期跟爸媽</td>
+                                        <td>2019/02/28 19:17</td>
+                                        <td>NTD <span>2700</span></td>
+                                        <td><a href="#"><i class="fas fa-plus"></i></a></td>
+                                    </tr>
+
+
+                                    <tr class="orderlist">
+                                        <td colspan="5">
+                                            <h4>訂單明細</h4>
+                                            <p>會員信箱 <span>liveforever@gmail.com</span></p>
+                                            <p>訂單編號 <span>A0123</span></p>
+                                            <p>訂購票種 <span>成人票 x 2 / 愛心票 x 2</span></p>
+                                            <p>入營時間 <span>2019 / 03 / 31 (六)</span></p>
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <td>活動項目</td>
+                                                        <td>活動評價</td>
+                                                        <td>活動留言</td>
+                                                        <td>評價狀態</td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>生火術</td>
+                                                        <td>星星星星星星</td>
+                                                        <td>好好玩喔! 工作人員也很有趣推薦大家!!!</td>
+                                                        <td>已繳交</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>野外繩結</td>
+                                                        <td>星星星星星星</td>
+                                                        <td>請輸入您對此活動的留言</td>
+                                                        <td>提交</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>生火術</td>
+                                                        <td>星星星星星星</td>
+                                                        <td>請輸入您對此活動的留言</td>
+                                                        <td>提交</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr class="order">
+                                        <td><i class="fas fa-qrcode fa-2x"></i><a href="#">列印</a></td>
+                                        <td>高中同學們一起的</td>
+                                        <td>2019/01/15 02:59</td>
+                                        <td>NTD <span>3500</span></td>
+                                        <td><a href="javascript:;"><i class="fas fa-plus"></i></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+
+                $(document).ready(function () {
+                    $('.tablinks-member').click(function () {
+                        $('#member').show();
+                        $('#plans').hide();
+                        $('#blogs').hide();
+                        $('#orders').hide();
+                    });
+
+                    $('.tablinks-plans').click(function () {
+                        $('#member').hide();
+                        $('#plans').css('display', 'flex');
+                        $('#blogs').hide();
+                        $('#orders').hide();
+                    });
+                    $('.tablinks-blogs').click(function () {
+                        $('#member').hide();
+                        $('#plans').hide();
+                        $('#blogs').show();
+                        $('#orders').hide();
+                    });
+                    $('.tablinks-orders').click(function () {
+                        $('#member').hide();
+                        $('#plans').hide();
+                        $('#blogs').hide();
+                        $('#orders').show();
+                    });
+
+                    $('.btn').click(function () {
+                        $(".orderlist >td").toggle();
+                    });
+
+                    $('.icon').click(function () {
+                        $('.icon').toggleClass('active');
+                    });
+
+                });
+            </script>
+        </div>
+        <!-- footer -->
+        <!-- <div id="jsi-flying-fish-container" class="container"></div> -->
+        <!-- footer -->
+        <!-- footer會再修改就先不放囉 -->
+        <!-- <script src="js/footer-flyfish.js"></script> -->
+
+
+</body>
+
+</html>

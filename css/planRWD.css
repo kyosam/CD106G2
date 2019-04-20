@@ -1,0 +1,1330 @@
+@charset "UTF-8";
+div, h1, h2, h3, h4, h5, h6, p, span {
+  font-family: '微軟正黑體';
+  letter-spacing: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button {
+  outline: none;
+}
+
+.clearfix {
+  clear: both;
+}
+
+div, h1, h2, h3, h4, h5, h6, p, span {
+  font-family: '微軟正黑體';
+  letter-spacing: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button {
+  outline: none;
+}
+
+.clearfix {
+  clear: both;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle farthest-corner at 10% 20%, #f8dbdb 0%, #e5f8fa 90%);
+}
+
+.RWD_plan_div {
+  display: none;
+}
+
+.header_title_background img {
+  display: block;
+  margin: 0 auto 50px;
+  max-width: 300px;
+  height: auto;
+}
+
+.header_title_background h2 {
+  display: none;
+}
+
+[type=radio] {
+  display: none;
+}
+
+.plan-screen-second {
+  margin: 20vh 0;
+}
+
+.plan-screen-first h2,
+.plan-screen-second h2,
+.plan-screen-confirmation h2 {
+  font-family: '微軟正黑體';
+  font-size: 34px;
+  color: #403d04;
+  font-weight: bold;
+  letter-spacing: 1.5;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#hot-event-container {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+#hot-event-container label {
+  border-radius: 13px;
+  border: 5px solid #947f70;
+  background-color: #fff;
+  margin: auto;
+  padding: 10px 2%;
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  transition: transform .5s ease, -webkit-transform .5s ease;
+}
+
+#hot-event-container label .hot-event-box {
+  width: 100%;
+  margin: 10px auto;
+  text-align: left;
+}
+
+#hot-event-container label .hot-event-box h3 {
+  font-family: '微軟正黑體';
+  font-size: 28px;
+  font-weight: bold;
+  color: #718cc6;
+  letter-spacing: 1.5;
+  margin: 30px 0;
+}
+
+#hot-event-container label .hot-event-box p {
+  font-family: '微軟正黑體';
+  font-size: 15px;
+  color: #232323;
+  letter-spacing: 1.5;
+  line-height: 1.5;
+}
+
+#hot-event-container label .hot-event-box .hot-event-img img {
+  width: 100%;
+  height: 250px;
+}
+
+#hot-event-container label .hot-event-box .euqal-add-box {
+  width: 90%;
+  position: absolute;
+  bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#hot-event-container label .hot-event-box .euqal-add-box .equal-value {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-family: '微軟正黑體';
+  font-size: 15px;
+  color: #232323;
+  letter-spacing: 1.5;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #4da45d;
+}
+
+#hot-event-container label .hot-event-box .euqal-add-box .equal-value img {
+  width: 18px;
+  vertical-align: top;
+}
+
+#hot-event-container label .hot-event-box .euqal-add-box button {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  font-family: '微軟正黑體';
+  font-size: 18px;
+  font-weight: bold;
+  color: #eb715f;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #ffdb3f;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  width: 200px;
+}
+
+#hot-event-container label .hot-event-box .euqal-add-box button:hover {
+  top: 4px;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+}
+
+#s1:checked ~ #slide3, #s2:checked ~ #slide1,
+#s3:checked ~ #slide2 {
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transform: translate3d(-100%, 0, -100px);
+          transform: translate3d(-100%, 0, -100px);
+}
+
+#s1:checked ~ #slide1, #s2:checked ~ #slide2,
+#s3:checked ~ #slide3 {
+  -webkit-box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3), 0 11px 7px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 13px 25px 0 rgba(0, 0, 0, 0.3), 0 11px 7px 0 rgba(0, 0, 0, 0.19);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+#s1:checked ~ #slide2, #s2:checked ~ #slide3,
+#s3:checked ~ #slide1 {
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transform: translate3d(100%, 0, -100px);
+          transform: translate3d(100%, 0, -100px);
+}
+
+.plan-container-step-one .bar-img-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.plan-container-step-one .bar-img-container .bar-img-box {
+  width: 25%;
+}
+
+.plan-container-step-one .bar-img-container .bar-img-box table {
+  width: 100%;
+}
+
+.plan-container-step-one .bar-img-container .bar-img-box .bar-value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: '微軟正黑體';
+  font-size: 15px;
+  color: #232323;
+  letter-spacing: 1.5;
+  line-height: 1.5;
+}
+
+.plan-container-step-one .bar-img-container .bar-img-box .value-item {
+  font-family: '微軟正黑體';
+  font-size: 24px;
+  font-weight: bold;
+  color: #403d04;
+  letter-spacing: 1.5;
+  margin: 10px 0;
+}
+
+.drag-img-box {
+  position: relative;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.drag-img-box img {
+  position: relative;
+  width: 50px;
+  z-index: 1;
+}
+
+.drag-img-box .drag-value-bar {
+  width: 100%;
+  height: 13px;
+  border-radius: 30px;
+  background-color: #bbb;
+  position: absolute;
+  top: 45%;
+}
+
+.plan-container-step-one,
+.plan-container-step-two,
+.plan-container-step-three,
+.plan-container-step-four,
+.plan-container-confirmation {
+  border-radius: 13px;
+  border: 5px solid #947f70;
+  background-color: #fff;
+  width: 95%;
+  margin: 0 auto 100px;
+  position: relative;
+}
+
+.plan-container-step-one::before,
+.plan-container-step-two::before,
+.plan-container-step-three::before,
+.plan-container-step-four::before,
+.plan-container-confirmation::before {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 70px;
+  position: absolute;
+  top: -75px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.plan-container-step-one h3,
+.plan-container-step-two h3,
+.plan-container-step-three h3,
+.plan-container-step-four h3,
+.plan-container-confirmation h3 {
+  font-family: '微軟正黑體';
+  font-size: 28px;
+  font-weight: bold;
+  color: #403d04;
+  letter-spacing: 1.5;
+  margin: 10px;
+}
+
+.plan-container-step-one h3::after,
+.plan-container-step-two h3::after,
+.plan-container-step-three h3::after,
+.plan-container-step-four h3::after,
+.plan-container-confirmation h3::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 5px;
+  background-color: #805c35;
+  margin-top: 10px;
+}
+
+.plan-container-step-one h3 .plan-explaination,
+.plan-container-step-two h3 .plan-explaination,
+.plan-container-step-three h3 .plan-explaination,
+.plan-container-step-four h3 .plan-explaination,
+.plan-container-confirmation h3 .plan-explaination {
+  font-family: '微軟正黑體';
+  font-size: 15px;
+  color: #232323;
+  letter-spacing: 1.5;
+  line-height: 1.5;
+  margin-left: 10px;
+  color: steelblue;
+  text-align: right;
+}
+
+.plan-container-step-one::before {
+  background-image: url(../../images/new/number1.png);
+}
+
+.plan-container-step-two::before {
+  background-image: url(../../images/new/number2.png);
+}
+
+.plan-container-step-three::before {
+  background-image: url(../../images/new/number3.png);
+}
+
+.plan-container-step-four::before {
+  background-image: url(../../images/new/number4.png);
+}
+
+.plan-container-confirmation::before {
+  background-image: url(../../images/new/number5.png);
+}
+
+.second-screen-flex-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.all-event-container {
+  width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  float: left;
+}
+
+.all-event-container .plan-option-list {
+  position: relative;
+  top: 10px;
+  right: 5%;
+  text-align: right;
+  width: 100%;
+}
+
+.all-event-container .plan-option-list span {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  font-family: '微軟正黑體';
+  font-size: 18px;
+  font-weight: bold;
+  color: #403d04;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #dae24b;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  border-bottom: 2px solid #ffdb3f;
+  width: 150px;
+  line-height: 50px;
+  margin-right: 20px;
+}
+
+.all-event-container .plan-option-list span:hover {
+  top: 4px;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+}
+
+.all-event-container .plan-option-list span a {
+  color: #403d04;
+}
+
+.all-event-container .plan-option-list #list-plan {
+  font-family: '微軟正黑體';
+  font-size: 15px;
+  color: #232323;
+  letter-spacing: 1.5;
+  line-height: 1.5;
+  font-weight: bold;
+  background-color: #85cfdc;
+  height: 40px;
+  border: none;
+  outline: none;
+}
+
+.all-event-container .event-detail-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: 700px;
+  overflow: auto;
+}
+
+.event-drop-area {
+  width: 25%;
+  position: relative;
+  border-right: 5px dotted #aaa;
+}
+
+.event-drop-area p {
+  font-family: '微軟正黑體';
+  font-size: 24px;
+  font-weight: bold;
+  color: #403d04;
+  letter-spacing: 1.5;
+  padding: 0 0 2% 2%;
+}
+
+.event-drop-area .event-drop-circle {
+  width: 150px;
+  height: 150px;
+  border: 5px dashed #947f70;
+  border-radius: 50%;
+  margin: 20px auto;
+  text-align: center;
+  font-family: '微軟正黑體';
+  font-size: 34px;
+  color: #403d04;
+  font-weight: bold;
+  letter-spacing: 1.5;
+  line-height: 150px;
+}
+
+.event-detail-box {
+  width: 44%;
+  border: 5px solid #403d04;
+  border-radius: 13px;
+  position: relative;
+  margin: 2%;
+  cursor: pointer;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.event-detail-box:hover {
+  background-color: #fdf7bd;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.event-detail-box .event-cover {
+  width: 41%;
+  height: 100px;
+  margin: 10px 10px 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.event-detail-box .event-cover img {
+  width: 100%;
+}
+
+.event-detail-box .event-txt-box {
+  display: inline-block;
+  vertical-align: top;
+  margin: 10px 0 10px 0;
+  height: 100px;
+  position: relative;
+  width: 52%;
+}
+
+.event-detail-box .event-txt-box h4 {
+  font-family: '微軟正黑體';
+  font-size: 28px;
+  font-weight: bold;
+  color: #718cc6;
+  letter-spacing: 1.5;
+}
+
+.event-detail-box .event-txt-box table {
+  margin: 10px 0 10px 0;
+  width: 150px;
+}
+
+.event-detail-box .event-txt-box table td {
+  width: 15px;
+  font-family: '微軟正黑體';
+  font-size: 15px;
+  color: #232323;
+  letter-spacing: 1.5;
+  line-height: 1.5;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.event-detail-box .event-txt-box table td img {
+  width: 25px;
+  vertical-align: middle;
+}
+
+.event-detail-box .event-txt-box .value-pic-box {
+  font-family: '微軟正黑體';
+  font-size: 15px;
+  color: #232323;
+  letter-spacing: 1.5;
+  line-height: 1.5;
+  color: #4da45d;
+  font-weight: bold;
+  position: absolute;
+  bottom: 0;
+}
+
+.event-detail-box .event-txt-box .value-pic-box img {
+  width: 18px;
+  vertical-align: bottom;
+}
+
+.event-detail-box .event-hour {
+  font-family: '微軟正黑體';
+  font-size: 15px;
+  color: #232323;
+  letter-spacing: 1.5;
+  line-height: 1.5;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.event-detail-box .event-price {
+  font-family: '微軟正黑體';
+  font-size: 15px;
+  color: #232323;
+  letter-spacing: 1.5;
+  line-height: 1.5;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.check-map-box {
+  margin: 2% 0;
+}
+
+.check-map-box img {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+}
+
+.name-cover-container {
+  margin: 2%;
+}
+
+.name-your-plan-container,
+.plan-cover-container {
+  margin: 2% auto;
+  text-align: left;
+  width: 50%;
+}
+
+.name-your-plan-container div {
+  margin-top: 4%;
+  font-family: '微軟正黑體';
+  font-size: 24px;
+  font-weight: bold;
+  color: #403d04;
+  letter-spacing: 1.5;
+}
+
+.name-your-plan-container div input {
+  width: 100%;
+  height: 40px;
+  border-style: none;
+  vertical-align: middle;
+  border-bottom: 3px solid #947f70;
+}
+
+.plan-cover-container {
+  margin-top: 4%;
+}
+
+.plan-cover-container p {
+  font-family: '微軟正黑體';
+  font-size: 24px;
+  font-weight: bold;
+  color: #403d04;
+  letter-spacing: 1.5;
+}
+
+.plan-cover-container .upload-cover-box span {
+  font-family: '微軟正黑體';
+  font-size: 15px;
+  color: #232323;
+  letter-spacing: 1.5;
+  line-height: 1.5;
+}
+
+.plan-cover-container .choose-cover-box {
+  margin-top: 1%;
+}
+
+.plan-cover-container .choose-cover-box .big-cover-post img {
+  width: 100%;
+  border: 3px solid #947f70;
+  border-radius: 13px;
+}
+
+.plan-cover-container .choose-cover-box .small-cover-pick-box {
+  width: 100%;
+  margin: 1% auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.plan-cover-container .choose-cover-box .small-cover-pick-box .small-cover-pic {
+  width: 150px;
+  height: 100px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 3px solid #947f70;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.plan-cover-container .choose-cover-box .small-cover-pick-box .small-cover-pic img {
+  width: 120%;
+}
+
+#finalize-my-plan,
+#confirm-and-buy-ticket {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  font-family: '微軟正黑體';
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #367473;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  display: block;
+  margin: 0 auto;
+}
+
+#finalize-my-plan:hover,
+#confirm-and-buy-ticket:hover {
+  top: 4px;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+}
+
+.confirmation-screen-flex-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.confirmation-screen-flex-group .confirmation-event-drop-area {
+  border-right: none;
+  width: 50%;
+}
+
+.confirmation-screen-flex-group .confirmation-event-drop-area .confirmation-event-oder-details-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.confirmation-screen-flex-group .confirmation-event-drop-area .confirmation-event-oder-details-container .confirmation-event-order {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-left: 2%;
+  width: 10%;
+}
+
+.confirmation-screen-flex-group .confirmation-event-drop-area .confirmation-event-oder-details-container .confirmation-event-order span {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  border: 2px solid #947f70;
+  font-family: '微軟正黑體';
+  font-size: 28px;
+  font-weight: bold;
+  color: #403d04;
+  letter-spacing: 1.5;
+  line-height: 40px;
+}
+
+.confirmation-screen-flex-group .confirmation-event-drop-area .confirmation-event-detail-box {
+  width: 86%;
+  cursor: default;
+}
+
+.confirmation-screen-flex-group .confirmation-event-drop-area .confirmation-event-detail-box:hover {
+  background: none;
+}
+
+.confirmation-screen-flex-group .confirmation-event-drop-area .confirmation-event-detail-box .event-txt-box {
+  width: 50%;
+}
+
+.confirmation-screen-flex-group .confirmation-right-container {
+  border-left: 5px dotted #aaa;
+  width: 50%;
+}
+
+.confirmation-screen-flex-group .confirmation-name-your-plan-container {
+  width: 96%;
+  text-align: left;
+  margin: 0 2% 30px 2%;
+}
+
+.confirmation-screen-flex-group .confirmation-name-your-plan-container div {
+  margin-top: 0;
+}
+
+.confirmation-screen-flex-group .confirmation-name-your-plan-container input {
+  width: 100%;
+  height: 40px;
+}
+
+.confirmation-screen-flex-group .confirmation-cover-map-container {
+  width: 100%;
+}
+
+.confirmation-screen-flex-group .confirmation-cover-map-container .confirmation-name-cover-container {
+  width: 96%;
+  margin: 0 2% 30px 2%;
+}
+
+.confirmation-screen-flex-group .confirmation-cover-map-container .confirmation-name-cover-container .confirmation-plan-cover-container {
+  width: 100%;
+  text-align: left;
+}
+
+.confirmation-screen-flex-group .confirmation-cover-map-container .confirmation-name-cover-container .confirmation-plan-cover-container .confirmation-big-cover-post img {
+  width: 99%;
+}
+
+.confirmation-check-map-box p {
+  font-family: '微軟正黑體';
+  font-size: 24px;
+  font-weight: bold;
+  color: #403d04;
+  letter-spacing: 1.5;
+  margin-left: 2%;
+}
+
+.confirmation-check-map-box img {
+  display: block;
+  width: 96%;
+  margin: 0 2% 30px 2%;
+}
+
+.confirm-buy-btn-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 100px;
+  margin-bottom: 100px;
+}
+
+.confirm-buy-btn-box #btn_confirm_my_plan {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  font-family: '微軟正黑體';
+  font-size: 18px;
+  font-weight: bold;
+  color: #eb715f;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #ffdb3f;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  display: block;
+  margin: 0 auto;
+}
+
+.confirm-buy-btn-box #btn_confirm_my_plan:hover {
+  top: 4px;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+}
+
+.confirm-buy-btn-box #btn_confirm_and_buy_ticket {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  font-family: '微軟正黑體';
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #367473;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  display: block;
+  margin: 0 auto;
+}
+
+.confirm-buy-btn-box #btn_confirm_and_buy_ticket:hover {
+  top: 4px;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+}
+
+#add_to_plan_list {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.671);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: block;
+  z-index: 5;
+}
+
+.lightbox-add-to-plan-list {
+  width: 30%;
+  height: 30vh;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 13px;
+  padding: 2%;
+}
+
+.lightbox-add-to-plan-list img {
+  width: 50%;
+  display: block;
+  margin: auto;
+  position: relative;
+  top: -30px;
+}
+
+.lightbox-add-to-plan-list h4 {
+  font-family: '微軟正黑體';
+  font-size: 28px;
+  font-weight: bold;
+  color: #718cc6;
+  letter-spacing: 1.5;
+  text-align: center;
+}
+
+.lightbox-add-to-plan-list p {
+  text-align: center;
+  margin: auto;
+}
+
+.lightbox-add-to-plan-list hr {
+  margin: 2% 5%;
+}
+
+.lightbox-add-to-plan-list div {
+  margin: 10%;
+  text-align: center;
+}
+
+.lightbox-add-to-plan-list div a {
+  width: 100px;
+  height: 30px;
+  text-align: center;
+  margin: auto;
+  line-height: 30px;
+  display: inline-block;
+  border: 1px solid #000;
+}
+
+.lightbox-add-to-plan-list div a:nth-child(1) {
+  float: left;
+}
+
+.lightbox-add-to-plan-list div a:nth-child(2) {
+  float: right;
+}
+
+.footer-try-image {
+  background: #fff;
+  background-size: contain;
+}
+
+@media screen and (max-width: 1200px) {
+  .desk_plan_div {
+    display: none;
+  }
+  .RWD_plan_div {
+    display: block;
+  }
+  .plan-container-step-one,
+  .plan-container-confirmation {
+    margin-bottom: 50px;
+  }
+  .plan-container-step-one,
+  .plan-container-step-two,
+  .plan-container-step-three,
+  .plan-container-confirmation {
+    width: 90%;
+  }
+  .plan-container-step-one h3 .plan-step,
+  .plan-container-step-two h3 .plan-step,
+  .plan-container-step-three h3 .plan-step,
+  .plan-container-step-four h3 .plan-step,
+  .plan-container-confirmation h3 .plan-step {
+    font-size: 18px;
+  }
+  .plan-container-step-one .bar-img-container {
+    display: block;
+    margin: 0 auto;
+  }
+  .plan-container-step-one .bar-img-container .bar-img-box {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px 5%;
+    background-color: antiquewhite;
+  }
+  .plan-container-step-two .all-event-container {
+    width: 100%;
+  }
+  .all-event-container .check_all_plan {
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    -webkit-transition: .3s;
+    transition: .3s;
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    font-family: '微軟正黑體';
+    font-size: 18px;
+    font-weight: bold;
+    color: #403d04;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #dae24b;
+    border-radius: 10px;
+    border: none;
+    -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+            box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+    border-bottom: 2px solid #ffdb3f;
+    width: 150px;
+    line-height: 50px;
+    display: block;
+    margin-left: 2%;
+    position: relative;
+  }
+  .all-event-container .check_all_plan:hover {
+    top: 4px;
+    -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+            box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+  }
+  .all-event-container .check_all_plan a {
+    color: #403d04;
+  }
+  .event-detail-box {
+    width: 100%;
+  }
+  .event-detail-box .event-cover {
+    width: 30%;
+  }
+  .event-detail-box .event-txt-box {
+    width: 60%;
+  }
+  .plan-container-step-three .name-cover-container {
+    margin: 5%;
+  }
+  .plan-container-step-three .name-cover-container .name-your-plan-container {
+    width: 100%;
+  }
+  .plan-container-step-three .name-cover-container .plan-cover-container {
+    width: 100%;
+  }
+  .plan-cover-container .choose-cover-box {
+    margin-top: 3%;
+  }
+  .confirmation-check-map-box img {
+    margin: 3% 2% 30px 2%;
+  }
+  .event-drop-area {
+    width: 40%;
+    border: none;
+  }
+  .event-drop-area .event-drop-circle {
+    width: 120px;
+    height: 120px;
+    line-height: 120px;
+  }
+  .confirmation-screen-flex-group .confirmation-right-container {
+    width: 56%;
+    margin-right: 2%;
+    padding-left: 2%;
+  }
+  .confirmation-screen-flex-group .confirmation-right-container .name-your-plan-container {
+    width: 98%;
+  }
+  .confirm-buy-btn-box #btn_confirm_my_plan {
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    -webkit-transition: .3s;
+    transition: .3s;
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    font-family: '微軟正黑體';
+    font-size: 18px;
+    font-weight: bold;
+    color: #eb715f;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #ffdb3f;
+    border-radius: 10px;
+    border: none;
+    -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+            box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+  }
+  .confirm-buy-btn-box #btn_confirm_my_plan:hover {
+    top: 4px;
+    -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+            box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+  }
+  .confirm-buy-btn-box #next-btn-pick-my-event,
+  .confirm-buy-btn-box #btn-confirm-and-buy-ticket {
+    cursor: pointer;
+    position: relative;
+    top: 0;
+    -webkit-transition: .3s;
+    transition: .3s;
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    font-family: '微軟正黑體';
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #367473;
+    border-radius: 10px;
+    border: none;
+    -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+            box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+  }
+  .confirm-buy-btn-box #next-btn-pick-my-event:hover,
+  .confirm-buy-btn-box #btn-confirm-and-buy-ticket:hover {
+    top: 4px;
+    -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+            box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+  }
+  .plan-container-confirmation::before {
+    background-image: url(../../images/new/number4.png);
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f8e958;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #dc719d;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #e13764;
+}
+
+.plan-container-step-one,
+.plan-container-step-two,
+.plan-container-step-three,
+.plan-container-confirmation {
+  width: 90%;
+}
+
+.plan-container-step-one h3 .plan-step,
+.plan-container-step-two h3 .plan-step,
+.plan-container-step-three h3 .plan-step,
+.plan-container-step-four h3 .plan-step,
+.plan-container-confirmation h3 .plan-step {
+  font-size: 18px;
+}
+
+.plan-container-step-one .bar-img-container {
+  display: block;
+  margin: 0 auto;
+}
+
+.plan-container-step-one .bar-img-container .bar-img-box {
+  width: 90%;
+  margin: 30px auto;
+  background-color: antiquewhite;
+}
+
+.plan-container-step-two .all-event-container {
+  width: 100%;
+}
+
+.event-detail-box {
+  width: 100%;
+}
+
+.event-detail-box .event-cover {
+  width: 30%;
+}
+
+.event-detail-box .event-txt-box {
+  width: 60%;
+}
+
+.plan-container-step-three .name-cover-container {
+  margin: 5%;
+}
+
+.plan-container-step-three .name-cover-container .name-your-plan-container {
+  width: 100%;
+}
+
+.plan-container-step-three .name-cover-container .plan-cover-container {
+  width: 100%;
+}
+
+.plan-cover-container .choose-cover-box {
+  margin-top: 3%;
+}
+
+.confirmation-check-map-box img {
+  margin: 3% 2% 30px 2%;
+}
+
+.event-drop-area {
+  width: 40%;
+  border: none;
+}
+
+.event-drop-area .event-drop-circle {
+  width: 120px;
+  height: 120px;
+  line-height: 120px;
+}
+
+.confirmation-screen-flex-group .confirmation-right-container {
+  width: 56%;
+  margin-right: 2%;
+  padding-left: 2%;
+}
+
+.confirmation-screen-flex-group .confirmation-right-container .name-your-plan-container {
+  width: 98%;
+}
+
+#back-btn,
+#btn-confirm-my-plan {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  font-family: '微軟正黑體';
+  font-size: 18px;
+  font-weight: bold;
+  color: #eb715f;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #ffdb3f;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
+#back-btn:hover,
+#btn-confirm-my-plan:hover {
+  top: 4px;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+}
+
+#next-btn-pick-my-event,
+#next-btn-name-cover,
+#next-btn-confirm,
+#btn-confirm-and-buy-ticket {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  font-family: '微軟正黑體';
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #f7bac2;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+}
+
+#next-btn-pick-my-event:hover,
+#next-btn-name-cover:hover,
+#next-btn-confirm:hover,
+#btn-confirm-and-buy-ticket:hover {
+  top: 4px;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+}
+/*# sourceMappingURL=planRWD.css.map */

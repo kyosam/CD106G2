@@ -1,0 +1,135 @@
+@import "../base/var";
+@import "../base/font";
+@import "../base/common";
+@import "../page/plan.scss";
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px; 
+}
+
+  /* Track */
+::-webkit-scrollbar-track {
+    background: #f8e958; 
+}
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #dc719d;
+    border-radius: 20px; 
+}
+
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #e13764; 
+}
+
+.plan-container-step-one, 
+.plan-container-step-two, 
+.plan-container-step-three, 
+.plan-container-confirmation {
+    width: 90%;
+    // height: 70vh;
+}
+.plan-container-step-one,
+.plan-container-step-two,
+.plan-container-step-three,
+.plan-container-step-four,
+.plan-container-confirmation {
+    h3 {
+        .plan-step {
+            font-size: 18px;
+        }
+    }
+}
+
+.plan-container-step-one {
+    .bar-img-container {
+        // outline: 1px solid red;
+        display: block;
+        margin: 0 auto;
+        .bar-img-box {
+            width: 90%;
+            margin: 30px auto;
+            background-color: antiquewhite;
+        }
+    }
+}
+
+.plan-container-step-two {
+    .all-event-container {
+        width: 100%;
+    }
+}
+
+.event-detail-box {
+    width: 100%;
+    .event-cover {
+        width: 30%;
+    }
+    .event-txt-box {
+        width: 60%;
+    }
+}
+
+.plan-container-step-three {
+    .name-cover-container {
+        margin: 5%;
+        .name-your-plan-container {
+            width: 100%;
+        }
+        .plan-cover-container {
+            width: 100%;
+
+        }
+    }
+}
+
+.plan-cover-container {
+    .choose-cover-box {
+        margin-top: 3%;
+    }    
+}
+
+.confirmation-check-map-box img {
+    margin: 3% 2% 30px 2%;
+}
+
+
+.event-drop-area {
+    width: 40%;
+    border: none;
+    .event-drop-circle {
+        width: 120px;
+        height: 120px;
+        line-height: 120px;
+    }
+}
+.confirmation-screen-flex-group{
+    .confirmation-right-container {
+        width: 56%;
+        margin-right: 2%;
+        padding-left: 2%;
+        .name-your-plan-container {
+            width: 98%;
+        }
+    }    
+}
+
+#back-btn,
+#btn-confirm-my-plan {
+    @include btn($red,$yellow);
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+  }
+
+#next-btn-pick-my-event,
+#next-btn-name-cover,
+#next-btn-confirm,
+#btn-confirm-and-buy-ticket {
+  @include btn($white,$pink);
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+}

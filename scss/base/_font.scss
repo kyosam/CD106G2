@@ -1,0 +1,40 @@
+div, h1, h2, h3, h4, h5, h6, p, span {
+    font-family: '微軟正黑體';
+    letter-spacing: 1.5;
+}
+
+//首頁各大標題: 大標題
+@mixin big-title($color) {
+    font-family: '微軟正黑體';
+    font-size: 34px;
+    color: $color;
+    font-weight: bold;
+    letter-spacing: 1.5;
+}
+
+//內頁標題: 中標題
+@mixin md-title($color) {
+    font-family: '微軟正黑體';
+    font-size: 28px;
+    font-weight: bold;
+    color: $color;
+    letter-spacing: 1.5;
+}
+
+//手札卡片等標題: 小標題
+@mixin sm-title($color) {
+    font-family: '微軟正黑體';
+    font-size: 24px;
+    font-weight: bold;
+    color: $color;
+    letter-spacing: 1.5;
+}
+
+//內文文字
+@mixin bodyP {
+    font-family: '微軟正黑體';
+    font-size: 15px;
+    color: #232323;
+    letter-spacing: 1.5;
+    line-height: 1.5;
+}

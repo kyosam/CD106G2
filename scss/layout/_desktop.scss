@@ -1,0 +1,42 @@
+.wrap {
+//<<<<<<< HEAD
+    width: 100%;
+    max-width: $dt;
+    margin: 200px auto 0;
+    position: relative; 
+    z-index: 1;
+//=======
+  width: 100%;
+  max-width: $dt;
+  margin: 200px auto 0;
+  position: relative; 
+  z-index: 1;
+//>>>>>>> order
+}
+
+body {
+  background-repeat: no-repeat;
+  background-image: linear-gradient( to bottom,  rgba(248,219,219,1) 0%, rgba(229,248,250,1) 90% );
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px; 
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #DAB980; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #67BE8D;
+    border-radius: 20px; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3BA261; 
+  }
+

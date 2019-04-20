@@ -1,0 +1,163 @@
+@import "../base/_var";
+@import "../base/_reset";
+@import "../layout/_header";
+@import "../layout/_desktop";
+@import "../base/_common";
+@import "../base/_font";
+
+//全部活動 allPlan的樣式
+
+.all-plan-title {
+    // outline: 1px solid red;
+    position: relative;
+    img {
+        display: block;
+        margin: 0 auto 70px;
+        max-width: 300px;
+        height: auto;
+        border: 2px solid red;
+    }
+    h2 {
+        display: none;
+    }
+}
+
+.explain-icons {
+    // width: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: flex;
+    outline: 2px solid red;
+    .icons-all {
+        align-items: flex-end;
+        img {
+            display: block;
+            width: 60px;
+            height: 60px;
+            margin: 0 10px;
+        }
+        span {
+            // outline: 1px solid red;
+            @include bodyP;
+            // color: $white;
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+        }
+    }
+}
+
+// @mixin picShape {
+//     -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+//     clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+// }
+
+.allPlan-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    // align-items: center;
+    // outline: 1px solid red;
+    margin-bottom: 60px;
+    .allPlan-box{
+        box-sizing: border-box;
+        width: 33.33333333333%;
+        // outline: 1px solid red;
+        transition: all .5s ease-in-out;        
+        h2 {
+        @include sm-title($blue);
+        font-weight: bold;
+        width: 150px;
+        margin: 0 auto 30px;
+        padding: 10px 0;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 5px;
+        position: relative;
+        transition: all .5s ease-out;
+        &::after {
+            content:'';
+            width: 0px;
+            height: 0px;
+            border-color: #fff #fff transparent transparent;
+            border-style: solid solid solid solid;
+            border-width: 10px 5px 10px 5px;
+            position: absolute;
+            top: 40px;
+            left: 10px;
+            }
+        }            
+        &:hover {
+            transform: scale(1.1);
+            transition: all .5s ease-out;
+            h2 {
+                color: $doubledarkGreen;
+                transition: all .5s ease-out;
+            }        
+        }           
+        .allPlan-pic {
+            width: 80%;
+            position: relative;
+            left: 7%;
+            img {
+                width: 100%;
+                border: 5px solid white;
+                border-radius: 13px;                
+            }
+        }
+    }
+}
+
+.allPlan-value-table {
+    margin: 10px auto 0;
+
+    td {
+        @include bodyP;
+        padding: 5px;
+        vertical-align: middle;
+        img {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+#goToPlan {
+    @include btn($white, $pink);
+    display: block;
+    width: 150px;
+    margin: 20px auto 60px;
+    height: 50px;
+    line-height: 50px;
+}
+
+@media screen and (max-width:768px){
+
+    ::-webkit-scrollbar {
+        display: none; 
+    }
+
+    .allPlan-group {
+        width: 100%;
+        display: block;
+        margin-bottom: 0;
+        .allPlan-box {
+            width: 100%;
+            margin-bottom: 70px;
+            .allPlan-pic {
+                width: 90%;
+                margin: 0 5%;
+                left: 0;
+                img {
+                    border: 0; 
+                    box-shadow: 3px 3px 2px $white;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+

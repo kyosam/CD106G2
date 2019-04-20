@@ -1,0 +1,32 @@
+svg {
+	position: absolute; 
+	top: 25%;
+	/* outline: 1px solid red; */
+}
+
+#ani1 {
+	width: 100%; 
+	/* background: rgb(238, 175, 156); */
+}
+
+#white-ring {
+	fill: none; 
+	stroke: #fff;
+	stroke-width: 14;
+}
+
+#yellow-ring {
+	fill: none; 
+	stroke: #fff5ab;
+	stroke-width: 20;
+}
+
+#sunshine {
+	stroke: #fff;
+	stroke-width: 15;
+	stroke-linejoin: round;
+}
+
+#cloud {
+	fill: #fff;
+}

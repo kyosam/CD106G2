@@ -1,0 +1,909 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle farthest-corner at 10% 20%, #f8dbdb 0%, #e5f8fa 90%);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+nav #header-cloud-ani {
+  position: fixed;
+  z-index: -1;
+  display: block;
+  left: 0;
+  top: 0;
+  height: 140px;
+  width: 100%;
+  -webkit-animation: uupDown 5s .5s linear infinite alternate;
+          animation: uupDown 5s .5s linear infinite alternate;
+}
+
+nav #header-cloud-anii {
+  position: fixed;
+  z-index: -1;
+  display: block;
+  left: 0;
+  top: 0;
+  height: 140px;
+  width: 100%;
+  opacity: 0.5;
+  -webkit-animation: upDown 2s 5s linear infinite alternate;
+          animation: upDown 2s 5s linear infinite alternate;
+}
+
+nav #forester-logo {
+  width: 100px;
+}
+
+nav #small-forester-logo {
+  display: none;
+}
+
+nav #header-member {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+}
+
+nav #header-member img {
+  width: 50px;
+  height: 50px;
+}
+
+nav .header-background-cloud {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+nav .header-background-cloud ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style: none;
+  margin: 10px  auto;
+}
+
+nav .header-background-cloud ul span {
+  display: none;
+}
+
+nav .header-background-cloud ul li {
+  display: inline-block;
+}
+
+nav .header-background-cloud ul li a {
+  font-size: 22px;
+  font-family: 微軟正黑體;
+  font-weight: bold;
+  color: #008c95;
+}
+
+@-webkit-keyframes upDown {
+  0% {
+    top: 0;
+  }
+  20% {
+    top: -3px;
+  }
+  40% {
+    top: -8px;
+  }
+  60% {
+    top: -5px;
+  }
+  80% {
+    top: -8px;
+  }
+  100% {
+    top: -4px;
+  }
+}
+
+@keyframes upDown {
+  0% {
+    top: 0;
+  }
+  20% {
+    top: -3px;
+  }
+  40% {
+    top: -8px;
+  }
+  60% {
+    top: -5px;
+  }
+  80% {
+    top: -8px;
+  }
+  100% {
+    top: -4px;
+  }
+}
+
+@-webkit-keyframes uupDown {
+  0% {
+    top: 0;
+  }
+  20% {
+    top: -5px;
+  }
+  40% {
+    top: -18px;
+  }
+  60% {
+    top: -5px;
+  }
+  80% {
+    top: -17px;
+  }
+  100% {
+    top: -5px;
+  }
+}
+
+@keyframes uupDown {
+  0% {
+    top: 0;
+  }
+  20% {
+    top: -5px;
+  }
+  40% {
+    top: -18px;
+  }
+  60% {
+    top: -5px;
+  }
+  80% {
+    top: -17px;
+  }
+  100% {
+    top: -5px;
+  }
+}
+
+/*手機漢堡堡*/
+@media screen and (max-width: 767px) {
+  nav #header-cloud-ani, nav #header-cloud-anii {
+    display: none;
+  }
+  nav .header-background-cloud {
+    background-color: #fff;
+    width: 100%;
+    height: 10vh;
+    margin: auto;
+    z-index: -100;
+    position: relative;
+  }
+  nav .header-background-cloud span {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    position: relative;
+  }
+  nav .header-background-cloud ul {
+    margin: auto;
+    display: block;
+    z-index: 10;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0;
+  }
+  nav .header-background-cloud ul #forester-logo {
+    display: none;
+  }
+  nav .header-background-cloud ul li {
+    margin: 20% auto;
+    text-align: center;
+    display: block;
+    z-index: 10;
+  }
+  nav .header-background-cloud ul li a {
+    font-size: 22px;
+    font-family: 微軟正黑體;
+    font-weight: bold;
+    color: #008c95;
+  }
+  nav #small-forester-logo {
+    position: fixed;
+    display: block;
+    top: 10px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1000;
+    width: 100px;
+  }
+  .icon {
+    position: fixed;
+    top: 3vh;
+    left: 15px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+  .hamburger {
+    width: 50px;
+    height: 5px;
+    background-color: #008c95;
+    position: absolute;
+    z-index: 1000;
+    top: 20px;
+  }
+  .hamburger::before, .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 5px;
+    background: #008c95;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    -webkit-transition: top .5s;
+    transition: top .5s;
+  }
+  .hamburger::before {
+    top: -10px;
+  }
+  .hamburger::after {
+    top: 10px;
+  }
+}
+
+.icon.active .hamburger {
+  background: rgba(0, 0, 0, 0);
+  -webkit-transition: top .5s;
+  transition: top .5s;
+}
+
+.icon.active .hamburger::before {
+  top: 0px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: top .5s;
+  transition: top .5s;
+}
+
+.icon.active .hamburger::after {
+  top: 0px;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  -webkit-transition: top .5s;
+  transition: top .5s;
+}
+
+@-webkit-keyframes show_span {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes show_span {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes noshow_span {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes noshow_span {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin: 200px auto 0;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 200px auto 0;
+  position: relative;
+  z-index: 1;
+}
+
+body {
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f8dbdb), color-stop(90%, #e5f8fa));
+  background-image: linear-gradient(to bottom, #f8dbdb 0%, #e5f8fa 90%);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #DAB980;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #67BE8D;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3BA261;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button {
+  outline: none;
+}
+
+.clearfix {
+  clear: both;
+}
+
+div, h1, h2, h3, h4, h5, h6, p, span {
+  font-family: '微軟正黑體';
+  letter-spacing: 1.5;
+}
+
+.header-space {
+  height: 150px;
+}
+
+.blogContent {
+  max-width: 1200px;
+  margin: auto;
+  background-color: #f6d5a7;
+  border-radius: 10px;
+  padding: 3%;
+}
+
+.blogContent .blogContent-heading {
+  margin: 10px 0;
+}
+
+.blogContent .blogContent-heading h2 {
+  font-family: '微軟正黑體';
+  font-size: 28px;
+  font-weight: bold;
+  color: #eb715f;
+  letter-spacing: 1.5;
+}
+
+.blogContent .blogContent-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.blogContent .blogContent-info .blogContent-author img {
+  width: 25px;
+  height: 25px;
+}
+
+.blogContent .blogContent-info .blogContent-author span {
+  font-family: '微軟正黑體';
+  font-size: 15px;
+  color: #232323;
+  letter-spacing: 1.5;
+  line-height: 1.5;
+  vertical-align: top;
+}
+
+.blogContent .blogContent-info .blogContent-share img {
+  width: 25px;
+  height: 25px;
+}
+
+.blogContent .blogContent-photo {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.blogContent .blogContent-photo img {
+  width: 80%;
+}
+
+.blogContent .blogContent-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@media screen and (max-width: 768px) {
+  .blogContent .blogContent-wrap {
+    display: block;
+  }
+}
+
+.blogContent .blogContent-content {
+  width: 50%;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .blogContent .blogContent-content {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+.blogContent .blogContent-content p {
+  margin: 10px 0;
+  padding: 10%;
+  width: 80%;
+}
+
+.blogContent .blogContent-graphic {
+  width: 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .blogContent .blogContent-graphic {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+.blogContent .blogContent-event-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 100%;
+  margin: 20px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .blogContent .blogContent-event-wrap {
+    width: 100%;
+  }
+}
+
+.blogContent .blogContent-event-wrap .blogContent-event {
+  cursor: pointer;
+  width: 80%;
+  border: #111 solid 2px;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  padding: 2%;
+  margin: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .blogContent .blogContent-event-wrap .blogContent-event {
+    width: 100%;
+  }
+}
+
+.blogContent .blogContent-event-wrap .blogContent-event:hover {
+  background-color: #fdf7bd;
+}
+
+@media screen and (max-width: 768px) {
+  .blogContent .blogContent-event-wrap .blogContent-event {
+    margin: 10px auto;
+  }
+}
+
+.blogContent .blogContent-event-wrap .blogContent-event img {
+  width: 35%;
+  margin: auto;
+  text-align: center;
+  vertical-align: top;
+}
+
+@media screen and (max-width: 768px) {
+  .blogContent .blogContent-event-wrap .blogContent-event img {
+    width: 35%;
+  }
+}
+
+.blogContent .blogContent-event-wrap .blogContent-event .blogContent-event-info {
+  display: inline-block;
+  text-align: start;
+  width: 60%;
+}
+
+.blogContent .blogContent-event-wrap .blogContent-event .blogContent-event-info .event-name {
+  font-family: '微軟正黑體';
+  font-size: 28px;
+  font-weight: bold;
+  color: #718cc6;
+  letter-spacing: 1.5;
+  display: inline-block;
+}
+
+.blogContent .blogContent-event-wrap .blogContent-event .blogContent-event-info .event-value-table img {
+  width: 25px;
+}
+
+.blogContent .blogContent-event-wrap .blogContent-event .blogContent-event-info .event-value-table td {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.blogContent .blogContent-event-wrap .blogContent-event .blogContent-event-info .avgScore span {
+  color: #3ba261;
+}
+
+.blogContent .blogContent-event-wrap .blogContent-event .blogContent-event-info .avgScore img {
+  width: 20px;
+  height: 20px;
+}
+
+.blogContent .blogContent-event-wrap .blogContent-event .blogContent-event-info .event-price {
+  text-align: end;
+}
+
+.blogContent .blogContent-location {
+  text-align: center;
+}
+
+.blogContent .blogContent-location img {
+  width: 80%;
+}
+
+.blogContent .blogContent-btnContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  vertical-align: middle;
+  margin: 20px 0;
+  font-family: '微軟正黑體';
+  font-size: 15px;
+  color: #232323;
+  letter-spacing: 1.5;
+  line-height: 1.5;
+}
+
+.blogContent .blogContent-btnContainer .blogLikeBtn {
+  margin: 0 10px;
+}
+
+.blogContent .blogContent-btnContainer .blogLikeBtn span {
+  vertical-align: 5px;
+}
+
+.blogContent .blogContent-btnContainer .blogLikeBtn img {
+  width: 25px;
+  height: 25px;
+}
+
+.blogContent .blogContent-btnContainer .blogCommentBtn {
+  margin: 0 10px;
+}
+
+.blogContent .blogContent-btnContainer .blogCommentBtn span {
+  vertical-align: 5px;
+}
+
+.blogContent .blogContent-btnContainer .blogCommentBtn img {
+  width: 25px;
+  height: 25px;
+}
+
+.blogContent .blogContent-btnContainer button {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  font-family: '微軟正黑體';
+  font-size: 18px;
+  font-weight: bold;
+  color: #eb715f;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #ffdb3f;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  width: 150px;
+}
+
+.blogContent .blogContent-btnContainer button:hover {
+  top: 4px;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+}
+
+.blogContent .comment {
+  max-width: 1200px;
+  margin-top: 10%;
+  padding: 5%;
+  background-color: #d79c58;
+  border-radius: 10px;
+}
+
+.blogContent .comment .comment-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .blogContent .comment .comment-item {
+    display: block;
+    margin: auto;
+  }
+}
+
+.blogContent .comment .comment-item .comment-author {
+  text-align: center;
+  margin: 10px;
+}
+
+.blogContent .comment .comment-item .comment-author img {
+  width: 100px;
+  height: 100px;
+}
+
+.blogContent .comment .comment-item .comment-SendContent {
+  background-color: #fff;
+  border-radius: 10px;
+  width: 80%;
+  padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .blogContent .comment .comment-item .comment-SendContent {
+    margin: auto;
+  }
+}
+
+.blogContent .comment .comment-item .comment-SendContent div {
+  height: 80%;
+  text-align: start;
+}
+
+.blogContent .comment .comment-item .comment-SendContent .comment-date {
+  height: 20%;
+}
+
+.blogContent .comment .comment-item button {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  font-family: '微軟正黑體';
+  font-size: 18px;
+  font-weight: bold;
+  color: #eb715f;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #ffdb3f;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  margin: 10px;
+}
+
+.blogContent .comment .comment-item button:hover {
+  top: 4px;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+}
+
+.blogContent .comment .comment-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.blogContent .comment .comment-input form textarea {
+  width: 500px;
+  height: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .blogContent .comment .comment-input form textarea {
+    width: 80%;
+  }
+}
+
+.blogContent .comment .comment-input form input {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  font-family: '微軟正黑體';
+  font-size: 18px;
+  font-weight: bold;
+  color: #eb715f;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #ffdb3f;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  position: relative;
+  top: -40%;
+  margin: 10px;
+}
+
+.blogContent .comment .comment-input form input:hover {
+  top: 4px;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+}
+
+@media screen and (max-width: 768px) {
+  .blogContent .comment .comment-input form input {
+    top: 0;
+  }
+}
+
+.blogContent-seemore {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  text-align: center;
+  margin: auto;
+}
+
+.blogContent-seemore button {
+  margin: 10px;
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  font-family: '微軟正黑體';
+  font-size: 18px;
+  font-weight: bold;
+  color: #eb715f;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #ffdb3f;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  width: 150px;
+}
+
+.blogContent-seemore button:hover {
+  top: 4px;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+}
+/*# sourceMappingURL=blogContent.css.map */
