@@ -390,7 +390,6 @@ nav .header-background-cloud ul li a {
   margin: 200px auto 0;
   position: relative;
   z-index: 1;
-  outline: 2px solid red;
   width: 100%;
   max-width: 1200px;
   margin: 200px auto 0;
@@ -443,38 +442,199 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   letter-spacing: 1.5;
 }
 
-* {
-  outline: 1px solid gray;
-}
-
 body {
   font-family: "微軟正黑體", Arial;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.step_group {
-  margin: auto;
-  padding-top: 10px;
+.wrap_bg {
+  width: 100%;
+  overflow: hidden;
   position: relative;
 }
 
-.step_group::after {
-  content: '';
-  display: inline-block;
-  width: 80%;
-  height: 8px;
-  background-color: rgba(255, 255, 255, 0.74);
+.wrap_bg .cloud1_bg {
+  background-image: url(/images/order/Cloud1.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
   position: absolute;
-  top: 10px;
-  right: 0;
-  bottom: 0;
+  top: 10%;
+  left: -80%;
+  z-index: -1;
+}
+
+.wrap_bg .airBalloon {
+  background-image: url(/images/order/airballoon.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 80%;
+  height: 70%;
+  position: absolute;
+  bottom: -600px;
+  z-index: -2;
+}
+
+.wrap_bg .light_box_wrap {
+  display: none;
+  background-color: rgba(192, 191, 191, 0.466);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+}
+
+.wrap_bg .light_box_wrap .light_box {
+  width: 80vw;
+  height: 60vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  margin: auto;
+  top: 100px;
   left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  position: fixed;
+  z-index: 1;
+}
+
+.wrap_bg .light_box_wrap .light_box #drawing_canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   margin: auto;
   z-index: -1;
 }
 
-.step_group .step_process {
+.wrap_bg .light_box_wrap .light_box::before {
+  content: '';
+  display: block;
+  background-image: url(/images/order/done_bg.png);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-repeat: no-repeat;
+  background-size: 100% 102%;
+  z-index: -1;
+}
+
+.wrap_bg .light_box_wrap .light_box::after {
+  content: '';
+  display: block;
+  background-image: url(/images/order/child.png);
+  width: 23%;
+  height: 28%;
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.wrap_bg .light_box_wrap .light_box h3 {
+  font-family: '微軟正黑體';
+  font-size: 28px;
+  font-weight: bold;
+  color: #403c04;
+  letter-spacing: 1.5;
+  margin: 3vh;
+  line-height: 1.2;
+}
+
+.wrap_bg .light_box_wrap .light_box .close {
+  width: 30px;
+  height: 30px;
+  float: right;
+  margin: 15px 15px 0 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.wrap_bg .light_box_wrap .light_box .close > img {
+  width: 100%;
+}
+
+.wrap_bg .light_box_wrap .light_box .close::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.wrap_bg .light_box_wrap .light_box .close:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.wrap_bg .light_box_wrap .light_box .qr_code {
+  width: 30%;
+  margin: auto;
+}
+
+.wrap_bg .light_box_wrap .light_box .qr_code > img {
+  width: 100%;
+}
+
+.wrap_bg .light_box_wrap .light_box > p {
+  display: inline-block;
+  font-size: 20px;
+  margin: 20px 0 13px 0;
+  color: #403c04;
+  font-weight: 500;
+}
+
+.wrap_bg .light_box_wrap .light_box > a {
+  display: block;
+  width: 50%;
+  height: 20px;
+  margin: auto;
+  font-size: 20px;
+  color: #367473;
+}
+
+@media screen and (min-width: 768px) {
+  .wrap_bg .light_box_wrap .light_box {
+    width: 550px;
+    height: 380px;
+  }
+  .wrap_bg .light_box_wrap .light_box::after {
+    content: '';
+    height: 50%;
+  }
+  .wrap_bg .light_box_wrap .light_box .qr_code {
+    width: 150px;
+    height: 150px;
+  }
+  .wrap_bg .light_box_wrap .light_box > a {
+    width: 120px;
+  }
+}
+
+.wrap {
+  position: relative;
+}
+
+.wrap::before {
+  content: '';
+  display: block;
+  background-image: url(/images/order/fly1.gif);
+  width: 100%;
+  height: 100px;
+  background-size: contain;
+  position: absolute;
+  background-repeat: no-repeat;
+  top: 12%;
+  bottom: 0;
+}
+
+.step_group {
+  margin: auto;
+  padding-top: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -482,36 +642,34 @@ body {
       justify-content: space-around;
 }
 
-.step_group .step_process li {
-  position: relative;
-}
-
-.step_group .step_process li::after {
-  content: '';
-  min-width: 85px;
-  min-height: 84px;
-  background-image: url(../images/lightCircle.png);
-  background-size: contain;
-  position: absolute;
-  top: -7px;
-  left: -7px;
-  -webkit-animation: 20s linear rot infinite;
-          animation: 20s linear rot infinite;
-}
-
-.step_group .step_process > li {
-  display: inline-block;
+.step_group .step_process {
   width: 70px;
   height: 70px;
-  background-color: sandybrown;
+  background-color: #f39e58;
   border-radius: 50%;
-  color: #fff;
-  font-family: '微軟正黑體';
-  font-size: 15px;
   text-align: center;
-  line-height: 4.7;
-  border: 2px solid #fff;
+  font-size: 14px;
+  line-height: 5;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: #fff;
+  -webkit-box-shadow: white 0px 0px 8px 5px;
+          box-shadow: white 0px 0px 8px 5px;
   position: relative;
+}
+
+.step_group .step_process .process_light {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: -36%;
+  left: -35%;
+  -webkit-animation: 30s linear rot infinite;
+          animation: 30s linear rot infinite;
+}
+
+.step_group .step_process .process_light > img {
+  width: 100%;
 }
 
 @-webkit-keyframes rot {
@@ -537,23 +695,17 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .step_group .step_process > li {
+  .step_group .step_process {
     width: 100px;
     height: 100px;
-    font-size: 20px;
-    line-height: 5;
+    line-height: 5.4;
+    font-size: 18px;
   }
-  .step_group .step_process li::after {
-    content: '';
-    min-width: 120px;
-    min-height: 119px;
-    background-image: url(../images/lightCircle.png);
-    background-size: contain;
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    -webkit-animation: 20s linear rot infinite;
-            animation: 20s linear rot infinite;
+  .step_group .step_process .process_light {
+    top: -35%;
+    left: -33%;
+    width: 165px;
+    height: 170px;
   }
 }
 
@@ -589,7 +741,7 @@ body {
 .order_container .calendar .box .calender_mon_title {
   text-align: center;
   margin-bottom: 25px;
-  color: #fff;
+  color: #8d4a16;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-size: 24px;
@@ -652,6 +804,10 @@ body {
   /*浅灰色*/
 }
 
+.light ul > li {
+  color: #8d4a16;
+}
+
 .dark {
   color: #8d4a16;
   /*今日後的字體顏色*/
@@ -663,6 +819,7 @@ body {
 }
 
 .c_box {
+  border-radius: 10%;
   border: 1px solid #fff;
   background: #ffbfcb;
   /*當日背景色*/
@@ -688,6 +845,21 @@ body {
 
 .ticket .ticket_group .t_content {
   margin: 20px 5px 5px 5px;
+  position: relative;
+}
+
+.ticket .ticket_group .t_content::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(/images/order/ticketBgM.png);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .ticket .ticket_group .t_content img {
@@ -721,6 +893,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  margin: 10px 0px 10px 50px;
 }
 
 .ticket .ticket_group .t_content .t_w .t_txt > span {
@@ -752,6 +925,12 @@ body {
   outline: 0;
   cursor: pointer;
   margin: 0 5%;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.ticket .ticket_group .t_content .t_w .t_quantity .t_less:hover, .ticket .ticket_group .t_content .t_w .t_quantity .t_add:hover {
+  background-color: #f1954a;
 }
 
 .ticket .ticket_group .t_content .t_w .t_quantity .t_less i, .ticket .ticket_group .t_content .t_w .t_quantity .t_add i {
@@ -764,10 +943,15 @@ body {
   width: 50%;
   height: 38px;
   background-color: #fff;
-  line-height: 2.3;
+  line-height: 2.1;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 @media screen and (min-width: 768px) {
+  .ticket {
+    margin: 0;
+  }
   .ticket .ticket_group {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
@@ -778,6 +962,11 @@ body {
   }
   .ticket .ticket_group .t_content {
     position: relative;
+  }
+  .ticket .ticket_group .t_content::after {
+    content: '';
+    position: relative;
+    display: none;
   }
   .ticket .ticket_group .t_content img {
     display: block;
@@ -855,6 +1044,18 @@ body {
   display: flex;
 }
 
+.process_light {
+  display: none;
+}
+
+.process_light.roll {
+  display: block;
+}
+
+.first_sun {
+  display: block;
+}
+
 .activity_container {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -888,6 +1089,29 @@ body {
   position: relative;
 }
 
+.activity_container .activity_group .a_item::after {
+  content: '';
+  display: block;
+  background-image: url(/images/order/bear.png);
+  width: 100px;
+  height: 150px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 100px;
+  left: 120px;
+  z-index: -2;
+  -webkit-transform: rotate(-20deg);
+          transform: rotate(-20deg);
+  -webkit-transition: 0.5s cubic-bezier(0.32, 1.28, 0.61, -0.16);
+  transition: 0.5s cubic-bezier(0.32, 1.28, 0.61, -0.16);
+}
+
+.activity_container .activity_group .a_item:hover::after {
+  top: 0;
+  left: 0;
+}
+
 .activity_container .activity_group .a_item h4 {
   font-family: '微軟正黑體';
   font-size: 24px;
@@ -909,6 +1133,8 @@ body {
   font-size: 16px;
   color: #fff;
   border-radius: 5px;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
 .activity_container .activity_group .a_item button:hover {
@@ -1001,17 +1227,6 @@ body {
   position: relative;
 }
 
-.confirm_container .confirm_box::after {
-  content: '';
-  background-image: url(/images/order/woodFrame.png);
-  width: 100%;
-  height: 20%;
-  background-size: contain;
-  background-repeat: repeat-x;
-  position: absolute;
-  bottom: 2%;
-}
-
 .confirm_container .confirm_box h3 {
   font-family: '微軟正黑體';
   font-size: 28px;
@@ -1072,6 +1287,21 @@ body {
   }
   .confirm_container .confirm_box {
     width: 50%;
+    width: 100%;
+    height: 300px;
+    vertical-align: middle;
+    margin: 2%;
+    position: relative;
+  }
+  .confirm_container .confirm_box::after {
+    content: '';
+    background-image: url(/images/order/woodFrame.png);
+    width: 100%;
+    height: 20%;
+    background-size: contain;
+    background-repeat: repeat-x;
+    position: absolute;
+    bottom: 2%;
   }
   .confirm_container .confirm_box .confirm {
     height: 205px;
@@ -1101,9 +1331,10 @@ body {
   font-family: '微軟正黑體';
   font-size: 28px;
   font-weight: bold;
-  color: #fff;
+  color: #403c04;
   letter-spacing: 1.5;
   margin-bottom: 3vh;
+  text-align: center;
 }
 
 .ct_rule > p {
@@ -1214,7 +1445,7 @@ body {
 .ct_credit .ct_credit_txt ul .ct_icon i {
   font-size: 30px;
   padding: 0 5px;
-  color: #fff;
+  color: #9e9a95;
 }
 
 @media screen and (min-width: 768px) {
@@ -1226,14 +1457,11 @@ body {
     width: 50%;
     padding: 20px;
   }
+  .credit_container .ct_rule h3, .credit_container .ct_credit h3 {
+    text-align: left;
+  }
   .credit_container .ct_rule {
     padding-left: 15%;
   }
-}
-
-.box111 {
-  width: 100px;
-  height: 100px;
-  background-color: #fff;
 }
 /*# sourceMappingURL=order.css.map */

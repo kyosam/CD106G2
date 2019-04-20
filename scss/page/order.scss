@@ -6,62 +6,239 @@
 @import "../base/_font.scss";
 
 //step
-*{
-    outline: 1px solid gray;
-}
+// *{
+//     outline: 1px solid gray;
+// }
 body{
     font-family: "微軟正黑體", Arial;
     box-sizing: border-box;
 }
+
+.wrap_bg{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    .cloud1_bg{
+        background-image: url(/images/order/Cloud1.png);
+        // background-size: contain;
+        background-repeat: no-repeat;
+        // width: 80%;
+        // height: 70%;
+        //新增
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        //
+        position: absolute;
+        top: 10%;
+        left: -80%;
+        z-index: -1;
+    }
+    .airBalloon{
+        background-image: url(/images/order/airballoon.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 80%;
+        height: 70%;
+        position: absolute;
+        bottom: -600px;
+        // left: 100px;
+        z-index: -2;
+    }
+    .light_box_wrap{
+        display: none;
+        background-color: rgba(192, 191, 191, 0.466);
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: 100;
+        .light_box{
+            // width: 550px;
+            // height: 380px;
+            //新增
+            width: 80vw;
+            height: 60vh;
+            //
+            box-sizing: border-box;
+            position: absolute;
+            margin: auto;
+            top: 100px;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            text-align: center;
+            position: fixed;
+            z-index: 1;
+            #drawing_canvas{
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                z-index: -1;
+            }
+            &::before{
+                content: '';
+                display: block;
+                background-image: url(/images/order/done_bg.png);
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                background-repeat: no-repeat;
+                background-size: 100% 102%;
+                z-index: -1;
+            }
+            &::after{
+                content: '';
+                display: block;
+                background-image: url(/images/order/child.png);
+                width: 23%;
+                // height: 50%;
+                height: 28%;
+                position: absolute;
+                bottom: 0;
+                left: 10px;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            h3{
+                @include md-title(#403c04);
+                margin: 3vh;
+                line-height: 1.2;
+            }
+            .close{
+                width: 30px;
+                height: 30px;
+                float: right;
+                margin: 15px 15px 0 0;
+                transition: .3s;
+                >img{
+                    width: 100%;
+                }
+                &::after{
+                    content: '';
+                    display: block;
+                    clear: both;
+                }
+                &:hover{
+                    transform: scale(1.2);
+                }
+            }
+            .qr_code{
+                // width: 150px;
+                // height: 150px;
+                //新增
+                width: 30%;
+                //
+                margin: auto;
+                >img{
+                    width: 100%;
+                }
+            }
+            >p{
+                display: inline-block;
+                font-size: 20px;
+                margin: 20px 0 13px 0;
+                color: #403c04;
+                font-weight: 500;
+            }
+            >a{
+                display: block;
+                // width: 120px;
+                //
+                width: 50%;
+                //
+                height: 20px;
+                margin: auto;
+                font-size: 20px;
+                color: $doubledarkGreen;
+            }
+        }
+    }
+}
+@media screen and (min-width:768px){
+    .wrap_bg{
+        .light_box_wrap{
+            .light_box{
+                width: 550px;
+                height: 380px;
+                &::after{
+                    content: '';
+                    height: 50%;
+                }
+                .qr_code{
+                    width: 150px;
+                    height: 150px;
+                }
+                >a{
+                    width: 120px;
+                }
+            }
+        }
+    }
+}
+
+
+.wrap{
+    position: relative;
+    &::before{
+        content: '';
+        display: block;
+        background-image: url(/images/order/fly1.gif);
+        width: 100%;
+        height: 100px;
+        background-size: contain;
+        position: absolute;
+        background-repeat: no-repeat;
+        top: 12%;
+        bottom: 0;
+    }
+}
+
 .step_group{
     margin: auto;
     padding-top: 10px;
-    position: relative;
-    &::after{
-        content: '';
-        display: inline-block;
-        width: 80%;
-        height: 8px;
-        background-color: rgba(255, 255, 255, 0.74);
-        position: absolute;
-        top: 10px;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        margin: auto;
-        z-index: -1;
-    }
+    display: flex;
+    justify-content: space-around;
     .step_process{
-        display: flex; 
-        justify-content: space-around;
-        li{
-            position: relative;
-        }
-        li::after{
-            content: '';
-            min-width: 85px;
-            min-height: 84px;
-            background-image: url(../images/lightCircle.png);
-            background-size: contain;
-            position: absolute;
-            top: -7px;
-            left: -7px;
-            animation: 20s linear rot infinite;
-        }
-    }
-    .step_process > li{
-        display: inline-block;
-        width: 70px; //本來100%
-        height: 70px; //本來100%
-        background-color: sandybrown;
+        // width: 100px;
+        // height: 100px;
+        //新增
+        width: 70px;
+        height: 70px;
+        //
+        background-color: #f39e58;
         border-radius: 50%;
-        color: #fff;
-        font-family: '微軟正黑體';
-        font-size: 15px; //20px
         text-align: center;
-        line-height: 4.7; //5
-        border: 2px solid #fff;
+        // line-height: 5.4;
+        // font-size: 18px;
+        //新增
+        font-size: 14px;
+        line-height: 5;
+        //
+        font-weight: 500;
+        letter-spacing: 2px;
+        color: #fff;
+        box-shadow: rgb(255, 255, 255) 0px 0px 8px 5px;
         position: relative;
+        .process_light{
+            position: absolute;
+            // top: -35%;
+            // left: -33%;
+            // width: 165px;
+            // height: 170px;
+            //新增
+            width: 120px;
+            height: 120px;
+            top: -36%;
+            left: -35%;
+            //
+            animation: 30s linear rot infinite;
+            >img{
+                width: 100%;
+            }
+        }
     }
 }
 @keyframes rot{
@@ -70,23 +247,16 @@ body{
 }
 @media screen and (min-width:768px){
     .step_group{
-        .step_process > li{
+        .step_process{
             width: 100px;
             height: 100px;
-            font-size: 20px;
-            line-height: 5;
-        }
-        .step_process{
-            li::after{
-                content: '';
-                min-width: 120px;
-                min-height: 119px;
-                background-image: url(../images/lightCircle.png);
-                background-size: contain;
-                position: absolute;
-                top: -10px;
-                left: -10px;
-                animation: 20s linear rot infinite;
+            line-height: 5.4;
+            font-size: 18px;
+            .process_light{
+                top: -35%;
+                left: -33%;
+                width: 165px;
+                height: 170px;
             }
         }
     }
@@ -114,7 +284,7 @@ body{
             .calender_mon_title{
                 text-align: center;
                 margin-bottom: 25px;
-                color: #fff;
+                color: #8d4a16;
                 box-sizing: border-box;
                 font-size: 24px;
                 #show_year,#show_mon{
@@ -166,6 +336,11 @@ body{
 }
 .light {
     color: #fff; /*浅灰色*/
+    ul{
+        >li{
+            color: #8d4a16;
+        }
+    }
 }
 .dark {
     color: #8d4a16; /*今日後的字體顏色*/
@@ -174,6 +349,7 @@ body{
     color: #8d4a16; /*當日字體顏色*/
 }
 .c_box {
+    border-radius: 10%;
     border: 1px solid #fff;
     background: #ffbfcb; /*當日背景色*/
 }
@@ -184,35 +360,36 @@ body{
     .ticket_group{
         display: flex;
         justify-content: space-around;
-        //新增
         flex-wrap: wrap;
         flex-direction: column;
-
         .t_content{
             margin: 20px 5px 5px 5px;
-            // position: relative;//桌機
             //新增
+            position: relative;
+            &::after{
+                content: '';
+                display: block;
+                width: 100%;
+                height: 100%;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-image: url(/images/order/ticketBgM.png);
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
             img{
                 width: 100%;
                 height: 360px;
-                //新增
                 display: none;
             }
             .t_w{
-                //桌機
-                // position: absolute;
-                // top: 0;
-                // right: 0;
-                // bottom: 0;
-                // left: 0;
-                //桌機止
                 margin: auto;
-                //新增
                 display: flex;
                 .t_txt{
                     border-radius: 10px;
                     padding: 20px 0px;
-                    // margin: 55px 6px 5px;//桌機
                     font-size: 18px;
                     text-align: center;
                     background-color: #f4e6c1;
@@ -221,6 +398,8 @@ body{
                     flex-wrap: wrap;
                     align-items: center;
                     justify-content: center;
+                    //新增
+                    margin: 10px 0px 10px 50px;
                     >span{
                         display: inline-block;
                         line-height: 2;
@@ -234,8 +413,6 @@ body{
                     width: 100%;
                     text-align: center;
                     display: flex;
-                    // margin-top: 75px;//桌機
-                    //新增
                     align-items: center;
                     .t_less,.t_add{
                         width: 40px;
@@ -246,6 +423,10 @@ body{
                         outline: 0;
                         cursor: pointer;
                         margin: 0 5%;
+                        transition: .3s;
+                        &:hover{
+                            background-color: #f1954a;
+                        }
                         i{
                             font-size: 20px;
                             color: #fff;
@@ -256,7 +437,9 @@ body{
                         width: 50%;
                         height: 38px;
                         background-color: #fff;
-                        line-height: 2.3;
+                        line-height: 2.1;
+                        font-size: 18px;
+                        font-weight: 600;
                     }
                 }
             }
@@ -265,14 +448,18 @@ body{
 }
 @media screen and (min-width:768px){
     .ticket{
+        margin: 0;
         .ticket_group{
-            //新增
             flex-wrap: nowrap;
             flex-direction: row;
             .t_content{
-                position: relative;//桌機
+                position: relative;
+                &::after{
+                    content: '';
+                    position: relative;
+                    display: none;
+                }
                 img{
-                    //新增
                     display: block;
                 }
                 .t_w{
@@ -282,14 +469,12 @@ body{
                     bottom: 0;
                     left: 0;
                     margin: auto;
-                    //新增
                     display: block;
                     .t_txt{
-                        margin: 55px 6px 5px;//桌機
+                        margin: 55px 6px 5px;
                     }
                     .t_quantity{
-                        margin-top: 75px;//桌機
-                        //新增
+                        margin-top: 75px;
                         align-items: flex-start;
                     }
                 }
@@ -321,9 +506,24 @@ body{
 .step.active{
     display: flex;
 }
-// #step2,#step1{
+// #step2,#step3{
 //     display: none;
 // }
+// #step4{
+//     display: none;
+//     display: flex;
+// }
+
+.process_light{
+    display: none;
+}
+.process_light.roll{
+    display: block;
+}
+.first_sun{
+    display: block;
+}
+
 
 // 選擇活動
 .activity_container{
@@ -340,10 +540,30 @@ body{
         flex-direction: column;
         .a_item{
             box-sizing: border-box;
-            // width: 33.333333%;//桌機
+            // width: 33.33333%;//桌機
             text-align: center;
             margin: 5px;
             position: relative;
+            &::after{
+                content: '';
+                display: block;
+                background-image: url(/images/order/bear.png);
+                width: 100px;
+                height: 150px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                position: absolute;
+                top: 100px;
+                left: 120px;
+                z-index: -2;
+                transform: rotate(-20deg);
+                transition: .5s cubic-bezier(.32,1.28,.61,-0.16);
+                // transition: .4s cubic-bezier(.11,1.26,.63,.59);
+            }
+            &:hover::after{
+                top: 0;
+                left: 0;
+            }
             h4{
                 @include sm-title($doubledarkGreen);
                 text-align: center;
@@ -360,6 +580,7 @@ body{
                 font-size: 16px;
                 color: #fff;
                 border-radius: 5px;
+                transition: .5s;
                 &:hover{
                     background-color: #fff;
                     color: #706456;
@@ -383,6 +604,7 @@ body{
                 padding-top: 15%;
                 >img{
                     width: 50%;
+                    // margin: auto;//今天owl新增
                 }
             }
         }
@@ -435,22 +657,9 @@ body{
     .confirm_box{
         width: 100%;
         height: 300px;
-        // padding: 2%;
         vertical-align: middle;
-        // margin-bottom: 40px;
         margin: 2%;
         position: relative;
-        &::after{
-            content: '';
-            background-image: url(/images/order/woodFrame.png);
-            // display: block;
-            width: 100%;
-            height: 20%;
-            background-size: contain;
-            background-repeat: repeat-x;
-            position: absolute;
-            bottom: 2%;
-        }
         h3{
             @include md-title(#403c04);
             text-align: center;
@@ -459,7 +668,6 @@ body{
         .confirm{
             background-color: rgba(255, 255, 255, 0.4);
             border-radius: 15px;
-            // border: 7px dashed #808080;
             table{
                 width: 100%;
                 font-size: 20px;
@@ -496,6 +704,21 @@ body{
         flex-wrap: nowrap;
         .confirm_box{
             width: 50%;
+                width: 100%;
+                height: 300px;
+                vertical-align: middle;
+                margin: 2%;
+                position: relative;
+                &::after{
+                    content: '';
+                    background-image: url(/images/order/woodFrame.png);
+                    width: 100%;
+                    height: 20%;
+                    background-size: contain;
+                    background-repeat: repeat-x;
+                    position: absolute;
+                    bottom: 2%;
+                }
             .confirm{
                 height: 205px;
                 overflow: scroll;
@@ -509,19 +732,79 @@ body{
 .credit_container{
     margin-top: 5vh;
     display: flex;
-    //新增
     flex-wrap: wrap;
     display: none;
+    // position: relative;//新增
     .ct_rule,.ct_credit{
-        width: 100%; //原本100%
+        width: 100%;
         box-sizing: border-box;
-        // padding: 20px;
         padding: 5%;
         h3{
-            @include md-title(#fff);
-            margin-bottom: 3vh; 
+            @include md-title(#403c04);
+            margin-bottom: 3vh;
+            text-align: center;
         }
     }
+    // .light_box{
+    //     display: none;
+    //     width: 40vw;
+    //     height: 400px;
+    //     background-color: #e79dc6;
+    //     position: absolute;
+    //     margin: auto;
+    //     top: 100px;
+    //     left: 0;
+    //     bottom: 0;
+    //     right: 0;
+    //     text-align: center;
+    //     position: fixed;
+    //     h3{
+    //         @include md-title(#403c04);
+    //         margin: 3vh;
+    //         line-height: 1.2;
+    //     }
+    //     .close{
+    //         width: 30px;
+    //         height: 30px;
+    //         float: right;
+    //         margin: 10px 10px 0 0;
+    //         transition: .3s;
+    //         >img{
+    //             width: 100%;
+    //         }
+    //         &::after{
+    //             content: '';
+    //             display: block;
+    //             clear: both;
+    //         }
+    //         &:hover{
+    //             transform: scale(1.2);
+    //         }
+    //     }
+    //     .qr_code{
+    //         width: 150px;
+    //         height: 150px;
+    //         margin: auto;
+    //         >img{
+    //             width: 100%;
+    //         }
+    //     }
+    //     >p{
+    //         display: inline-block;
+    //         font-size: 20px;
+    //         margin: 20px 0;
+    //         color: #403c04;
+    //         font-weight: 500;
+    //     }
+    //     a{
+    //         display: block;
+    //         background-color: #fff;
+    //         width: 120px;
+    //         height: 20px;
+    //         margin: auto;
+    //         font-size: 20px;
+    //     }
+    // }
 }
 .ct_rule > p{
     padding: 5px 0;
@@ -616,7 +899,7 @@ content: '';
                 i{
                     font-size: 30px;
                     padding: 0 5px;
-                    color: #fff;
+                    color: #9e9a95;
                 }
             }
         }
@@ -628,23 +911,12 @@ content: '';
         .ct_rule,.ct_credit{
             width: 50%;
             padding: 20px;
+            h3{
+                text-align: left;
+            }
         }
         .ct_rule{
             padding-left: 15%;
         }
     }
-}
-
-
-
-
-
-
-
-
-
-.box111{
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
 }
