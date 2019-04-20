@@ -1,3 +1,67 @@
+<?php
+    ob_start();
+    session_start();
+
+try {
+    require_once("connectDb.php");
+    //第一名手札
+    $sqlranking="SELECT * FROM `plan` as p JOIN `member` as m ON p.memNo = m.memNo where noteStatus = 1 limit 1";
+    $ranking = $pdo -> query($sqlranking);
+    $ranking -> bindColumn("planNo",$planNo);
+    $ranking -> bindColumn("noteName",$noteName);
+    $ranking -> bindColumn("noteDate",$noteDate);
+    $ranking -> bindColumn("planPhoto",$planPhoto);
+    $ranking -> bindColumn("planList",$planList);
+    $ranking -> bindColumn("noteContent",$noteContent);
+    $ranking -> bindColumn("noteLikeTime",$noteLikeTime);
+    $ranking -> bindColumn("noteMsgTime",$noteMsgTime);
+    $ranking -> bindColumn("memId",$memId);
+    $ranking -> bindColumn("memImg",$memImg);
+    //最新排列手札
+    $sqlNewblog = "SELECT * FROM `plan` p LEFT JOIN `member` m ON p.memNo = m.memNo where noteStatus = 1 order by noteDate";
+    $blogNew = $pdo -> query($sqlNewblog);
+    $blogNew -> bindColumn("planNo",$planNo);
+    $blogNew -> bindColumn("noteName",$noteName);
+    $blogNew -> bindColumn("noteDate",$noteDate);
+    $blogNew -> bindColumn("planPhoto",$planPhoto);
+    $blogNew -> bindColumn("planList",$planList);
+    $blogNew -> bindColumn("noteContent",$noteContent);
+    $blogNew -> bindColumn("noteLikeTime",$noteLikeTime);
+    $blogNew -> bindColumn("noteMsgTime",$noteMsgTime);
+    $blogNew -> bindColumn("memId",$memId);
+    $blogNew -> bindColumn("memImg",$memImg);
+    //熱門排列手札
+    $sqlHotblog = "SELECT * FROM `plan` p LEFT JOIN `member` m ON p.memNo = m.memNo where noteStatus = 1 order by noteLikeTime";
+    $blogHot = $pdo -> query($sqlHotblog);
+    $blogHot -> bindColumn("planNo",$planNo);
+    $blogHot -> bindColumn("noteName",$noteName);
+    $blogHot -> bindColumn("noteDate",$noteDate);
+    $blogHot -> bindColumn("planPhoto",$planPhoto);
+    $blogHot -> bindColumn("planName",$planName);
+    $blogHot -> bindColumn("planList",$planList);
+    $blogHot -> bindColumn("noteContent",$noteContent);
+    $blogHot -> bindColumn("noteLikeTime",$noteLikeTime);
+    $blogHot -> bindColumn("noteMsgTime",$noteMsgTime);
+    $blogHot -> bindColumn("memId",$memId);
+    $blogHot -> bindColumn("memImg",$memImg);
+    //活動
+    // $sqlevent ="SELECT * FROM `event`";
+    // $event = $pdo -> query($sqlevent);
+    // $event -> bindColumn("entNo",$entNo);
+    // $event -> bindColumn("entName",$entName);
+    // $event -> bindColumn("entPhoto",$entPhoto);
+    // $event -> bindColumn("entDate",$entDate);
+    // $event -> bindColumn("entPrice",$entPrice);
+    // $event -> bindColumn("entSco",$entPrice);
+    // $event -> bindColumn("entSurVal",$entSurVal);
+    // $event -> bindColumn("entHanVal",$entHanVal);
+    // $event -> bindColumn("entPcVal",$entPcVal);
+
+} catch (PDOException $e) {
+	echo "錯誤 : ", $e -> getMessage(), "<br>";
+	echo "行號 : ", $e -> getLine(), "<br>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +76,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="js/masonry.pkgd.min.js"></script>
     <script src="js/hbgClick.js"></script>
+    <script src="js/copyLink.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <title>森存者｜手札分享</title>
 </head>
@@ -55,64 +120,73 @@
     <div class="wrap">
     <!-- bg fly -->
     <div id="scene1">
-            <div data-depth="0.2" class="fly1"><img src="images/blog/fly1.gif" alt="蝴蝶"></div>
+        <div data-depth="0.2" class="fly1"><img src="images/blog/fly1.gif" alt="蝴蝶"></div>
     </div>
        <script>
           parallaxInstance = new Parallax( document.getElementById( "scene1" ));
       </script>
+
+
     <div class="blogRanking">
-        <a href="blogContent.html"><h2>原來山泉水這麼甜!!</h2></a>
+    <?php
+    while($ranking->fetch(PDO::FETCH_ASSOC)){
+    ?>
+    
+        <a href="blogContent.php?planNo=<?php echo $planNo;?>"><h2><?php echo $noteName;?></h2></a>
         <div class="blogRanking-info">
             <div class="blogRanking-author">
-                <img src="images/blog/big_head1.png" alt="大頭貼">
-                <span>董董</span>
-                <span>2019-04-09</span>
+                <!-- <img src="images/member/<?php echo $memNo;?>/big_head1.png" alt="大頭貼"> -->
+                <span><?php echo $memId;?></span>
+                <span><?php echo $noteDate;?></span>
             </div>
             <div class="blogContent-share">
-                <input type="text" id="copyurl" value="http://140.115.236.71/demo-projects/CD106/CD106G2/blogContent.php?planNo=<?php echo $blogRow['planNo']; ?>" >   
+                <input type="text" id="copyurl" value="blogContent.php?planNo=<?php echo $planNo;?>" >
                 <img src="images/blog/Share.png" alt="分享" id="copybtn">
             </div>
         </div>
-        <!-- <script>
-         //燈箱
-         var copybtn=document.getElementById("copybtn");
-    
-        copybtn.addEventListener("click",function(){
-    
-        var copyurl = document.getElementById("copyurl");    
-        copyurl.select();    
-        document.execCommand("copy");
-        document.getElementById("copyok").style.display="inline-block"; 
-    
-        setTimeout(function(){ document.getElementById("copyok").style.display="none";  }, 3000);
-        });
-        </script> -->
         <div class="blogRanking-article">
             <div class="blogRanking-article-left">
                 <div class="blogRanking-photo">
-                    <img src="images/event/Best-Survival-Schools.jpg" alt="手札圖片">
+                    <!-- <img src="images/plan/<?php echo $planNo;?>/<?php echo $planPhoto;?>" alt="手札圖片" onerror="javascript:this.src='images/planDef/planDef.jpg'"> -->
                 </div>
-                <p>這個活動真是太神奇了，我們把髒兮兮的泥巴水變成可以喝的清水，一定要推一下的拉!!!一定要推一下的拉!!!一定要推一下的拉!!!一定要推一下的拉!!!一定要推一下的拉!!!一定要推一下的拉!!!
-                    <a href="blogContent.html"><span class="readMore" >繼續閱讀</span></a> </p>
+                <p><?php echo $noteContent;?>
+                    <a href="blogContent.php?planNo=<?php echo $planNo;?>"><span class="readMore" >繼續閱讀</span></a> </p>
             </div>
             
           
           <!-- event -->
             <div class="blogRanking-event-wrap">
+    
+            <?php
+            $eventArr = explode(",",$planList);
+            for($i=0;$i<count($eventArr);$i++){
+                $sqlevent ="SELECT * FROM `event` where entNo =$eventArr[$i]";
+                $event = $pdo -> query($sqlevent);
+                // $event -> bindColumn("entNo",$entNo);
+                $event -> bindColumn("entName",$entName);
+                $event -> bindColumn("entPhoto",$entPhoto);
+                $event -> bindColumn("entDate",$entDate);
+                $event -> bindColumn("entPrice",$entPrice);
+                $event -> bindColumn("entSco",$entPrice);
+                $event -> bindColumn("entSurVal",$entSurVal);
+                $event -> bindColumn("entHanVal",$entHanVal);
+                $event -> bindColumn("entPcVal",$entPcVal);
+                $event ->fetch(PDO::FETCH_ASSOC)
+            ?>
             <div class="blogRanking-event">
                  <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動圖片">
                  <div class="blogRanking-event-info">
-                    <h3 class="event-name">基本求生</h3>
-                    <span class="event-hr">2小時</span>
+                    <h3 class="event-name"><?php echo $entName;?></h3>
+                    <span class="event-hr"><?php echo $entDate;?>小時</span>
                        <div class="event-value">
                         <table class="event-value-table">
                             <tr>
                                 <td><img src="images/blog/value_family.png" alt="親子值"></td>
-                                <td>2</td>
+                                <td><?php echo $entPcVal;?></td>
                                 <td><img src="images/blog/value_handmade.png" alt="手作值"></td>
-                                <td>3</td>
+                                <td><?php echo $entHanVal;?></td>
                                 <td><img src="images/blog/value_survive.png" alt="生存值"></td>
-                                <td>2</td>
+                                <td><?php echo $entSurVal;?></td>
                             </tr>
                         </table> 
                       </div>
@@ -124,109 +198,23 @@
                           <img src="images/blog/fire.png" alt="評分火數">
                           <img src="images/blog/fire.png" alt="評分火數">
                       </div>
-                      <div class="event-price">$1000</div>
+                      <div class="event-price"><?php echo $entPrice;?></div>
                  </div>    
             </div>
-
-            <div class="blogRanking-event">
-                 <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動圖片">
-                 <div class="blogRanking-event-info">
-                    <h3 class="event-name">基本求生</h3>
-                    <span class="event-hr">2小時</span>
-                       <div class="event-value">
-                        <table class="event-value-table">
-                            <tr>
-                                <td><img src="images/blog/value_family.png" alt="親子值"></td>
-                                <td>2</td>
-                                <td><img src="images/blog/value_handmade.png" alt="手作值"></td>
-                                <td>3</td>
-                                <td><img src="images/blog/value_survive.png" alt="生存值"></td>
-                                <td>2</td>
-                            </tr>
-                        </table> 
-                      </div>
-                      <div class="avgScore">
-                          <span>平均</span>
-                          <img src="images/blog/fire.png" alt="評分火數">
-                          <img src="images/blog/fire.png" alt="評分火數">
-                          <img src="images/blog/fire.png" alt="評分火數">
-                          <img src="images/blog/fire.png" alt="評分火數">
-                          <img src="images/blog/fire.png" alt="評分火數">
-                      </div>
-                      <div class="event-price">$1000</div>
-                 </div>    
-            </div>
-            
-            <div class="blogRanking-event">
-                 <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動圖片">
-                 <div class="blogRanking-event-info">
-                    <h3 class="event-name">基本求生</h3>
-                    <span class="event-hr">2小時</span>
-                       <div class="event-value">
-                        <table class="event-value-table">
-                            <tr>
-                                <td><img src="images/blog/value_family.png" alt="親子值"></td>
-                                <td>2</td>
-                                <td><img src="images/blog/value_handmade.png" alt="手作值"></td>
-                                <td>3</td>
-                                <td><img src="images/blog/value_survive.png" alt="生存值"></td>
-                                <td>2</td>
-                            </tr>
-                        </table> 
-                      </div>
-                      <div class="avgScore">
-                          <span>平均</span>
-                          <img src="images/blog/fire.png" alt="評分火數">
-                          <img src="images/blog/fire.png" alt="評分火數">
-                          <img src="images/blog/fire.png" alt="評分火數">
-                          <img src="images/blog/fire.png" alt="評分火數">
-                          <img src="images/blog/fire.png" alt="評分火數">
-                      </div>
-                      <div class="event-price">$1000</div>
-                 </div>    
-            </div>
-
-            <div class="blogRanking-event">
-                 <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動圖片">
-                 <div class="blogRanking-event-info">
-                    <h3 class="event-name">基本求生</h3>
-                    <span class="event-hr">2小時</span>
-                       <div class="event-value">
-                        <table class="event-value-table">
-                            <tr>
-                                <td><img src="images/blog/value_family.png" alt="親子值"></td>
-                                <td>2</td>
-                                <td><img src="images/blog/value_handmade.png" alt="手作值"></td>
-                                <td>3</td>
-                                <td><img src="images/blog/value_survive.png" alt="生存值"></td>
-                                <td>2</td>
-                            </tr>
-                        </table> 
-                      </div>
-                      <div class="avgScore">
-                          <span>平均</span>
-                          <img src="images/blog/fire.png" alt="評分火數">
-                          <img src="images/blog/fire.png" alt="評分火數">
-                          <img src="images/blog/fire.png" alt="評分火數">
-                          <img src="images/blog/fire.png" alt="評分火數">
-                          <img src="images/blog/fire.png" alt="評分火數">
-                      </div>
-                      <div class="event-price">$1000</div>
-                 </div>    
-            </div>
-            </div> 
-            
-            
+             <?php
+            }
+            ?> 
+          
         </div>
 
          <div class="blogRanking-btnContainer">
             <div class="blogLikeBtn">
                <img src="images/blog/愛心.png" alt="like">
-               <span class="likeNum" id="likeNum">100</span> 
+               <span class="likeNum" id="likeNum"><?php echo $noteLikeTime;?></span> 
             </div>
             <div class="blogCommentBtn">
               <img src="images/blog/留言.png" alt="comment">
-              <span class="commNum" id="commNum">100</span>  
+              <span class="commNum" id="commNum"><?php echo $noteMsgTime;?></span>  
             </div>
          </div>
 
@@ -237,6 +225,9 @@
             <button>加入我的行程</button>
         </div>
     </div>
+    <?php  }?>
+    </div>
+    
    <!-- bg fly -->
     <div id="scene2">
         <div data-depth="0.6" class="fly1"><img src="images/blog/fly1.gif" alt="蝴蝶"></div>
