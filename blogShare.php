@@ -11,7 +11,6 @@
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/hbgClick.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-<!--  -->
     <script src="//cdn.quilljs.com/1.0.0/quill.js"></script>
     <script src="//cdn.quilljs.com/1.0.0/quill.min.js"></script>
     <link href="//cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
@@ -150,9 +149,7 @@ var quill = new Quill("#blogTextarea", {
 					[{ 'list': 'bullet' }], // 清單
 					['image'],
 					[{ 'header': [1, 2, 3, 4, 5, 6, false] }],// 標題
-					// [{ 'font': [] }], // 字體
-					// [{ 'align': [] }], // 文字方向
-					// [ 'clean' ] // 清除文字格是
+				
 				]
 			}
 		})

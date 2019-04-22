@@ -269,6 +269,28 @@
                 }
             }
         }
+        // .notecommReport{
+        //     display: none;
+        //     position: fixed;
+        //     z-index: 10;
+        //     top: 0;
+        //     bottom: 0;
+        //     right: 0;
+        //     left: 0;
+        //     margin: auto;
+        //     text-align: center;
+        //     background-color: rgba($color: $pink, $alpha: 0.7) ;
+        //     .reportArea{
+        //         position: fixed;
+        //         top: 50%;
+        //         left: 50%;
+        //         transform: translate(-50%, -50%);
+        //         width: 350px;
+        //         box-sizing: border-box;
+        //         background-color: gray;
+        //         color: $white;
+        //     }
+        // }
         .comment-input{
             display: flex;
             justify-content: space-around;
@@ -352,6 +374,7 @@
         @include big-title($black);
     }
 }
+
 
 //背景
 #scene1{

@@ -18,7 +18,7 @@ try {
     $ranking -> bindColumn("memId",$memId);
     $ranking -> bindColumn("memImg",$memImg);
     //最新排列手札
-    $sqlNewblog = "SELECT * FROM `plan` p LEFT JOIN `member` m ON p.memNo = m.memNo where noteStatus = 1 order by noteDate";
+    $sqlNewblog = "SELECT * FROM `plan` p LEFT JOIN `member` m ON p.memNo = m.memNo where noteStatus = 1 order by noteDate desc";
     $blogNew = $pdo -> query($sqlNewblog);
     $blogNew -> bindColumn("planNo",$planNo);
     $blogNew -> bindColumn("noteName",$noteName);
@@ -76,7 +76,8 @@ try {
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="js/masonry.pkgd.min.js"></script>
     <script src="js/hbgClick.js"></script>
-    <script src="js/copyLink.js"></script>
+    <script src="js/blog.js"></script>
+    <!-- <script src="js/copyLink.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <title>森存者｜手札分享</title>
 </head>
@@ -135,6 +136,7 @@ try {
         <a href="blogContent.php?planNo=<?php echo $planNo;?>"><h2><?php echo $noteName;?></h2></a>
         <div class="blogRanking-info">
             <div class="blogRanking-author">
+                <img src="images/blog/big_head1.png" alt="大頭貼">
                 <!-- <img src="images/member/<?php echo $memNo;?>/big_head1.png" alt="大頭貼"> -->
                 <span><?php echo $memId;?></span>
                 <span><?php echo $noteDate;?></span>
@@ -147,7 +149,8 @@ try {
         <div class="blogRanking-article">
             <div class="blogRanking-article-left">
                 <div class="blogRanking-photo">
-                    <!-- <img src="images/plan/<?php echo $planNo;?>/<?php echo $planPhoto;?>" alt="手札圖片" onerror="javascript:this.src='images/planDef/planDef.jpg'"> -->
+                <img src="images/event/Best-Survival-Schools.jpg" alt="手札圖片">
+                    <!-- <img src="images/plan/<?php echo $planNo;?>/*.jpg" alt="手札圖片" onerror="javascript:this.src='images/planDef/planDef.jpg'"> -->
                 </div>
                 <p><?php echo $noteContent;?>
                     <a href="blogContent.php?planNo=<?php echo $planNo;?>"><span class="readMore" >繼續閱讀</span></a> </p>
@@ -167,7 +170,7 @@ try {
                 $event -> bindColumn("entPhoto",$entPhoto);
                 $event -> bindColumn("entDate",$entDate);
                 $event -> bindColumn("entPrice",$entPrice);
-                $event -> bindColumn("entSco",$entPrice);
+                $event -> bindColumn("entSco",$entSco);
                 $event -> bindColumn("entSurVal",$entSurVal);
                 $event -> bindColumn("entHanVal",$entHanVal);
                 $event -> bindColumn("entPcVal",$entPcVal);
@@ -175,6 +178,7 @@ try {
             ?>
             <div class="blogRanking-event">
                  <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動圖片">
+                 <!-- <img src="images/event/<?php echo $entName;?>/*.jpg" alt="活動圖片"> -->
                  <div class="blogRanking-event-info">
                     <h3 class="event-name"><?php echo $entName;?></h3>
                     <span class="event-hr"><?php echo $entDate;?>小時</span>
@@ -192,13 +196,15 @@ try {
                       </div>
                       <div class="avgScore">
                           <span>平均</span>
+                        <?php
+                          for($j=0;$j<$entSco;$j++){
+                        ?>
                           <img src="images/blog/fire.png" alt="評分火數">
-                          <img src="images/blog/fire.png" alt="評分火數">
-                          <img src="images/blog/fire.png" alt="評分火數">
-                          <img src="images/blog/fire.png" alt="評分火數">
-                          <img src="images/blog/fire.png" alt="評分火數">
+                        <?php
+                         }
+                        ?>
                       </div>
-                      <div class="event-price"><?php echo $entPrice;?></div>
+                      <div class="event-price">$<?php echo $entPrice;?></div>
                  </div>    
             </div>
              <?php
@@ -237,7 +243,7 @@ try {
     </script>
     <!-- blog share -->
     <div class="blogShare">
-        <button class="blogShareBtn"><a href="blogShare.html">編著手札</a></button>
+        <button class="blogShareBtn" id="blogShareBtn">編著手札</button>
         <img src="images/blog/back.png" alt="手札分享" class="blogShareImg" data-mobile="images/blog/bear.png" data-desktop="images/blog/back.png">
         <div class="blogShare-beforehover">
             你是不是很想寫下你的美好經驗！
@@ -296,215 +302,85 @@ try {
     <div class="blogForum">
         <div class="blogForum-optContainer">
             <!-- 下拉選單 -->
-            <select name="blogForum-option">
+            <!-- <select name="blogForum-option">
                 <option value="optHigh">依熱門排列</option>
                 <option value="optNew">依時間排列</option>
-            </select>
+            </select> -->
+            <button id="NewShare" >最新分享</button>
+            <button id="HighScore">最高評分</button>
         </div>
-     <div id="scene4">
-        <div data-depth="1" class="fly1"><img src="images/blog/fly1.gif" alt="蝴蝶"></div>
-    </div>
+        <div id="scene4">
+            <div data-depth="1" class="fly1"><img src="images/blog/fly1.gif" alt="蝴蝶"></div>
+        </div>
         <script>
             parallaxInstance = new Parallax( document.getElementById( "scene4" ));
         </script>
 
         <!-- 瀑布文章 -->
+    <!-- <div id="filter"> -->
         <div id="container">
+        <?php
+        while($blogNew ->fetch(PDO::FETCH_ASSOC)){
+        ?>
             <div class="blog-item">
                 <div class="blog-img">
-                   <a href="blogContent.html"><img src="images/event/Best-Survival-Schools.jpg" alt="手札圖片"></a>
+                    <a href="blogContent.php?planNo=<?php echo $planNo;?>"><img src="images/event/Best-Survival-Schools.jpg" alt="手札圖片"></a>
                 </div>
                 
                 <div class="blog-info">
                     <div class="blog-author">
-                       <img src="images/blog/big_head1.png" alt="大頭照">
-                       <span class="authorName">董董</span>
+                       <!-- <img src="images/member/<?php echo $memNo;?>/big_head1.png" alt="大頭貼"> -->
+                       <span class="authorName"><?php echo $memId;?></span>
                     </div>  
-                     <span class="blogDate">2019-04-09</span>
+                     <span class="blogDate"><?php echo $noteDate;?></span>
                 </div>
                 
                 <div class="blog-name">
-                    <a href="blogContent.html"><h2>原來山泉水這麼甜!!</h2></a>
+                    <a href="blogContent.php?planNo=<?php echo $planNo;?>"><h2><?php echo $noteName;?></h2></a>
                 </div>
                 
                 <!-- event -->
                 <div class="event-wrap">
+                <?php
+                $eventArr = explode(",",$planList);
+                for($i=0;$i<count($eventArr);$i++){
+                    $sqlevent ="SELECT * FROM `event` where entNo =$eventArr[$i]";
+                    $event = $pdo -> query($sqlevent);
+                    // $event -> bindColumn("entNo",$entNo);
+                    $event -> bindColumn("entName",$entName);
+                    $event -> bindColumn("entPhoto",$entPhoto);
+                    // $event -> bindColumn("entDate",$entDate);
+                    // $event -> bindColumn("entPrice",$entPrice);
+                    // $event -> bindColumn("entSco",$entSco);
+                    // $event -> bindColumn("entSurVal",$entSurVal);
+                    // $event -> bindColumn("entHanVal",$entHanVal);
+                    // $event -> bindColumn("entPcVal",$entPcVal);
+                    $event ->fetch(PDO::FETCH_ASSOC)
+                ?>
                      <div class="event-item">
                         <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動圖片">
-                        <h3>基本求生</h3>
+                        <h3><?php echo $entName;?></h3>
                      </div>
-                     <div class="event-item">
-                        <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動圖片">
-                        <h3>生火術</h3>
-                     </div>
-                     <div class="event-item">
-                        <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動圖片">
-                        <h3>淨水術</h3>
-                     </div>
-                     <div class="event-item">
-                        <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動圖片">
-                        <h3>基本求生</h3>
-                     </div>
+                <?php
+                    }
+                ?> 
                 </div>
                
                 <div class="blog-item-btnContainer">
                     <div class="blogLikeBtn">
                        <img src="images/blog/愛心.png" alt="like">
-                       <span class="likeNum" id="likeNum">100</span> 
+                       <span class="likeNum" id="likeNum"><?php echo $noteLikeTime;?></span> 
                     </div>
                     <div class="blogCommentBtn">
                       <img src="images/blog/留言.png" alt="comment">
-                      <span class="commNum" id="commNum">100</span>  
+                      <span class="commNum" id="commNum"><?php echo $noteMsgTime;?></span>  
                     </div>
                 </div>
             </div>
-
-            <div class="blog-item">
-                <div class="blog-img">
-                    <img src="images/event/Best-Survival-Schools.jpg" alt="手札圖片">
-                </div>
-                
-                <div class="blog-info">
-                    <div class="blog-author">
-                       <img src="images/event/Best-Survival-Schools.jpg" alt="大頭照">
-                       <span class="authorName">sam</span>
-                    </div>  
-                     <span class="blogDate">2019-04-09</span>
-                </div>
-
-                <div class="blog-name">
-                    <h2>手札名稱</h2>
-                </div>
-                
-                <!-- event -->
-                <div class="event-wrap">
-                     <div class="event-item">
-                        <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動圖片">
-                        <h3>基本求生</h3>
-                     </div>
-                     <div class="event-item">
-                        <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動圖片">
-                        <h3>生火術</h3>
-                     </div>
-                     <div class="event-item">
-                        <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動圖片">
-                        <h3>淨水術</h3>
-                     </div>
-                     <div class="event-item">
-                        <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動圖片">
-                        <h3>基本求生</h3>
-                     </div>
-                </div>
-               
-                <div class="blog-item-btnContainer">
-                    <div class="blogLikeBtn">
-                       <img src="images/blog/愛心.png" alt="like">
-                       <span class="likeNum" id="likeNum">100</span> 
-                    </div>
-                    <div class="blogCommentBtn">
-                      <img src="images/blog/留言.png" alt="comment">
-                      <span class="commNum" id="commNum">100</span>  
-                    </div>
-                </div>
-            </div>
-
-            <div class="blog-item">
-                <div class="blog-img">
-                    <img src="images/event/Best-Survival-Schools.jpg" alt="手札圖片">
-                </div>
-                
-                <div class="blog-info">
-                    <div class="blog-author">
-                       <img src="images/event/Best-Survival-Schools.jpg" alt="大頭照">
-                       <span class="authorName">sam</span>
-                    </div>  
-                     <span class="blogDate">2019-04-09</span>
-                </div>
-
-                <div class="blog-name">
-                    <h2>手札名稱</h2>
-                </div>
-                
-                <!-- event -->
-                <div class="event-wrap">
-                     <div class="event-item">
-                        <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動圖片">
-                        <h3>基本求生</h3>
-                     </div>
-                     <div class="event-item">
-                        <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動圖片">
-                        <h3>生火術</h3>
-                     </div>
-                     <div class="event-item">
-                        <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動圖片">
-                        <h3>淨水術</h3>
-                     </div>
-                    
-                </div>
-               
-                <div class="blog-item-btnContainer">
-                    <div class="blogLikeBtn">
-                       <img src="images/blog/愛心.png" alt="like">
-                       <span class="likeNum" id="likeNum">100</span> 
-                    </div>
-                    <div class="blogCommentBtn">
-                      <img src="images/blog/留言.png" alt="comment">
-                      <span class="commNum" id="commNum">100</span>  
-                    </div>
-                    
-                </div>
-            </div>
-
-            <div class="blog-item">
-                <div class="blog-img">
-                    <img src="images/event/Best-Survival-Schools.jpg" alt="手札圖片">
-                </div>
-                
-                <div class="blog-info">
-                    <div class="blog-author">
-                       <img src="images/event/Best-Survival-Schools.jpg" alt="大頭照">
-                       <span class="authorName">sam</span>
-                    </div>  
-                     <span class="blogDate">2019-04-09</span>
-                </div>
-
-                <div class="blog-name">
-                    <h2>手札名稱</h2>
-                </div>
-                
-                <!-- event -->
-                <div class="event-wrap">
-                     <div class="event-item">
-                        <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動圖片">
-                        <h3>基本求生</h3>
-                     </div>
-                     <div class="event-item">
-                        <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動圖片">
-                        <h3>生火術</h3>
-                     </div>
-                     <div class="event-item">
-                        <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動圖片">
-                        <h3>淨水術</h3>
-                     </div>
-                     <div class="event-item">
-                        <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動圖片">
-                        <h3>基本求生</h3>
-                     </div>
-                </div>
-               
-                <div class="blog-item-btnContainer">
-                    <div class="blogLikeBtn">
-                       <img src="images/blog/愛心.png" alt="like">
-                       <span class="likeNum" id="likeNum">100</span> 
-                    </div>
-                    <div class="blogCommentBtn">
-                      <img src="images/blog/留言.png" alt="comment">
-                      <span class="commNum" id="commNum">100</span>  
-                    </div>
-                </div>
-            </div>
+            <?php  }?>
         </div>
 
+    <!-- </div> -->
 
 
     </div>
