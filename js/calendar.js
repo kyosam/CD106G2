@@ -84,15 +84,34 @@ mylist.addEventListener('click',  function(e){
   }
   if(e.target.className ==='light'||e.target.className ==='c_font c_box'){
     // alert("步行點唷!!!")
-    console.log("HI");
+    // console.log("HI");
   }
   else{
   tempDate[tempIndex].className ='dark';
   e.target.className ='c_font c_box';
 }
   console.log(e.target);
-} , false);
+});
 
+
+
+// function chooseDate(){
+//   var tempDate = document.querySelectorAll("#days li");
+  
+//   for (i = 0; i < tempDate.length; i++) {
+//     if(tempDate[i].className.indexOf("c_font c_box") != -1){
+//       tempIndex = i;
+//     }
+//   }
+//   if(e.target.className ==='light'||e.target.className ==='c_font c_box'){
+//     // alert("步行點唷!!!")
+//     // console.log("HI");
+//   }
+//   else{
+//     tempDate[tempIndex].className ='dark';
+//     e.target.className ='c_font c_box';
+//   }
+// }
 // -----------------------------
 
 
@@ -100,3 +119,11 @@ mylist.addEventListener('click',  function(e){
 window.onload = function () {
   refreshDate(); //執行函數
 }
+
+// function init(){
+//   var nextMonth = document.getElementById('next');
+//   var prevMonth = document.getElementById('prev');
+//   nextMonth.addEventListener('click',chooseDate);
+//   prevMonth.addEventListener('click',chooseDate);
+// }
+// window.addEventListener("load",init);
