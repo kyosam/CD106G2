@@ -14,6 +14,11 @@ nextBtn.click(function() {
     }else{
         index++;
     }
+
+    //暫存訂票
+    if(index == 1){
+        saveTicket();
+    }
     
     console.log(index);
     if($("#next_btn").text() == '送出'){
@@ -35,7 +40,6 @@ nextBtn.click(function() {
 
 
 prevBtn.click(function() {
-    
     nextBtn.css('display', 'block');
     console.log(index);
     if (index == 0) {
@@ -51,8 +55,40 @@ prevBtn.click(function() {
         $('.first_sun').css('display','block');
     }
     nextBtn.text('下一步');
-    
 });
+
+// 選擇日期
+function highLight(e){
+    var obj = e.target;
+    obj.style.color = '#FF4500';
+    obj.style.transition = '.2s';
+    obj.style.transform = 'scale(1.2)';
+}
+function normal(e){
+    var obj = e.target;
+    obj.style.color= '#8d4a16';
+    obj.style.transform = 'scale(1)';
+}
+// 點擊前後月份刷新註冊
+function refreshMonth(){
+    selectDate = document.querySelectorAll('li.dark');
+    for( var i=0; i<selectDate.length; i++){
+        selectDate[i].onmouseover = highLight;
+        selectDate[i].onmouseout = normal;
+    }
+    function highLight(e){
+        var obj = e.target;
+        obj.style.color = '#FF4500';
+        obj.style.transition = '.2s';
+        obj.style.transform = 'scale(1.2)';
+    }
+    function normal(e){
+        var obj = e.target;
+        obj.style.color= '#8d4a16';
+        obj.style.transform = 'scale(1)';
+    }
+}
+
 
 // 關掉燈箱
 $(document).ready(function(){
@@ -63,7 +99,6 @@ $(document).ready(function(){
 
 
 // 檢查信用卡資訊功能
-
 function checkCredit(){
     var cn = document.querySelectorAll('input.credit');
     var Safe_length = document.getElementById('safe').value.length;
@@ -83,57 +118,105 @@ function checkCredit(){
 }
 
 // 加減票
-
-var less = document.getElementsByClassName('t_less')[0];
-var add = document.getElementsByClassName('t_add')[0];
-var t_adults = document.getElementById('t_adults');
-var t_student = document.getElementById('t_student');
-var t_child = document.getElementById('t_child');
-
-var count = 0;
-
 function addTicket(){
-    count = count + 1;
-    t_adults.innerHTML = count;
+    add_temp = parseInt(this.previousElementSibling.innerHTML);
+    // add_temp++;
+    // this.previousElementSibling.innerHTML = add_temp;
+
+    if(add_temp <=19){
+        add_temp++;
+    }else{
+        add.disable = true;
+    }
+    this.previousElementSibling.innerHTML = add_temp;
 }
 function lessTicket(){
-    if(count >= 1){
-        count--;
+    less_temp = parseInt(this.nextElementSibling.innerHTML);
+    if(less_temp >= 1){
+        less_temp--;
     }else{
         less.disable = true;
-        count = 0;
+        less_temp = 0;
     }
-    t_adults.innerHTML = count;
+    this.nextElementSibling.innerHTML = less_temp;
+    console.log()
 }
 
+// 不規劃行程
+function checkMark(){
+    var check = document.getElementById('noPlan');
+    var newSpan = document.createElement('span'); 
+    var temp = 0;
+    if(temp == 0){
+        check.appendChild(newSpan).setAttribute('class','check_mark');
+        temp++;
+    }else if(temp == 1){
+        alert('test');
+    }
+    console.log(temp);
+}
+
+//選擇活動
+// function choose(){
+//     var chooseAct = document.getElementById('import');
+//     var check_mark = document.getElementsByClassName('check_mark');
+//     document.body.removeChild(check_mark);
+// }
 
 
 function init(){
-    var less = document.getElementsByClassName('t_less')[0];
-    var add = document.getElementsByClassName('t_add')[0];
-    less.addEventListener("click",lessTicket);
-    add.addEventListener("click",addTicket);
+    less = document.getElementsByClassName('t_less');
+    add = document.getElementsByClassName('t_add');
+    for(i = 0;i < less.length;i++){
+        less[i].addEventListener('click',lessTicket);
+        add[i].addEventListener('click',addTicket);
+    }
+    selectDate = document.querySelectorAll('li.dark');
+    for( var i=0; i<selectDate.length; i++){
+        selectDate[i].onmouseover = highLight;
+        selectDate[i].onmouseout = normal;
+    }
+    var nextMonth = document.getElementById('next');
+    var prevMonth = document.getElementById('prev');
+    nextMonth.addEventListener('click',refreshMonth);
+    prevMonth.addEventListener('click',refreshMonth);
+
+    var noPlan = document.getElementById('noPlan');
+    noPlan.addEventListener('click',checkMark);
+    
+    //選擇活動
+    // var chooseAct = document.getElementById('import');
+    // chooseAct.addEventListener('click',choose)
 }
 
 window.addEventListener('load',init);
 
 
-// $('.owl-carousel').owlCarousel({
-//     loop:true,
-//     // margin:10,
-//     nav:true,
-//     responsive:{
-//         0:{
-//             items:1
-//         },
-//         768:{
-//             items:2
-//         },
-//         1200:{
-//             items:3
-//         }
-//     }
-// });
+// 儲存訂購門票內容
+function saveTicket(){
+    window.sessionStorage['t_adults'] = document.getElementById('t_adults').innerHTML;
+    window.sessionStorage['t_student'] = document.getElementById('t_student').innerHTML;
+    window.sessionStorage['t_child'] = document.getElementById('t_child').innerHTML;
+    window.sessionStorage['t_date'] = document.getElementsByClassName('dark');
+}
+
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    // margin:10,
+    nav:false,
+    responsive:{
+        0:{
+            items:1
+        },
+        768:{
+            items:2
+        },
+        1200:{
+            items:3
+        }
+    },
+});
+
 
 
 

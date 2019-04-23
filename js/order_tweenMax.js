@@ -16,7 +16,7 @@ TweenMax.to('.cloud1_bg',60, {
 
 TweenMax.to('.airBalloon',50, {
     x : 1000,
-    y : -1300,
+    y : -1550,
     repeat: -1,
     // yoyo: true,
     // delay: 1,
