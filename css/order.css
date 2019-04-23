@@ -603,7 +603,7 @@ body {
 
 .wrap_bg footer {
   height: 150px;
-  background: url(../../images/order/footer.png);
+  background: url(../images/order/footer.png);
   background-size: cover;
   position: relative;
 }
@@ -1044,8 +1044,8 @@ body {
   background-color: #f7bac2;
   border-radius: 10px;
   border: none;
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
   line-height: 2.5;
 }
 
@@ -1281,7 +1281,7 @@ body {
     background-repeat: no-repeat;
     position: absolute;
     top: 100px;
-    left: 90px;
+    left: 110px;
     z-index: -2;
     -webkit-transform: rotate(-20deg);
             transform: rotate(-20deg);

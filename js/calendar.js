@@ -74,6 +74,9 @@ function refreshDate() {
   ctitle.innerHTML = month_name[my_month]; //設置英文月份顯示
   cyear.innerHTML = my_year; //設置年份顯示
 }
+
+var oderDate = 0;
+
 mylist.addEventListener('click',  function(e){
   var tempDate = document.querySelectorAll("#days li");
   
@@ -90,7 +93,18 @@ mylist.addEventListener('click',  function(e){
   tempDate[tempIndex].className ='dark';
   e.target.className ='c_font c_box';
 }
-  console.log(e.target);
+  // console.log(e.target);
+  oderDate=e.target.innerHTML;
+  
+  // console.log(my_year );
+  console.log(typeof( my_month) );
+  parseInt(my_month)*100;
+
+  console.log(my_month );
+  parseInt(my_month);
+
+  oderDate=oderDate*10
+  console.log(oderDate );
 });
 
 

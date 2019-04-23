@@ -2,6 +2,7 @@
 ob_start();
 session_start();
 $errMsg = "";
+$memNo = 1;
 
 try{
     require_once("page/connect_order.php");
@@ -12,6 +13,8 @@ try{
     $sql3 = "select * from ticket where tktNo = 3";
     $ticket3 = $pdo->query($sql3);
 
+    $sql4 = "select * from plan where memNo = $memNo";
+    $plan = $pdo->query($sql4);
 
 }catch(PDOException $e){
     $errMsg .= "錯誤原因" . $e->getMessage() . "<br>";
@@ -90,11 +93,11 @@ echo $errMsg;
             <div class="light_box">
                 <!-- <canvas id="drawing_canvas"></canvas> -->
                 <div class="close">
-                    <img src="/images/order/icon-close.png" alt="close">
+                    <img src="images/order/icon-close.png" alt="close">
                 </div>
                 <h3>訂購完成<br>您預定的QRcode</h3>
                 <div class="qr_code">
-                    <img src="/images/order/QRcode.png" alt="qrcode">
+                    <img src="images/order/QRcode.png" alt="qrcode">
                 </div>
                 <p>訂單已儲存至會員中心</p>
                 <a href="member.html"><p>前往會員中心</p></a>
@@ -105,26 +108,26 @@ echo $errMsg;
             <div class="step_group">
                 <div class="step_process roll">訂購門票
                     <div class="process_light first_sun">
-                        <img src="/images/order/sun.png" alt="sun">
+                        <img src="images/order/sun.png" alt="sun">
                     </div>
                 </div>
                 <div class="step_process">選擇活動
                     <div class="process_light">
-                        <img src="/images/order/sun.png" alt="sun">
+                        <img src="images/order/sun.png" alt="sun">
                     </div>
                 </div>
                 <div class="step_process">確認資訊
                     <div class="process_light">
-                        <img src="/images/order/sun.png" alt="sun">
+                        <img src="images/order/sun.png" alt="sun">
                     </div>
                 </div>
                 <div class="step_process">付款
                     <div class="process_light">
-                        <img src="/images/order/sun.png" alt="sun">
+                        <img src="images/order/sun.png" alt="sun">
                     </div>
                 </div>
             </div>
-            <form action="" method="get">
+            <!-- <form action=""> -->
                 <!-- 訂票門票 -->
                 <div id="step1" class="step active order_container">
                     <div class="calendar">
@@ -231,21 +234,28 @@ echo $errMsg;
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> 
                     </div>
                 </div>
                 <!-- 選擇活動 -->
                 <div id="step2" class="step activity_container">
                     <h3>匯入我的行程</h3>
                     <div class="activity_group owl-carousel owl-theme">
+                        <?php
+                            while( $planRow = $plan->fetch()){
+                        ?>
                         <div class="a_item">
                             <div class="item_img">
                                 <img src="images/order/fire.jpg" alt="fire">
                             </div>
-                            <h4>取火術</h4>
-                            <button id="import">選擇</button>
+                            <!-- <h4>取火術</h4> -->
+                            <h4><?php echo $planRow["planName"]?></h4>
+                            <button class="import">選擇</button>
                         </div>
-                        <div class="a_item">
+                        <?php
+                            }
+                        ?>
+                        <!-- <div class="a_item">
                             <div class="item_img">
                                 <img src="images/order/Fishing.png" alt="Fishing">
                             </div>
@@ -265,7 +275,7 @@ echo $errMsg;
                             </div>
                             <h4>搭建術</h4>
                             <button>選擇</button>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="activity_none">
                         <p>
@@ -453,7 +463,7 @@ echo $errMsg;
                     <div id="pre_btn" style="display:none">上一步</div>
                     <div id="next_btn">下一步</div>
                 </div> 
-            </form>
+            <!-- </form> -->
         </div>
         <footer>
             <p>Copyright©2019 森存者</p>

@@ -122,7 +122,6 @@ function addTicket(){
     add_temp = parseInt(this.previousElementSibling.innerHTML);
     // add_temp++;
     // this.previousElementSibling.innerHTML = add_temp;
-
     if(add_temp <=19){
         add_temp++;
     }else{
@@ -139,29 +138,29 @@ function lessTicket(){
         less_temp = 0;
     }
     this.nextElementSibling.innerHTML = less_temp;
-    console.log()
 }
 
 // 不規劃行程
 function checkMark(){
     var check = document.getElementById('noPlan');
-    var newSpan = document.createElement('span'); 
-    var temp = 0;
-    if(temp == 0){
+    var check_mark = check.querySelectorAll(".check_mark");
+    if( check_mark.length == 0){
+        var newSpan = document.createElement('span');
         check.appendChild(newSpan).setAttribute('class','check_mark');
-        temp++;
-    }else if(temp == 1){
-        alert('test');
+    }else{
+        check.removeChild(check_mark[0]);
     }
-    console.log(temp);
+
 }
 
 //選擇活動
-// function choose(){
-//     var chooseAct = document.getElementById('import');
-//     var check_mark = document.getElementsByClassName('check_mark');
-//     document.body.removeChild(check_mark);
-// }
+function chooseOne(){
+    var check = document.getElementById('noPlan');
+    var check_mark = check.querySelectorAll(".check_mark");
+    if( check_mark.length != 0){
+        check.removeChild(check_mark[0]);
+    }
+}
 
 
 function init(){
@@ -185,8 +184,11 @@ function init(){
     noPlan.addEventListener('click',checkMark);
     
     //選擇活動
-    // var chooseAct = document.getElementById('import');
-    // chooseAct.addEventListener('click',choose)
+    var chooseActs = document.getElementsByClassName('import');
+    var length = chooseActs.length;
+    for( var i=0; i<length; i++){
+        chooseActs[i].addEventListener('click',chooseOne);
+    }
 }
 
 window.addEventListener('load',init);
