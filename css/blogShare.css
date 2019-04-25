@@ -572,6 +572,12 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   line-height: 1.5;
 }
 
+.blogShare #selectPlan {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .blogShare .plan-photo {
   width: 60%;
   margin: auto;

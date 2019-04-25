@@ -1,3 +1,27 @@
+<?php
+    ob_start();
+    session_start();
+
+try {
+    //先取得memNo
+    // $memNo = $_SESSION['memNo'];
+    // 下面登入功能寫好要刪掉
+    $memNo =1;
+    require_once("connectDb.php");
+    //內容
+    $sql = "SELECT * FROM `plan` where memNo = $memNo";
+    $planSelect = $pdo -> prepare($sql);
+    $planSelect -> bindColumn("planNo",$planNo);
+    $planSelect -> bindColumn("planName",$planName);
+    $planSelect -> bindColumn("planPhoto",$planPhoto);
+    $planSelect -> bindColumn("planList",$planList);
+
+    $planSelect ->execute();
+} catch (PDOException $e) {
+	echo "錯誤 : ", $e -> getMessage(), "<br>";
+	echo "行號 : ", $e -> getLine(), "<br>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +34,7 @@
     <link rel="Shortcut Icon" type="image/x-icon" href="images/new/favicon.png" />
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/hbgClick.js"></script>
+    <script src="js/blogShare.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
     <script src="//cdn.quilljs.com/1.0.0/quill.js"></script>
     <script src="//cdn.quilljs.com/1.0.0/quill.min.js"></script>
@@ -75,52 +100,59 @@
         <div class="blogShare-board">
             <img src="images/blogShare/edit_blog_paper-01.png" alt="board">
         </div>
-       
-        <div class="previewPlan">
+        <div class="previewPlan" id="previewPlan">
             <div class="selectPlan">
                 <div>選擇你想分享的行程</div>
-                    <select name="YourPlan">
-                　      <option value="plan-1">plan-1</option>
-                　      <option value="plan-2">plan-2</option>
+                    <select name="planNo" id="selectPlanNo" >
+                    <?php
+                    while($planSelect->fetch(PDO::FETCH_ASSOC)){
+                    ?>
+                　      <option value="<?php echo $planNo;?>"><?php echo $planName;?></option>
+                    <?php
+                    } 
+                    ?>
                     </select>
             </div>
+            <div id="selectPlan">
             <div class="plan-photo">
                 <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="行程圖片">
+                <!-- <img src="images/plan/<?php echo $planNo;?>/*.jpg" alt="行程圖片"> -->
             </div> 
             <!-- event -->
             <div class="event-wrap">
-                     <div class="event-item">
-                        <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動照片">
-                        <h3>基本求生</h3>
+                <?php
+                    $sqlevent = "select * from `event` where entNo in ($planList)";
+                    $event = $pdo -> query($sqlevent);
+                    $event -> bindColumn('entName',$entName);
+                    $event -> bindColumn('entPhoto',$entPhoto);
+                while($event ->fetch(PDO::FETCH_ASSOC)){
+                ?>
+                     <div class='event-item'>
+                        <img src='images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg'>
+                        <!-- <img src="images/event/<?php echo $entName;?>.jpg"> -->
+                        <h3><?php echo $entName;?></h3>
                      </div>
-                     <div class="event-item">
-                        <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動照片">
-                        <h3>生火術</h3>
-                     </div>
-                     <div class="event-item">
-                        <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動照片">
-                        <h3>淨水術</h3>
-                     </div>
-                     <div class="event-item">
-                        <img src="images/event/Basic-Survival-Skills-Every-Man-Should-Know.jpg" alt="活動照片">
-                        <h3>基本求生</h3>
-                     </div>
+                <?php
+                }
+                ?> 
+            </div>
             </div>
         </div>   
+        
 
-        <!-- ckediter -->
         <div class="blogSummit">
             <div class="blogSummit-pin">
                 <img src="images/pin.png" alt="圖釘">
             </div>
             
-                <form id="form">
-                        <input type="text" placeholder="輸入你的手札名稱" id="typeBlogName">    
-                           <div class="blogTextarea" id="blogTextarea"></div>
-               
-                       <div class="blogShare-btnContainer">
-                           <button>發布手札</button>
-                       </div>
+                <form action="noteSubmit.php" id="noteform" method="post">
+                        <input type="hidden" name="planNo" value="" id="hiddenplanNo">
+                        <input type="text" placeholder="輸入你的手札名稱" id="typeBlogName" name="noteName">    
+                        <div class="blogTextarea" id="blogTextarea"></div>
+                        <textarea name="noteContent" id="noteContent" cols="30" rows="10" style="display:none;"></textarea>
+                        <div class="blogShare-btnContainer">
+                           <button id="noteSubmitbtn">發布手札</button>
+                        </div>
                 </form>
               <!-- bg fly -->
                 <div id="scene3">
@@ -129,8 +161,8 @@
                 <script>
                     parallaxInstance = new Parallax( document.getElementById( "scene3" ));
                 </script> 
-    </div>
         </div>
+    </div>
   
      
 </div>

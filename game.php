@@ -28,6 +28,7 @@ try {
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/game.js"></script>
     <link rel="Shortcut Icon" type="image/x-icon" href="images/new/favicon.png" />
     <link rel="stylesheet" href="css/game.css">
     <link rel="stylesheet" href="css/header.css">
@@ -88,7 +89,6 @@ try {
         <!-- 地圖按鈕 -->
         <div class="game-rule">
             <img src="images/game/mapbtn.png" alt="遊戲規則按鈕">
-            <!-- <span>遊戲規則</span> -->
         </div>
 
         <div class="game-rule-content">
@@ -128,10 +128,23 @@ try {
               parallaxInstance = new Parallax( document.getElementById( "scene3" ));                  
         </script> 
             <div class="photoWall-upload">
-                <button>上傳與森存者合照</button>
+                <button id="uploadCheck">上傳與森存者合照</button>
+            </div>
+            <!-- <div id="photoUploadArea"> -->
+            <div id="photoUploadArea" style="display:none;">
+            <div id="closeUpload"></div>
+                <form action="uploadPhoto.php" method="post" enctype="multipart/form-data">
+                    <img src="images/game/Photoupload.png" alt="" id="imgPreview">
+                    <input type="file" name="photoWForester" id="upFile">
+                    <input type="submit" value="送出照片" id="photoSub">
+               </form>
             </div>
         </div>
-
+        <script>
+        $("#closeUpload").click(function(){
+            $("#photoUploadArea").hide();
+        });
+    </script>
         <div id="container">
         <?php
         while($photo ->fetch(PDO::FETCH_ASSOC)){
@@ -150,8 +163,8 @@ try {
                     </div>
                 <div class="photoBtn">
                         <div class="photoLikeBtn">
-                            <img src="images/blog/愛心.png" alt="like">
-                            <span class="likeNum" id="likeNum"><?php echo $photoLikeCnt;?></span>  
+                            <img src="images/blog/愛心.png" class="like" id="like<?php echo "|".$photoNo?>">
+                            <span id="likeNum<?php echo $photoNo;?>"><?php echo $photoLikeCnt;?></span>  
                         </div>
                         <div class="photoRepBtn">
                            <a href="photoReport.php?photoNo=<?php echo $photoNo;?>"><img src="images/game/alert.png" alt="like"></a>

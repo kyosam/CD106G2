@@ -453,6 +453,7 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   margin: auto;
   background-color: #FFD19B;
   border-radius: 10px;
+  border-radius: 20px;
   padding: 3%;
 }
 
@@ -540,6 +541,8 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   margin: 10px 0;
   padding: 10%;
   width: 80%;
+  font-size: 24px;
+  line-height: 1.8;
 }
 
 .blogContent .blogContent-graphic {
@@ -688,9 +691,20 @@ div, h1, h2, h3, h4, h5, h6, p, span {
 }
 
 .blogContent .blogContent-btnContainer .blogLikeBtn {
+  cursor: pointer;
   margin: 0 10px;
   position: relative;
   top: 10px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: rgba(218, 185, 128, 0.623);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.blogContent .blogContent-btnContainer .blogLikeBtn:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .blogContent .blogContent-btnContainer .blogLikeBtn span {
@@ -703,9 +717,20 @@ div, h1, h2, h3, h4, h5, h6, p, span {
 }
 
 .blogContent .blogContent-btnContainer .blogCommentBtn {
+  cursor: pointer;
   margin: 0 10px;
   position: relative;
   top: 10px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: rgba(218, 185, 128, 0.623);
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+.blogContent .blogContent-btnContainer .blogCommentBtn:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .blogContent .blogContent-btnContainer .blogCommentBtn span {
@@ -746,6 +771,91 @@ div, h1, h2, h3, h4, h5, h6, p, span {
           box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
 }
 
+.blogContent #addPlanArea {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  height: 30%;
+  border-radius: 20px;
+  background-color: rgba(247, 186, 194, 0.95);
+  padding: 5%;
+}
+
+.blogContent #addPlanArea h2 {
+  font-family: '微軟正黑體';
+  font-size: 28px;
+  font-weight: bold;
+  color: #eb715f;
+  letter-spacing: 1.5;
+}
+
+.blogContent #addPlanArea #close {
+  position: absolute;
+  z-index: 11;
+  right: 4%;
+  top: 8%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 60px;
+}
+
+.blogContent #addPlanArea #close::after {
+  content: '';
+  display: block;
+  background-image: url(../images/game/icon-close.png);
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+}
+
+.blogContent #addPlanArea #addplanName {
+  width: 30%;
+  margin: 2.5%;
+  font-size: 30px;
+}
+
+.blogContent #addPlanArea #planSub {
+  margin: 5%;
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  font-family: '微軟正黑體';
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #eb715f;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+}
+
+.blogContent #addPlanArea #planSub:hover {
+  top: 4px;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+}
+
 .blogContent .comment {
   max-width: 1200px;
   margin-top: 10%;
@@ -768,6 +878,7 @@ div, h1, h2, h3, h4, h5, h6, p, span {
       -ms-flex-pack: justify;
           justify-content: space-between;
   text-align: center;
+  margin: 20px 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -861,7 +972,7 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   }
 }
 
-.blogContent .comment .comment-input form input {
+.blogContent .comment .comment-input form button {
   cursor: pointer;
   position: relative;
   top: 0;
@@ -886,14 +997,14 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   margin: 10px;
 }
 
-.blogContent .comment .comment-input form input:hover {
+.blogContent .comment .comment-input form button:hover {
   top: 4px;
   -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
           box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
 }
 
 @media screen and (max-width: 768px) {
-  .blogContent .comment .comment-input form input {
+  .blogContent .comment .comment-input form button {
     top: 0;
   }
 }
@@ -966,6 +1077,11 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   top: 4px;
   -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
           box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+}
+
+.blogContent-seemore #readMoreBlog a {
+  text-decoration: none;
+  color: #fff;
 }
 
 #copyurl {

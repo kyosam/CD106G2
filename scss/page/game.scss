@@ -190,6 +190,46 @@
             }
             
         }
+        #photoUploadArea{
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 50%;
+            height: 50%;
+            border-radius: 20px;
+            background-color:rgba($color: $pink, $alpha: 0.95) ;
+            padding: 5%;
+            #closeUpload{
+                position: absolute;
+                z-index: 11;
+                right: 4%;
+                top: 8%;
+                display: flex;
+                justify-content:flex-end;
+                cursor: pointer;
+                font-weight: bolder;
+                font-size: 50px;
+                &::after{
+                    content: '';
+                    display: block;
+                    background-image: url(../images/game/icon-close.png);
+                    background-repeat: no-repeat;
+                    width: 30px;
+                    height: 30px;
+                    background-size: contain;
+                }
+            }
+            img{
+                width: 40%;
+            }
+            #photoSub{
+                @include btn($white,$red);
+            }
+        }
     }
     #container{
         display: flex;

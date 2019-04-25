@@ -20,6 +20,7 @@
     margin: auto;
     background-color: $blogrank;
     border-radius: 10px;
+    border-radius: 20px;
     padding: 3%;
     .blogContent-heading{
         margin: 10px 0;
@@ -77,6 +78,8 @@
             margin: 10px 0;
             padding: 10%;
             width: 80%;
+            font-size: 24px;
+            line-height: 1.8;
         }
     }
     .blogContent-graphic{
@@ -184,9 +187,17 @@
             margin: 20px 0;
             @include bodyP;
             .blogLikeBtn{
+                cursor: pointer;
                 margin: 0 10px;
                 position: relative;
                 top: 10px;
+                height: 30px;;
+                border-radius: 10px;
+                background-color: rgba(218, 185, 128, 0.623);
+                transition: 1s;
+                &:hover{
+                    transform: scale(1.2);
+                }
                 span{
                     vertical-align: 5px;
                 }
@@ -196,9 +207,17 @@
                 }
             }
             .blogCommentBtn{
+                cursor: pointer;
                 margin: 0 10px;
                 position: relative;
                 top: 10px;
+                height: 30px;;
+                border-radius: 10px;
+                background-color: rgba(218, 185, 128, 0.623);
+                transition: 1s;
+                &:hover{
+                    transform: scale(1.2);
+                }
                 span{
                     vertical-align: 5px;
                 }
@@ -211,6 +230,54 @@
                 @include btn($red,$yellow);
                 width: 150px;
             }
+    }
+    #addPlanArea{
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        width: 50%;
+        height: 30%;
+        border-radius: 20px;
+        background-color:rgba($color: $pink, $alpha: 0.95) ;
+        padding: 5%;
+        h2{
+            @include md-title($red);
+        }
+        #close{
+            position: absolute;
+            z-index: 11;
+            right: 4%;
+            top: 8%;
+            display: flex;
+            justify-content:flex-end;
+            cursor: pointer;
+            font-weight: bolder;
+            font-size: 60px;
+            &::after{
+                content: '';
+                display: block;
+                background-image: url(../images/game/icon-close.png);
+                background-repeat: no-repeat;
+                width: 30px;
+                height: 30px;
+                background-size: contain;
+            }
+            
+        }
+        #addplanName{
+                width: 30%;
+                margin: 2.5%;
+                font-size: 30px;
+        }
+        #planSub{
+            margin: 5%;
+            @include btn($white,$red);
+        }
     }
     .comment{
         max-width: $dt;
@@ -225,6 +292,7 @@
             display: flex;
             justify-content: space-between;
             text-align: center;
+            margin: 20px 0;
             @media screen and (max-width:$mb){
                 display: block;
                 margin: auto;
@@ -317,7 +385,7 @@
                         height: 60%;
                     }
                 }
-                input{
+                button{
                     @include btn($red,$yellow);
                     position: relative;
                     top: -40%;
@@ -346,6 +414,10 @@
         #readMoreBlog{
             @include btn($white,$doubledarkGreen);
             width: 150px;
+            a{
+                text-decoration: none;
+                color: $white;
+            }
         }
     }
 

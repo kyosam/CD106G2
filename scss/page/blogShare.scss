@@ -101,6 +101,9 @@
             @include bodyP;
         }
     }
+    #selectPlan{
+        display: flex;
+    }
     .plan-photo{
         width: 60%;
         margin: auto;

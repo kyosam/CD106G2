@@ -55,11 +55,13 @@
     }
     .blogRanking-article{
         display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
         @media screen and (max-width:$mb){
             display: block;
         }
         .blogRanking-article-left{
-            width: 60%;
+            width: 50%;
             margin: auto;
             @media screen and (max-width:$mb){
                 width: 100%;
@@ -101,7 +103,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-evenly;
-            width: 40%;
+            width: 50%;
             margin: 20px 0;
      
             @media screen and (max-width:$mb){
@@ -134,6 +136,7 @@
         
                         .event-name{
                             @include md-title($blue);
+                            font-size: 26px;
                             display: inline-block;
                         }
                         .event-hr{
@@ -174,9 +177,11 @@
             display: flex;
             justify-content: flex-end;
             vertical-align: middle;
+            height: 40px;
             @include bodyP;
             .blogLikeBtn{
                 cursor: pointer;
+                height: 30px;
                 display: flex;
                 justify-content: space-around;
                 margin: 0 10px;
@@ -196,6 +201,7 @@
             }
             .blogCommentBtn{
                 cursor: pointer;
+                height: 30px;
                 display: flex;
                 justify-content: space-around;
                 margin: 0 10px;
@@ -226,6 +232,51 @@
         button{
             @include btn($red,$yellow);
             width: 150px;
+        }
+    }
+    #addPlanArea{
+        position: fixed;
+        z-index: 10;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+        width: 50%;
+        height: 30%;
+        border-radius: 20px;
+        background-color:rgba($color: $pink, $alpha: 0.95) ;
+        padding: 5%;
+        #close{
+            position: absolute;
+            z-index: 11;
+            right: 4%;
+            top: 8%;
+            display: flex;
+            justify-content:flex-end;
+            cursor: pointer;
+            font-weight: bolder;
+            font-size: 60px;
+            &::after{
+                content: '';
+                display: block;
+                background-image: url(../images/game/icon-close.png);
+                background-repeat: no-repeat;
+                width: 30px;
+                height: 30px;
+                background-size: contain;
+            }
+            
+        }
+        #addplanName{
+                width: 30%;
+                margin: 2.5%;
+                font-size: 30px;
+        }
+        #planSub{
+            margin: 5%;
+            @include btn($white,$red);
         }
     }
     
@@ -262,6 +313,7 @@
         text-align: center;
         vertical-align: middle;
         background-color: $pink;
+        color: $red;
         border-radius: 10px;
         border: none;
         box-shadow: 0px 1px 0px #ccc,
@@ -275,9 +327,6 @@
             right: 40%;
         }
         z-index: 1;
-        a{
-            color: $red;
-        }
     }
     .blogShare-beforehover{
         display: inline-block;
@@ -350,13 +399,9 @@
     max-width: $dt;
     margin: auto;
     .blogForum-optContainer{
-        display: flex;
-        justify-content: flex-start;
-        margin: 0 20px;
-        select{
-            width: 180px;
-            height: 50px;
-             @include sm-title($black);  
+        button{
+            @include btn($red,$yellow);
+            height: 30px;
         }
         
     }
@@ -530,8 +575,9 @@
     height: 0.001px;
 }
 #copyok{
-    width: 80%;
-    height: 50vw;
+    width: 50%;
+    height: 50%;
+    border-radius: 20px;
     background-color: rgba($color: $pink, $alpha: 0.8);
     position: fixed;
     z-index: 3;
@@ -543,7 +589,7 @@
     text-align: center;
     display: none;
     p{
-        margin: 20%;
+        margin: 15%;
         @include big-title($black);
     }
 }

@@ -141,7 +141,7 @@ try {
                 <span><?php echo $memId;?></span>
                 <span><?php echo $noteDate;?></span>
             </div>
-            <div class="blogContent-share">
+            <div class="blogRanking-share">
                 <input type="text" id="copyurl" value="blogContent.php?planNo=<?php echo $planNo;?>" >
                 <img src="images/blog/Share.png" alt="分享" id="copybtn">
             </div>
@@ -149,11 +149,12 @@ try {
         <div class="blogRanking-article">
             <div class="blogRanking-article-left">
                 <div class="blogRanking-photo">
-                <img src="images/event/Best-Survival-Schools.jpg" alt="手札圖片">
-                    <!-- <img src="images/plan/<?php echo $planNo;?>/*.jpg" alt="手札圖片" onerror="javascript:this.src='images/planDef/planDef.jpg'"> -->
+                    <img src="images/event/Best-Survival-Schools.jpg" alt="手札圖片">
+                    <!-- <img src="images/plan/<?php echo $planNo;?>/<?php echo $planphoto;?>" alt="手札圖片" onerror="javascript:this.src='images/planDef/planDef.jpg'"> -->
                 </div>
                 <p><?php echo $noteContent;?>
-                    <a href="blogContent.php?planNo=<?php echo $planNo;?>"><span class="readMore" >繼續閱讀</span></a> </p>
+                    <a href="blogContent.php?planNo=<?php echo $planNo;?>"><span class="readMore" >繼續閱讀</span></a>
+                </p>
             </div>
             
           
@@ -215,12 +216,20 @@ try {
 
          <div class="blogRanking-btnContainer">
             <div class="blogLikeBtn">
-               <img src="images/blog/愛心.png" alt="like">
-               <span class="likeNum" id="likeNum"><?php echo $noteLikeTime;?></span> 
+               <img src="images/blog/愛心.png" class="like" id="like<?php echo "|".$planNo?>">
+               <span id="likeNum<?php echo $planNo;?>"><?php echo $noteLikeTime;?></span> 
             </div>
+            <?php
+            // $sqlMsg = "SELECT COUNT(noteCommNo)  FROM noteComment WHERE noteCommStatus=1 AND planNo = $planNo";
+            // $noteMsgTime = $pdo -> query($sqlMsg);
+            $con =mysqli_connect("localhost","root","root","cd106g2"); 
+            $sqlMsg = "SELECT COUNT(noteCommNo)  FROM noteComment WHERE noteCommStatus=1 AND planNo = $planNo";
+            $result = mysqli_query($con,$sqlMsg);
+            $noteMsgTime = mysqli_fetch_array($result);
+            ?>
             <div class="blogCommentBtn">
               <img src="images/blog/留言.png" alt="comment">
-              <span class="commNum" id="commNum"><?php echo $noteMsgTime;?></span>  
+              <span class="commNum" id="commNum"><?php echo $noteMsgTime[0];?></span>  
             </div>
          </div>
 
@@ -228,12 +237,26 @@ try {
 
         
         <div class="addBtn">
-            <button>加入我的行程</button>
+            <button id="addCheck">加入我的行程</button>
+        </div>
+        <div id="addPlanArea" style="display:none;">
+            <div id="close"></div>
+            <h2>加入的行程將會存入會員中心</h2>
+                <form action="addPlan.php" method="post">
+                    <input type="text" name="planName" placeholder="輸入行程名稱" id="addplanName">
+                    <input type="hidden" name="planList" value="<?php echo $planList?>">
+                    <br>
+                    <input type="submit" value="加入行程" id="planSub">
+               </form>
         </div>
     </div>
     <?php  }?>
     </div>
-    
+    <script>
+        $("#close").click(function(){
+            $("#addPlanArea").hide();
+        });
+    </script>
    <!-- bg fly -->
     <div id="scene2">
         <div data-depth="0.6" class="fly1"><img src="images/blog/fly1.gif" alt="蝴蝶"></div>
@@ -301,11 +324,6 @@ try {
     <!-- blog forum -->
     <div class="blogForum">
         <div class="blogForum-optContainer">
-            <!-- 下拉選單 -->
-            <!-- <select name="blogForum-option">
-                <option value="optHigh">依熱門排列</option>
-                <option value="optNew">依時間排列</option>
-            </select> -->
             <button id="NewShare" >最新分享</button>
             <button id="HighScore">最高評分</button>
         </div>
@@ -317,7 +335,6 @@ try {
         </script>
 
         <!-- 瀑布文章 -->
-    <!-- <div id="filter"> -->
         <div id="container">
         <?php
         while($blogNew ->fetch(PDO::FETCH_ASSOC)){
@@ -330,6 +347,7 @@ try {
                 <div class="blog-info">
                     <div class="blog-author">
                        <!-- <img src="images/member/<?php echo $memNo;?>/big_head1.png" alt="大頭貼"> -->
+                       <img src="images/blog/big_head1.png" alt="大頭貼">
                        <span class="authorName"><?php echo $memId;?></span>
                     </div>  
                      <span class="blogDate"><?php echo $noteDate;?></span>
@@ -368,19 +386,24 @@ try {
                
                 <div class="blog-item-btnContainer">
                     <div class="blogLikeBtn">
-                       <img src="images/blog/愛心.png" alt="like">
-                       <span class="likeNum" id="likeNum"><?php echo $noteLikeTime;?></span> 
+                       <img src="images/blog/愛心.png" class="like" id="like<?php echo "|".$planNo?>">
+                       <span id="likeNum<?php echo $planNo;?>"><?php echo $noteLikeTime;?></span> 
                     </div>
+                    <?php
+                    $con =mysqli_connect("localhost","root","root","cd106g2"); 
+                    $sqlMsg = "SELECT COUNT(noteCommNo)  FROM noteComment WHERE noteCommStatus=1 AND planNo = $planNo";
+                    $result = mysqli_query($con,$sqlMsg);
+                    $noteMsgTime = mysqli_fetch_array($result);
+                    ?>
                     <div class="blogCommentBtn">
                       <img src="images/blog/留言.png" alt="comment">
-                      <span class="commNum" id="commNum"><?php echo $noteMsgTime;?></span>  
+                      <span class="commNum" id="commNum"><?php echo $noteMsgTime[0];?></span>  
                     </div>
                 </div>
             </div>
             <?php  }?>
         </div>
 
-    <!-- </div> -->
 
 
     </div>

@@ -506,6 +506,11 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 @media screen and (max-width: 768px) {
@@ -515,7 +520,7 @@ div, h1, h2, h3, h4, h5, h6, p, span {
 }
 
 .blogRanking .blogRanking-article .blogRanking-article-left {
-  width: 60%;
+  width: 50%;
   margin: auto;
 }
 
@@ -567,7 +572,7 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  width: 40%;
+  width: 50%;
   margin: 20px 0;
 }
 
@@ -615,6 +620,7 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   font-weight: bold;
   color: #718cc6;
   letter-spacing: 1.5;
+  font-size: 26px;
   display: inline-block;
 }
 
@@ -658,6 +664,7 @@ div, h1, h2, h3, h4, h5, h6, p, span {
       -ms-flex-pack: end;
           justify-content: flex-end;
   vertical-align: middle;
+  height: 40px;
   font-family: '微軟正黑體';
   font-size: 15px;
   color: #232323;
@@ -667,6 +674,7 @@ div, h1, h2, h3, h4, h5, h6, p, span {
 
 .blogRanking .blogRanking-btnContainer .blogLikeBtn {
   cursor: pointer;
+  height: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -695,6 +703,7 @@ div, h1, h2, h3, h4, h5, h6, p, span {
 
 .blogRanking .blogRanking-btnContainer .blogCommentBtn {
   cursor: pointer;
+  height: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -762,6 +771,83 @@ div, h1, h2, h3, h4, h5, h6, p, span {
           box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
 }
 
+.blogRanking #addPlanArea {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  width: 50%;
+  height: 30%;
+  border-radius: 20px;
+  background-color: rgba(247, 186, 194, 0.95);
+  padding: 5%;
+}
+
+.blogRanking #addPlanArea #close {
+  position: absolute;
+  z-index: 11;
+  right: 4%;
+  top: 8%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 60px;
+}
+
+.blogRanking #addPlanArea #close::after {
+  content: '';
+  display: block;
+  background-image: url(../images/game/icon-close.png);
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+}
+
+.blogRanking #addPlanArea #addplanName {
+  width: 30%;
+  margin: 2.5%;
+  font-size: 30px;
+}
+
+.blogRanking #addPlanArea #planSub {
+  margin: 5%;
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  font-family: '微軟正黑體';
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #eb715f;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+}
+
+.blogRanking #addPlanArea #planSub:hover {
+  top: 4px;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+}
+
 .blogShare {
   margin: auto;
   text-align: center;
@@ -798,6 +884,7 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   text-align: center;
   vertical-align: middle;
   background-color: #f7bac2;
+  color: #eb715f;
   border-radius: 10px;
   border: none;
   -webkit-box-shadow: 0px 1px 0px #ccc, 0px 2px 0px #bbb, 0px 3px 0px #aaa, 0px 4px 0px #999;
@@ -812,10 +899,6 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   .blogShare button {
     right: 40%;
   }
-}
-
-.blogShare button a {
-  color: #eb715f;
 }
 
 .blogShare .blogShare-beforehover {
@@ -911,24 +994,33 @@ div, h1, h2, h3, h4, h5, h6, p, span {
   margin: auto;
 }
 
-.blogForum .blogForum-optContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  margin: 0 20px;
+.blogForum .blogForum-optContainer button {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100px;
+  height: 50px;
+  display: inline-block;
+  font-family: '微軟正黑體';
+  font-size: 18px;
+  font-weight: bold;
+  color: #eb715f;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #ffdb3f;
+  border-radius: 10px;
+  border: none;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  height: 30px;
 }
 
-.blogForum .blogForum-optContainer select {
-  width: 180px;
-  height: 50px;
-  font-family: '微軟正黑體';
-  font-size: 24px;
-  font-weight: bold;
-  color: #403d04;
-  letter-spacing: 1.5;
+.blogForum .blogForum-optContainer button:hover {
+  top: 4px;
+  -webkit-box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
+          box-shadow: 0px 1px 0px #946970, 0px 1px 0px #9e757c, 0px 2px 0px #a57e85, 0px 2px 0px #af8c92;
 }
 
 .blogForum #container {
@@ -1169,8 +1261,9 @@ div, h1, h2, h3, h4, h5, h6, p, span {
 }
 
 #copyok {
-  width: 80%;
-  height: 50vw;
+  width: 50%;
+  height: 50%;
+  border-radius: 20px;
   background-color: rgba(247, 186, 194, 0.8);
   position: fixed;
   z-index: 3;
@@ -1184,7 +1277,7 @@ div, h1, h2, h3, h4, h5, h6, p, span {
 }
 
 #copyok p {
-  margin: 20%;
+  margin: 15%;
   font-family: '微軟正黑體';
   font-size: 34px;
   color: #403d04;
