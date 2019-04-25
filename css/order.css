@@ -1044,8 +1044,8 @@ body {
   background-color: #f7bac2;
   border-radius: 10px;
   border: none;
-  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
-          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+  -webkit-box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
+          box-shadow: 0px 1px 0px #af8c92, 0px 2px 0px #a57e85, 0px 3px 0px #9e757c, 0px 4px 0px #946970;
   line-height: 2.5;
 }
 
@@ -1172,6 +1172,47 @@ body {
   margin: auto;
 }
 
+.activity_container .activity_group .a_item .heartBox {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.activity_container .activity_group .a_item .heartBox .heart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+  -webkit-animation: heartbeat 1.5s infinite;
+          animation: heartbeat 1.5s infinite;
+  margin: 0 auto;
+}
+
+.activity_container .activity_group .a_item .heartBox .heart::before, .activity_container .activity_group .a_item .heartBox .heart::after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: #ee5757;
+  border-radius: 50px 50px 0 0;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: 0 100%;
+  transform-origin: 0 100%;
+}
+
+.activity_container .activity_group .a_item .heartBox .heart::after {
+  left: 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+  transform-origin: 100% 100%;
+}
+
 .activity_container .activity_none {
   margin: auto;
 }
@@ -1202,7 +1243,7 @@ body {
   margin-right: 10px;
 }
 
-.activity_container .activity_none p .check .check_mark {
+.activity_container .activity_none p .check .check_x {
   position: absolute;
   top: 2px;
   left: 3px;
@@ -1211,26 +1252,80 @@ body {
   background-color: #fff;
 }
 
-.activity_container .activity_none p .check .check_mark::before, .activity_container .activity_none p .check .check_mark::after {
+.activity_container .activity_none p .check .check_x::before, .activity_container .activity_none p .check .check_x::after {
   content: '';
   display: block;
   width: 30px;
   height: 5px;
-  background-color: #f06697;
+  background-color: #e66c96;
 }
 
-.activity_container .activity_none p .check .check_mark::before {
+.activity_container .activity_none p .check .check_x::before {
   -webkit-transform: translate(-25%, 65%) rotate(45deg);
           transform: translate(-25%, 65%) rotate(45deg);
   -webkit-animation: crossCheckMarker 0.5s;
           animation: crossCheckMarker 0.5s;
 }
 
-.activity_container .activity_none p .check .check_mark::after {
+.activity_container .activity_none p .check .check_x::after {
   -webkit-transform: translate(-25%, -10%) rotate(-45deg);
           transform: translate(-25%, -10%) rotate(-45deg);
   -webkit-animation: crossCheckMarker 0.5s;
           animation: crossCheckMarker 0.5s;
+}
+
+@-webkit-keyframes heartbeat {
+  0% {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+  20% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  40% {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+  60% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  80% {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+  100% {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+}
+
+@keyframes heartbeat {
+  0% {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+  20% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  40% {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+  60% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  80% {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+  100% {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
 }
 
 @-webkit-keyframes crossCheckMarker {
@@ -1353,6 +1448,8 @@ body {
           justify-content: flex-end;
   padding-top: 25px;
   font-size: 20px;
+  font-weight: 600;
+  color: #3F3B04;
 }
 
 .confirm_container .show_total {
@@ -1426,6 +1523,37 @@ body {
   padding-bottom: 5px;
 }
 
+.credit_container .all_total {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 25px;
+}
+
+.credit_container .all_total > span {
+  width: 200px;
+  display: block;
+  margin-top: 10px;
+  margin-right: 20px;
+  font-size: 20px;
+  letter-spacing: 5;
+  color: #3F3B04;
+  font-weight: 500;
+}
+
+.credit_container .all_total #point {
+  padding-bottom: 2px;
+  border-bottom: 2px solid #706456;
+}
+
 .ct_rule > p {
   padding: 5px 0;
 }
@@ -1488,6 +1616,10 @@ body {
           transform: rotate(45deg);
 }
 
+#memPoint {
+  font-size: 26px;
+}
+
 .ct_credit .ct_credit_txt ul {
   font-size: 18px;
 }
@@ -1539,8 +1671,8 @@ body {
 
 @media screen and (min-width: 768px) {
   .credit_container {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .credit_container .ct_rule, .credit_container .ct_credit {
     width: 50%;
@@ -1554,16 +1686,11 @@ body {
   .credit_container .ct_rule {
     padding-left: 15%;
   }
-}
-
-.owl-next {
-  color: #2c60af;
-  font-size: 50px;
-  margin: 5px;
-  padding: 4px 7px;
-  background: #c47924;
-  display: inline-block;
-  cursor: pointer;
-  border-radius: 3px;
+  .credit_container .all_total {
+    margin-top: 0;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
 }
 /*# sourceMappingURL=order.css.map */

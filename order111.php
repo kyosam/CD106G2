@@ -6,12 +6,8 @@ $memNo = 1;
 
 try{
     require_once("page/connect_order.php");
-    $sql = "select * from ticket where tktNo = 1";
+    $sql = "select * from ticket ";
     $ticket = $pdo->query($sql);
-    $sql2 = "select * from ticket where tktNo = 2";
-    $ticket2 = $pdo->query($sql2);
-    $sql3 = "select * from ticket where tktNo = 3";
-    $ticket3 = $pdo->query($sql3);
 
     $sql4 = "select * from plan where memNo = $memNo";
     $plan = $pdo->query($sql4);
@@ -111,7 +107,7 @@ echo $errMsg;
                         <img src="images/order/sun.png" alt="sun">
                     </div>
                 </div>
-                <div class="step_process">選擇行程
+                <div class="step_process">選擇活動
                     <div class="process_light">
                         <img src="images/order/sun.png" alt="sun">
                     </div>
@@ -159,19 +155,16 @@ echo $errMsg;
                     </div>
                     <div class="ticket">
                         <div class="ticket_group">
+                        <?php
+                            while( $tTitle = $ticket->fetch()){
+                        ?>
                             <div class="t_content">
                                 <img src="images/order/ticketBg.png" alt="ticketBg">
-                                <div class="t_w">
+                                <div class="t_w">                                 
                                     <div class="t_txt">
-                                    <?php
-                                        while( $tTitle = $ticket->fetch()){
-                                    ?>
-                                        <span id="t_type_adults" class="species"><?php echo $tTitle["tktName"]?></span>
+                                        <span class="species"><?php echo $tTitle["tktName"]?></span>
                                         <span class="age"><?php echo $tTitle["tktDesc"]?></span>
-                                        <span  id="t_price_adults" class="price"><?php echo $tTitle["tktPrice"]?>元</span>
-                                    <?php
-                                        }
-                                    ?>
+                                        <span class="price"><?php echo $tTitle["tktPrice"]?>元</span>
                                     </div>
                                     <div class="t_quantity">
                                         <button class="t_less">
@@ -184,60 +177,13 @@ echo $errMsg;
                                     </div>
                                 </div>
                             </div>
-                            <div class="t_content">
-                                <img src="images/order/ticketBg.png" alt="ticketBg">
-                                <div class="t_w">
-                                    <?php
-                                        while( $tTitle2 = $ticket2->fetch()){
-                                    ?>
-                                    <div class="t_txt">
-                                        <span id="t_type_student" class="species"><?php echo $tTitle2["tktName"]?></span>
-                                        <span class="age"><?php echo $tTitle2["tktDesc"]?></span>
-                                        <span id="t_price_student" class="price"><?php echo $tTitle2["tktPrice"]?>元</span>
-                                    </div>
-                                    <?php
-                                        }
-                                    ?>
-                                    <div class="t_quantity">
-                                        <button class="t_less">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <span id="t_student" class="t_num">0</span>
-                                        <button class="t_add">
-                                            <i class="fas fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="t_content">
-                                <img src="images/order/ticketBg.png" alt="ticketBg">
-                                <div class="t_w">
-                                    <?php
-                                        while( $tTitle3 = $ticket3->fetch()){
-                                    ?>
-                                    <div class="t_txt">
-                                        <span id="t_type_child" class="species"><?php echo $tTitle3["tktName"]?></span>
-                                        <span class="age"><?php echo $tTitle3["tktDesc"]?></span>
-                                        <span id="t_price_child" class="price"><?php echo $tTitle3["tktPrice"]?>元</span>
-                                    </div>
-                                    <?php
-                                        }
-                                    ?>
-                                    <div class="t_quantity">
-                                        <button class="t_less">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <span id="t_child" class="t_num">0</span>
-                                        <button class="t_add">
-                                            <i class="fas fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php
+                                }
+                            ?>
                         </div> 
                     </div>
                 </div>
-                <!-- 選擇行程 -->
+                <!-- 選擇活動 -->
                 <div id="step2" class="step activity_container">
                     <h3>匯入我的行程</h3>
                     <div class="activity_group owl-carousel owl-theme">
@@ -251,8 +197,8 @@ echo $errMsg;
                             <!-- <h4>取火術</h4> -->
                             <h4><?php echo $planRow["planName"]?></h4>
                             <button class="import">選擇</button>
-                            <div class="heartBox">
-                                <div class="heart"></div>
+                            <div id="heartBox">
+                                <div id="heart"></div>
                             </div>
                         </div>
                         <?php
@@ -294,25 +240,37 @@ echo $errMsg;
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>票總</th>
+                                        <th>票價</th>
                                         <th>單價</th>
                                         <th>數量</th>
                                         <th>小計</th>
                                     </tr>
                                 </thead>
-                                <tbody id="ticketList">
-                                    <!-- <tr>
-                                        <td>全票</td>
+                                <tbody>
+                                    <tr class="ticketList">
+                                    <?php
+                                        while( $tTitle = $ticket->fetch()){
+                                    ?>
+                                        <td><?php echo $tTitle["tktName"]?></td>
                                         <td>1000</td>
                                         <td>2</td>
                                         <td>2000</td>
-                                    </tr> -->
-                                    <!-- <tr>
-                                        <td>半票</td>
+                                    <?php
+                                        }
+                                    ?>
+                                    </tr>
+                                    <tr>
+                                    <?php
+                                        while( $tTitle2 = $ticket2->fetch()){
+                                    ?>
+                                        <td><?php echo $tTitle2["tktName"]?></td>
                                         <td>700</td>
                                         <td>1</td>
                                         <td>700</td>
-                                    </tr> -->
+                                    <?php
+                                        }
+                                    ?>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -379,7 +337,7 @@ echo $errMsg;
                                 <input type="checkbox">
                                 <span class="check_mark"></span>
                             </label>
-                                <p>您持有的紅利點數為：<span id="memPoint">0</span>點</p>
+                                <p>您持有的紅利點數為：0點</p>
                                 <p>(每10點可折抵1元)</p>
                             <label>我已詳閱並同意購買的條款
                                 <input type="checkbox">

@@ -19,6 +19,14 @@ nextBtn.click(function() {
     if(index == 1){
         saveTicket();
     }
+    if(index == 2){
+        if(parseInt(adultsCount[0]) == 0){
+            alert('沒有票券');
+        }else if(parseInt(adultsCount[0]) != 0){
+            alert('有票券喔');
+            // $('#ticketList').append("<tr><td>adultsCount[1]</td><td>adultsCount[2]</td><td>adultsCount[0]</td></tr>");
+        }
+    }
     
     console.log(index);
     if($("#next_btn").text() == '送出'){
@@ -122,6 +130,7 @@ function addTicket(){
     add_temp = parseInt(this.previousElementSibling.innerHTML);
     // add_temp++;
     // this.previousElementSibling.innerHTML = add_temp;
+
     if(add_temp <=19){
         add_temp++;
     }else{
@@ -138,28 +147,32 @@ function lessTicket(){
         less_temp = 0;
     }
     this.nextElementSibling.innerHTML = less_temp;
+    console.log()
 }
 
-// 不規劃行程
+// 點不規劃行程
 function checkMark(){
-    var check = document.getElementById('noPlan');
-    var check_mark = check.querySelectorAll(".check_mark");
-    if( check_mark.length == 0){
+    var check = document.getElementById('noPlan');//點擊不規劃行
+    var check_x = check.getElementsByClassName("check_x");//所有新生成的span
+    if( check_x.length == 0){ //如果一開始沒有新標籤為0,會新生成
         var newSpan = document.createElement('span');
-        check.appendChild(newSpan).setAttribute('class','check_mark');
+        check.appendChild(newSpan).setAttribute('class','check_x');
     }else{
-        check.removeChild(check_mark[0]);
+        check.removeChild(check_x[0]);
     }
-
 }
 
-//選擇活動
+//點選擇行程
 function chooseOne(){
+    var check_x = document.getElementsByClassName("check_x");
     var check = document.getElementById('noPlan');
-    var check_mark = check.querySelectorAll(".check_mark");
-    if( check_mark.length != 0){
-        check.removeChild(check_mark[0]);
-    }
+    var myTarget = this.nextElementSibling;
+    myTarget.style.display = 'block';
+    if( check_x.length != 0){
+        check.removeChild(check_x[0]);
+    }else{
+        // alert();
+    }    
 }
 
 
@@ -180,27 +193,32 @@ function init(){
     nextMonth.addEventListener('click',refreshMonth);
     prevMonth.addEventListener('click',refreshMonth);
 
-    var noPlan = document.getElementById('noPlan');
+    var noPlan = document.getElementById('noPlan');//不規劃行程
     noPlan.addEventListener('click',checkMark);
     
-    //選擇活動
-    var chooseActs = document.getElementsByClassName('import');
-    var length = chooseActs.length;
+    var chooseActs = document.querySelectorAll('.import');//選擇行程按鈕
+    var length = chooseActs.length; //看有幾個
     for( var i=0; i<length; i++){
-        chooseActs[i].addEventListener('click',chooseOne);
+        chooseActs[i].addEventListener('click',chooseOne); //都註冊
     }
 }
 
 window.addEventListener('load',init);
 
-
 // 儲存訂購門票內容
+var storage = sessionStorage;
+
 function saveTicket(){
-    window.sessionStorage['t_adults'] = document.getElementById('t_adults').innerHTML;
-    window.sessionStorage['t_student'] = document.getElementById('t_student').innerHTML;
-    window.sessionStorage['t_child'] = document.getElementById('t_child').innerHTML;
-    window.sessionStorage['t_date'] = document.getElementsByClassName('dark');
+    storage['adults'] = [document.getElementById('t_adults').innerHTML,document.getElementById('t_type_adults').innerHTML,document.getElementById('t_price_adults').innerHTML];
+    storage['student'] = [document.getElementById('t_student').innerHTML,document.getElementById('t_type_student').innerHTML,document.getElementById('t_price_student').innerHTML];
+    storage['child'] = [document.getElementById('t_child').innerHTML,document.getElementById('t_type_child').innerHTML,document.getElementById('t_price_child').innerHTML];
+    // window.sessionStorage['t_date'] = document.getElementsByClassName('dark');
+    adultsCount = storage['adults'].split(',');
+    studentCount = storage['student'].split(',');
+    childCount = storage['child'].split(',');
 }
+
+
 
 $('.owl-carousel').owlCarousel({
     loop:true,
@@ -218,27 +236,6 @@ $('.owl-carousel').owlCarousel({
         }
     },
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // //撒花
