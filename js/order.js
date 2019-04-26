@@ -19,13 +19,39 @@ nextBtn.click(function() {
     if(index == 1){
         saveTicket();
     }
+    //秀出購票清單
     if(index == 2){
-        if(parseInt(adultsCount[0]) == 0){
-            alert('沒有票券');
-        }else if(parseInt(adultsCount[0]) != 0){
-            alert('有票券喔');
-            // $('#ticketList').append("<tr><td>adultsCount[1]</td><td>adultsCount[2]</td><td>adultsCount[0]</td></tr>");
+        let tbody = document.getElementById("ticketList");
+        let trs = tbody.childNodes;
+        let length = trs.length;
+        for( let i=length-1; i>=0; i--){
+            tbody.removeChild(trs[i]);
         }
+        if(parseInt(adultsCount[0]) == 0){
+        }else if(parseInt(adultsCount[0]) != 0){
+            $('#ticketList').append(`<tr><td>${adultsCount[1]}</td><td>${parseInt(adultsCount[2])}</td><td>${adultsCount[0]}</td><td>${parseInt(adultsCount[0])*parseInt(adultsCount[2])}</td></tr>`);
+        }
+        if(parseInt(studentCount[0]) == 0){
+        }else if(parseInt(studentCount[0]) != 0){
+            $('#ticketList').append(`<tr><td>${studentCount[1]}</td><td>${parseInt(studentCount[2])}</td><td>${studentCount[0]}</td><td>${parseInt(studentCount[0])*parseInt(studentCount[2])}</td></tr>`);
+        }
+        if(parseInt(childCount[0]) == 0){
+        }else if(parseInt(childCount[0]) != 0){
+            $('#ticketList').append(`<tr><td>${childCount[1]}</td><td>${parseInt(childCount[2])}</td><td>${childCount[0]}</td><td>${parseInt(childCount[0])*parseInt(childCount[2])}</td></tr>`);
+        }
+        //票券小計
+        $('#tkt_total').html(`票券小計：${parseInt(adultsCount[0])*parseInt(adultsCount[2])+parseInt(studentCount[0])*parseInt(studentCount[2])+parseInt(childCount[0])*parseInt(childCount[2])}`);
+        
+        //判斷有沒有選日期,在顯示
+        if(`${oderDate}` == 0){
+            $('#entrance_date').html('');
+        }else{
+            $('#entrance_date').html(`${cyear.innerHTML+ctitle.innerHTML+oderDate}`);
+        }
+
+        //活動價錢加總
+        var act_price = document.getElementsByClassName('act_price').innerHTML;
+        console.log(act_price);
     }
     
     console.log(index);
@@ -97,6 +123,17 @@ function refreshMonth(){
     }
 }
 
+// 儲存訂購門票內容
+var storage = sessionStorage;
+
+function saveTicket(){
+    storage['adults'] = [document.getElementById('t_adults').innerHTML,document.getElementById('t_type_adults').innerHTML,document.getElementById('t_price_adults').innerHTML];
+    storage['student'] = [document.getElementById('t_student').innerHTML,document.getElementById('t_type_student').innerHTML,document.getElementById('t_price_student').innerHTML];
+    storage['child'] = [document.getElementById('t_child').innerHTML,document.getElementById('t_type_child').innerHTML,document.getElementById('t_price_child').innerHTML];
+    adultsCount = storage['adults'].split(',');
+    studentCount = storage['student'].split(',');
+    childCount = storage['child'].split(',');
+}
 
 // 關掉燈箱
 $(document).ready(function(){
@@ -104,7 +141,6 @@ $(document).ready(function(){
         $(".light_box_wrap").fadeOut(500);
     });
 });
-
 
 // 檢查信用卡資訊功能
 function checkCredit(){
@@ -131,7 +167,7 @@ function addTicket(){
     // add_temp++;
     // this.previousElementSibling.innerHTML = add_temp;
 
-    if(add_temp <=19){
+    if(add_temp <=49){
         add_temp++;
     }else{
         add.disable = true;
@@ -153,13 +189,24 @@ function lessTicket(){
 // 點不規劃行程
 function checkMark(){
     var check = document.getElementById('noPlan');//點擊不規劃行
-    var check_x = check.getElementsByClassName("check_x");//所有新生成的span
-    if( check_x.length == 0){ //如果一開始沒有新標籤為0,會新生成
+    var check_x = check.getElementsByClassName('check_x');//所有新生成的span
+    // 點擊不規劃，將活動清單內容移除
+    var tbody = document.getElementById("testPanel");
+    var trs = tbody.childNodes;
+    var length = trs.length;
+    for( var i=length-1; i>=0; i--){
+        tbody.removeChild(trs[i]);
+    }
+    if( check_x.length == 0){ //一開始沒有標籤為0,會新生成
         var newSpan = document.createElement('span');
         check.appendChild(newSpan).setAttribute('class','check_x');
     }else{
         check.removeChild(check_x[0]);
     }
+    if(check_x.length == 1){
+        $('.heartBox').css('display','none');
+    }
+    
 }
 
 //點選擇行程
@@ -167,14 +214,27 @@ function chooseOne(){
     var check_x = document.getElementsByClassName("check_x");
     var check = document.getElementById('noPlan');
     var myTarget = this.nextElementSibling;
+    console.log(this.parentNode.lastElementChild.innerHTML);
+    let planlist = this.parentNode.lastElementChild.innerHTML;
+    //..................... GET EVENT DATA
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function(){
+
+    // console.log(xhr.responseText);
+    document.getElementById("testPanel").innerHTML = xhr.responseText;
+    }
+    xhr.open("get", "page/order_ajax.php?planlist=" + planlist);
+    xhr.send(null)
+
+    //........................
+    $('.heartBox').css('display','none');
     myTarget.style.display = 'block';
+    // console.log(check_x.length);
     if( check_x.length != 0){
         check.removeChild(check_x[0]);
-    }else{
-        // alert();
-    }    
+        myTarget.style.display = 'block';
+    }
 }
-
 
 function init(){
     less = document.getElementsByClassName('t_less');
@@ -197,26 +257,14 @@ function init(){
     noPlan.addEventListener('click',checkMark);
     
     var chooseActs = document.querySelectorAll('.import');//選擇行程按鈕
-    var length = chooseActs.length; //看有幾個
+    var length = chooseActs.length;
     for( var i=0; i<length; i++){
-        chooseActs[i].addEventListener('click',chooseOne); //都註冊
+        chooseActs[i].addEventListener('click',chooseOne);
     }
 }
 
 window.addEventListener('load',init);
 
-// 儲存訂購門票內容
-var storage = sessionStorage;
-
-function saveTicket(){
-    storage['adults'] = [document.getElementById('t_adults').innerHTML,document.getElementById('t_type_adults').innerHTML,document.getElementById('t_price_adults').innerHTML];
-    storage['student'] = [document.getElementById('t_student').innerHTML,document.getElementById('t_type_student').innerHTML,document.getElementById('t_price_student').innerHTML];
-    storage['child'] = [document.getElementById('t_child').innerHTML,document.getElementById('t_type_child').innerHTML,document.getElementById('t_price_child').innerHTML];
-    // window.sessionStorage['t_date'] = document.getElementsByClassName('dark');
-    adultsCount = storage['adults'].split(',');
-    studentCount = storage['student'].split(',');
-    childCount = storage['child'].split(',');
-}
 
 
 
@@ -236,6 +284,44 @@ $('.owl-carousel').owlCarousel({
         }
     },
 });
+
+
+
+
+function createXHR() {
+    var xhr = null;
+    if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+    }else if (window.ActiveXObject) {
+        xhr = new ActiveXObject('Microsoft.XMLHTTP');
+    }
+    return xhr
+}
+
+// function showList() {
+//     xhr = createXHR();  // 建立請求物件
+//     if (xhr != null) {
+//         var url = "order_ajax.php";
+//         // 利用 GET 方法、請求目的地 url、true 為非同步
+//         xhr.open("GET", url, true);
+//         // 回應處理函式 displayResult，稍後定義
+//         // xhr.onreadystatechange = displayResult;
+//         xhr.send(null);  // 送出請求（由於為 GET 所以參數為 null）
+//     }
+// }
+
+// window.onload = showList;
+
+
+
+
+
+
+
+
+
+
+
 
 
 // //撒花

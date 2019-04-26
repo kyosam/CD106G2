@@ -10,6 +10,9 @@ var ctitle = document.getElementById("calendar-month");
 var cyear = document.getElementById("calendar-year");
 var mylist = document.getElementById("days");
 
+
+// var monthAcc =  ctitle.innerHTML;
+
 var temp;
 var my_date = new Date(); //獲取當前時間
 var my_year = my_date.getFullYear(); //獲取當前年份
@@ -97,14 +100,14 @@ mylist.addEventListener('click',  function(e){
   oderDate=e.target.innerHTML;
   
   // console.log(my_year );
-  console.log(typeof( my_month) );
-  parseInt(my_month)*100;
+  // console.log(typeof( my_month) );
+  // parseInt(my_month)*100;
 
-  console.log(my_month );
-  parseInt(my_month);
+  // console.log(my_month );
+  // parseInt(my_month);
 
-  oderDate=oderDate*10
-  console.log(oderDate );
+  // oderDate=oderDate*10
+  // console.log(oderDate );
 });
 
 

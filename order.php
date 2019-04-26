@@ -92,9 +92,11 @@ echo $errMsg;
         <div class="light_box_wrap">
             <div class="light_box">
                 <!-- <canvas id="drawing_canvas"></canvas> -->
-                <div class="close">
-                    <img src="images/order/icon-close.png" alt="close">
-                </div>
+                <a class="close_link" href="order.php">
+                    <div class="close">
+                        <img src="images/order/icon-close.png" alt="close">
+                    </div>
+                </a>
                 <h3>訂購完成<br>您預定的QRcode</h3>
                 <div class="qr_code">
                     <img src="images/order/QRcode.png" alt="qrcode">
@@ -135,8 +137,8 @@ echo $errMsg;
                         <div class="box">
                             <div class="calender_mon_title">
                                 <span id="prev"><i class="fas fa-chevron-left"></i></span>
-                                <span id="calendar-year">year</span>
-                                <span id="calendar-month">month</span>
+                                <span id="calendar-year"></span>
+                                <span id="calendar-month"></span>
                                 <span id="next"><i class="fas fa-chevron-right"></i></span>
                             </div>
                             <div class="body">
@@ -246,39 +248,20 @@ echo $errMsg;
                         ?>
                         <div class="a_item">
                             <div class="item_img">
-                                <img src="images/order/fire.jpg" alt="fire">
+                                <!-- <img src="images/plan/<?php echo $planRow["planNo"]?>/<?php echo $planRow["planPhoto"]?>" alt="fire"> -->
+                                <img src="images/order/Fishing.png" alt="fire">
                             </div>
-                            <!-- <h4>取火術</h4> -->
+                            <!-- <h4>形成名稱</h4> -->
                             <h4><?php echo $planRow["planName"]?></h4>
                             <button class="import">選擇</button>
                             <div class="heartBox">
                                 <div class="heart"></div>
                             </div>
+                            <div class="hidePlanList" id="hidePlanList" style="display:none"><?php echo $planRow["planList"];?></div>
                         </div>
                         <?php
                             }
                         ?>
-                        <!-- <div class="a_item">
-                            <div class="item_img">
-                                <img src="images/order/Fishing.png" alt="Fishing">
-                            </div>
-                            <h4>捕魚術</h4>
-                            <button>選擇</button>
-                        </div>
-                        <div class="a_item">
-                            <div class="item_img">
-                                <img src="images/order/building.png" alt="building">
-                            </div>
-                            <h4>搭建術</h4>
-                            <button>選擇</button>
-                        </div>
-                        <div class="a_item">
-                            <div class="item_img">
-                                <img src="images/order/building.png" alt="building">
-                            </div>
-                            <h4>搭建術</h4>
-                            <button>選擇</button>
-                        </div> -->
                     </div>
                     <div class="activity_none">
                         <p>
@@ -301,69 +284,33 @@ echo $errMsg;
                                     </tr>
                                 </thead>
                                 <tbody id="ticketList">
-                                    <!-- <tr>
-                                        <td>全票</td>
-                                        <td>1000</td>
-                                        <td>2</td>
-                                        <td>2000</td>
-                                    </tr> -->
-                                    <!-- <tr>
-                                        <td>半票</td>
-                                        <td>700</td>
-                                        <td>1</td>
-                                        <td>700</td>
-                                    </tr> -->
                                 </tbody>
                             </table>
                         </div>
-                        <span>票券小計：2700</span>
+                        <span id="tkt_total"></span>
                     </div>
-        
                     <div class="confirm_box">
                         <h3>行程活動清單</h3>
-                        <div class="confirm">
+                        <div class="confirm" id="testPanel">
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>票價</th>
-                                        <th>單價</th>
-                                        <th>數量</th>
+                                        <th>活動</th>
                                         <th>小計</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <!-- <tbody>
                                     <tr>
                                         <td>生火術</td>
                                         <td>700</td>
-                                        <td>1</td>
-                                        <td>700</td>
                                     </tr>
-                                    <tr>
-                                        <td>防身術</td>
-                                        <td>800</td>
-                                        <td>2</td>
-                                        <td>1600</td>
-                                    </tr>
-                                    <tr>
-                                        <td>淨水術</td>
-                                        <td>600</td>
-                                        <td>2</td>
-                                        <td>1200</td>
-                                    </tr>
-                                    <tr>
-                                        <td>搭建術</td>
-                                        <td>900</td>
-                                        <td>1</td>
-                                        <td>900</td>
-                                    </tr>
-                                </tbody>
+                                </tbody> -->
                             </table>
                         </div>
-                        <span>活動小計：4400</span>
+                        <span id="act_total">活動小計：4400</span>
                     </div>
-                    <div class="show_total">
+                    <div class="entrance_date">
                         <div class="entrance">入園日期：<span id="entrance_date">2019.04.09</span></div>
-                        <div class="total">總金額：<span id="amount">7100</span></div>
                     </div>
                 </div>
                 <!-- 付款 -->
