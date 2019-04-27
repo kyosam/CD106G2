@@ -12,9 +12,12 @@ try{
     $ticket2 = $pdo->query($sql2);
     $sql3 = "select * from ticket where tktNo = 3";
     $ticket3 = $pdo->query($sql3);
-
+    
     $sql4 = "select * from plan where memNo = $memNo";
     $plan = $pdo->query($sql4);
+
+    $sql6 = "select * from member where memNo = 1";
+    $point = $pdo->query($sql6);
 
 }catch(PDOException $e){
     $errMsg .= "錯誤原因" . $e->getMessage() . "<br>";
@@ -307,7 +310,7 @@ echo $errMsg;
                                 </tbody> -->
                             </table>
                         </div>
-                        <span id="act_total">活動小計：4400</span>
+                        <span id="act_total">活動小計：</span>
                     </div>
                     <div class="entrance_date">
                         <div class="entrance">入園日期：<span id="entrance_date">2019.04.09</span></div>
@@ -322,12 +325,18 @@ echo $errMsg;
                         <p>若於入營前3天內退訂，則是20%退款。</p>
                         <p>若園區暫停營業為天災人禍之因素，無條件全額退款。</p>
                         <div class="ct_rule_check">
-                            <label>使用紅利點數折抵
+                            <label id="use_point">使用紅利點數折抵
                                 <input type="checkbox">
                                 <span class="check_mark"></span>
                             </label>
-                                <p>您持有的紅利點數為：<span id="memPoint">0</span>點</p>
+                            <?php
+                                while( $pointRow = $point->fetch()){
+                            ?>
+                                <p>您持有的紅利點數為：<span id="memPoint"><?php echo $pointRow["memTotalPoint"]?> </span>點</p>
                                 <p>(每10點可折抵1元)</p>
+                            <?php
+                            }
+                            ?>
                             <label>我已詳閱並同意購買的條款
                                 <input type="checkbox">
                                 <span class="check_mark"></span>
@@ -409,9 +418,9 @@ echo $errMsg;
                         </div>
                     </div>
                     <div class="all_total">
-                        <span id="allTotal">總金額：1000</span>
-                        <span id="point">紅利折抵：22</span>
-                        <span id="">應付金額：1111</span>
+                        <span id="allTotal"></span>
+                        <span id="discountPoint"></span>
+                        <span id="sumPayable">應付金額：1111</span>
                     </div>
                 </div>
                 <div class="btn_group">

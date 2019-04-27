@@ -10,9 +10,6 @@ var ctitle = document.getElementById("calendar-month");
 var cyear = document.getElementById("calendar-year");
 var mylist = document.getElementById("days");
 
-
-// var monthAcc =  ctitle.innerHTML;
-
 var temp;
 var my_date = new Date(); //獲取當前時間
 var my_year = my_date.getFullYear(); //獲取當前年份
@@ -25,7 +22,7 @@ function dayStart(month, year) {
   return (tmpDate.getDay());
 }
 //計算是不是閏年（前年份除以4的餘數）
-function daysMonth(month, year) {
+function daysMonth(month, year) { 
   var tmp = year % 4;
   if (tmp == 0) {
     return (month_olympic[month]);
@@ -58,7 +55,7 @@ function refreshDate() {
   var totalDay = daysMonth(my_month, my_year); //獲取該月天數
   var firstDay = dayStart(my_month, my_year); //獲取該月第一天星期幾
   var myclass;
-  for (var i = 1; i < firstDay; i++) {
+  for (var i = 0; i < firstDay; i++) {
     str += "<li> </li>"; //期使日期之前空白
   }
   for (var i = 1; i <= totalDay; i++) {
@@ -96,18 +93,7 @@ mylist.addEventListener('click',  function(e){
   tempDate[tempIndex].className ='dark';
   e.target.className ='c_font c_box';
 }
-  // console.log(e.target);
   oderDate=e.target.innerHTML;
-  
-  // console.log(my_year );
-  // console.log(typeof( my_month) );
-  // parseInt(my_month)*100;
-
-  // console.log(my_month );
-  // parseInt(my_month);
-
-  // oderDate=oderDate*10
-  // console.log(oderDate );
 });
 
 
@@ -136,11 +122,3 @@ mylist.addEventListener('click',  function(e){
 window.onload = function () {
   refreshDate(); //執行函數
 }
-
-// function init(){
-//   var nextMonth = document.getElementById('next');
-//   var prevMonth = document.getElementById('prev');
-//   nextMonth.addEventListener('click',chooseDate);
-//   prevMonth.addEventListener('click',chooseDate);
-// }
-// window.addEventListener("load",init);

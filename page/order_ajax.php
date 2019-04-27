@@ -24,7 +24,7 @@ try{
     <?php while( $planRow = $plan->fetch(PDO::FETCH_ASSOC)){ ?>
             <tr>
                 <td><?php echo $planRow["entName"]?></td>
-                <td class="act_Price"><?php echo $planRow["entPrice"]?></td>
+                <td class="act_price"><?php echo $planRow["entPrice"]?></td>
             </tr>
     <?php
         }

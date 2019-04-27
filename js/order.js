@@ -50,13 +50,27 @@ nextBtn.click(function() {
         }
 
         //活動價錢加總
-        var act_price = document.getElementsByClassName('act_price').innerHTML;
-        console.log(act_price);
+        var actprice = document.getElementsByClassName('act_price');
+        var total =0;
+        for( var i=0; i<actprice.length; i++){
+            var total =  total + parseInt(actprice[i].innerHTML);
+        }
+        $('#act_total').html(`活動小計：${total}`);
+    }
+
+    if(index == 3){
+        var tkt_total = document.getElementById('tkt_total').innerHTML.split('：');
+        var act_total = document.getElementById('act_total').innerHTML.split('：');
+        var memPoint = document.getElementById('memPoint').innerHTML;
+        $('#allTotal').html(`總金額：${parseInt(tkt_total[1])+parseInt(act_total[1])}`);
+        $('#sumPayable').html(`應付金額：${parseInt(tkt_total[1])+parseInt(act_total[1])-memPoint/10}`);
     }
     
     console.log(index);
     if($("#next_btn").text() == '送出'){
-        checkCredit();
+        checkCredit(); //檢查信用卡資訊
+        
+
     }
 
     prevBtn.css('display', 'block');
@@ -69,6 +83,7 @@ nextBtn.click(function() {
 
     if (index == stepsCount - 1) {
         $(this).text('送出');
+        // $('#next_btn').css('display','none');
     }
 });
 
@@ -236,6 +251,12 @@ function chooseOne(){
     }
 }
 
+// 使用紅利點數
+function use_point(){
+    var memPoint = document.getElementById('memPoint').innerHTML;
+    $('#discountPoint').html(`紅利折抵：${memPoint/10}`);
+}
+
 function init(){
     less = document.getElementsByClassName('t_less');
     add = document.getElementsByClassName('t_add');
@@ -261,6 +282,9 @@ function init(){
     for( var i=0; i<length; i++){
         chooseActs[i].addEventListener('click',chooseOne);
     }
+
+    //使用紅利點數
+    document.getElementById('use_point').addEventListener('click',use_point);
 }
 
 window.addEventListener('load',init);
@@ -288,15 +312,15 @@ $('.owl-carousel').owlCarousel({
 
 
 
-function createXHR() {
-    var xhr = null;
-    if (window.XMLHttpRequest) {
-        xhr = new XMLHttpRequest();
-    }else if (window.ActiveXObject) {
-        xhr = new ActiveXObject('Microsoft.XMLHTTP');
-    }
-    return xhr
-}
+// function createXHR() {
+//     var xhr = null;
+//     if (window.XMLHttpRequest) {
+//         xhr = new XMLHttpRequest();
+//     }else if (window.ActiveXObject) {
+//         xhr = new ActiveXObject('Microsoft.XMLHTTP');
+//     }
+//     return xhr
+// }
 
 // function showList() {
 //     xhr = createXHR();  // 建立請求物件
