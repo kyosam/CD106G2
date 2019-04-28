@@ -50,7 +50,7 @@ body{
         z-index: 100;
         .light_box{
             width: 80vw;
-            height: 60vh;
+            height: 50vh;
             box-sizing: border-box;
             position: absolute;
             margin: auto;
@@ -86,7 +86,7 @@ body{
                 display: block;
                 background-image: url(../images/order/child.png);
                 width: 23%;
-                height: 28%;
+                height: 20%;
                 position: absolute;
                 bottom: 0;
                 left: 10px;
@@ -97,6 +97,12 @@ body{
                 @include md-title(#403c04);
                 margin: 3vh;
                 line-height: 1.2;
+                >span{
+                    display: block;
+                    font-size: 20px;
+                    margin-top: 10px;
+
+                }
             }
             .close_link{
                 display: block;
@@ -140,6 +146,11 @@ body{
                 margin: auto;
                 font-size: 20px;
                 color: $doubledarkGreen;
+                font-weight: 600;
+                transition: .3s;
+                &:hover{
+                    color: $green;
+                }
             }
         }
     
@@ -188,7 +199,7 @@ body{
                     height: 50%;
                 }
                 .qr_code{
-                    width: 150px;
+                    width: 240px;
                     height: 150px;
                 }
                 >a{

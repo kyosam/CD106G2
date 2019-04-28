@@ -16,7 +16,7 @@ try{
     $sql4 = "select * from plan where memNo = $memNo";
     $plan = $pdo->query($sql4);
 
-    $sql6 = "select * from member where memNo = 1";
+    $sql6 = "select * from member where memNo = $memNo";
     $point = $pdo->query($sql6);
 
 }catch(PDOException $e){
@@ -100,9 +100,9 @@ echo $errMsg;
                         <img src="images/order/icon-close.png" alt="close">
                     </div>
                 </a>
-                <h3>訂購完成<br>您預定的QRcode</h3>
+                <h3>訂購完成<span>QRcode請至會員中心查看</span></h3>
                 <div class="qr_code">
-                    <img src="images/order/QRcode.png" alt="qrcode">
+                    <img src="images/order/done.png" alt="done">
                 </div>
                 <p>訂單已儲存至會員中心</p>
                 <a href="member.html"><p>前往會員中心</p></a>
@@ -256,7 +256,8 @@ echo $errMsg;
                             </div>
                             <!-- <h4>形成名稱</h4> -->
                             <h4><?php echo $planRow["planName"]?></h4>
-                            <button class="import">選擇</button>
+                            
+                            <span style="display:none"><?php echo $planRow["planNo"]?></span><button class="import">選擇</button>
                             <div class="heartBox">
                                 <div class="heart"></div>
                             </div>
@@ -420,7 +421,7 @@ echo $errMsg;
                     <div class="all_total">
                         <span id="allTotal"></span>
                         <span id="discountPoint"></span>
-                        <span id="sumPayable">應付金額：1111</span>
+                        <span>應付金額：<span id="sumPayable"></span></span>
                     </div>
                 </div>
                 <div class="btn_group">

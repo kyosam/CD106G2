@@ -3,6 +3,7 @@ ob_start();
 session_start();
 $errMsg = "";
 $memNo = 1;
+$_SESSION["buyPlanNo"] = $_REQUEST["planNo"];
 
 try{
     require_once("connect_order.php");
@@ -21,7 +22,8 @@ try{
             </tr>
         </thead>
         <tbody>
-    <?php while( $planRow = $plan->fetch(PDO::FETCH_ASSOC)){ ?>
+    <?php while( $planRow = $plan->fetch(PDO::FETCH_ASSOC)){ 
+    ?>
             <tr>
                 <td><?php echo $planRow["entName"]?></td>
                 <td class="act_price"><?php echo $planRow["entPrice"]?></td>

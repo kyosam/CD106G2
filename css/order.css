@@ -492,7 +492,7 @@ body {
 
 .wrap_bg .light_box_wrap .light_box {
   width: 80vw;
-  height: 60vh;
+  height: 50vh;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: absolute;
@@ -533,7 +533,7 @@ body {
   display: block;
   background-image: url(../images/order/child.png);
   width: 23%;
-  height: 28%;
+  height: 20%;
   position: absolute;
   bottom: 0;
   left: 10px;
@@ -549,6 +549,12 @@ body {
   letter-spacing: 1.5;
   margin: 3vh;
   line-height: 1.2;
+}
+
+.wrap_bg .light_box_wrap .light_box h3 > span {
+  display: block;
+  font-size: 20px;
+  margin-top: 10px;
 }
 
 .wrap_bg .light_box_wrap .light_box .close_link {
@@ -600,6 +606,13 @@ body {
   margin: auto;
   font-size: 20px;
   color: #367473;
+  font-weight: 600;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.wrap_bg .light_box_wrap .light_box > a:hover {
+  color: #3ba261;
 }
 
 .wrap_bg footer {
@@ -646,7 +659,7 @@ body {
     height: 50%;
   }
   .wrap_bg .light_box_wrap .light_box .qr_code {
-    width: 150px;
+    width: 240px;
     height: 150px;
   }
   .wrap_bg .light_box_wrap .light_box > a {
