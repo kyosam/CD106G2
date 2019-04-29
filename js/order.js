@@ -65,7 +65,11 @@ nextBtn.click(function() {
         var act_total = document.getElementById('act_total').innerHTML.split('：');
         var memPoint = document.getElementById('memPoint').innerHTML;
         $('#allTotal').html(`總金額：${parseInt(tkt_total[1])+parseInt(act_total[1])}`);
-        $('#sumPayable').html(`${parseInt(tkt_total[1])+parseInt(act_total[1])-memPoint/10}`);
+        if(document.getElementById('discountPoint').innerHTML == ''){
+            $('#sumPayable').html(`${parseInt(tkt_total[1])+parseInt(act_total[1])}`);
+        }else if(document.getElementById('discountPoint').innerHTML != ''){
+            $('#sumPayable').html(`${parseInt(tkt_total[1])+parseInt(act_total[1])-memPoint/10}`);
+        }
     }
     
     console.log(index);
@@ -281,8 +285,15 @@ function chooseOne(e){
 
 // 使用紅利點數
 function use_point(){
-    var memPoint = document.getElementById('memPoint').innerHTML;
-    $('#discountPoint').html(`紅利折抵：${memPoint/10}`);
+    var memPoint = document.getElementById('memPoint');
+    var discountPoint = document.getElementById('discountPoint');
+    var use_point = document.getElementById('use_point');
+    if(use_point.checked == true){
+        // $('#discountPoint').html(`紅利折抵：${memPoint/10}`);
+        discountPoint.innerText = '紅利折抵：'+memPoint.innerText/10;
+    }else{
+        discountPoint.innerText = '';
+    }
 }
 
 function init(){

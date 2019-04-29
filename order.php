@@ -326,8 +326,8 @@ echo $errMsg;
                         <p>若於入營前3天內退訂，則是20%退款。</p>
                         <p>若園區暫停營業為天災人禍之因素，無條件全額退款。</p>
                         <div class="ct_rule_check">
-                            <label id="use_point">使用紅利點數折抵
-                                <input type="checkbox">
+                            <label id="">使用紅利點數折抵
+                                <input type="checkbox" id="use_point">
                                 <span class="check_mark"></span>
                             </label>
                             <?php
