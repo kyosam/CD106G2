@@ -5,8 +5,8 @@ processCount = $('process_light').length,
 first_sun = $('.first_sun'),
 prevBtn = $('#pre_btn'),
 nextBtn = $('#next_btn');
-console.log(index);
-console.log(stepsCount);
+// console.log(index);
+// console.log(stepsCount);
 
 
 nextBtn.click(function() {
@@ -15,12 +15,25 @@ nextBtn.click(function() {
     }else{
         index++;
     }
+    // console.log( "dateChoosed : ", dateChoosed);
+    // console.log( "ticketChoosed : ", ticketChoosed);
 
-    //暫存訂票,確認有無選購
+    //檢查有無選日期與票種，暫存訂票
     if(index == 1){
-        saveTicket();
-        choosePlay();
-    }
+        // uploadCheck();
+        if( dateChoosed == false){
+            alert("請選擇日期");
+            index--;
+            return;
+        }else if(ticketChoosed == false){
+            alert("請選擇票券");
+            index--;
+            return;
+        }else{
+            saveTicket();     
+        }
+        
+    }else 
     //秀出購票清單
     if(index == 2){
         let tbody = document.getElementById("ticketList");
@@ -60,38 +73,41 @@ nextBtn.click(function() {
         $('#act_total').html(`活動小計：${total}`);
     }
 
+
     if(index == 3){
         var tkt_total = document.getElementById('tkt_total').innerHTML.split('：');
         var act_total = document.getElementById('act_total').innerHTML.split('：');
-        var memPoint = document.getElementById('memPoint').innerHTML;
         $('#allTotal').html(`總金額：${parseInt(tkt_total[1])+parseInt(act_total[1])}`);
-        if(document.getElementById('discountPoint').innerHTML == ''){
-            $('#sumPayable').html(`${parseInt(tkt_total[1])+parseInt(act_total[1])}`);
-        }else if(document.getElementById('discountPoint').innerHTML != ''){
-            $('#sumPayable').html(`${parseInt(tkt_total[1])+parseInt(act_total[1])-memPoint/10}`);
-        }
+        $('#sumPayable').html(`${parseInt(tkt_total[1])+parseInt(act_total[1])}`);
     }
     
-    console.log(index);
+    // console.log(index);
     if($("#next_btn").text() == '送出'){
         if(checkCredit() == false){ //檢查信用卡資訊
             return;
         }
-
         //get all information 
-        let info = {};
-        info.orderDate = document.getElementById("entrance_date").innerHTML;
-        info.adults = sessionStorage["adults"];
-        info.child = sessionStorage["child"];
-        info.student = sessionStorage["student"];
-        info.sumPayable = document.getElementById('sumPayable').innerHTML;
+        orderDate = document.getElementById("entrance_date").innerHTML;
+        adults = sessionStorage["adults"];
+        student = sessionStorage["student"];
+        child = sessionStorage["child"];
+        sumPayable = document.getElementById('sumPayable').innerHTML;
 
-        var str = JSON.stringify(info);
+        // var str = JSON.stringify(info);
         let xhr = new XMLHttpRequest();
-        xhr.open("get","order_ajaxsend.php?info="+ str);
+        // xhr.onload=function (){
+        //     if( xhr.status == 200 ){
+        //       //modify here
+        //         alert( xhr.responseText );
+        //         console.log(xhr.responseText)
+        //     }else{
+        //         alert( xhr.status );
+        //     }
+        // }
+        var url = "page/orderAjaxSend.php?orderDate="+orderDate+"&adults=" +adults+"&child=" +child+"&student=" +student+"&sumPayable=" +sumPayable;
+        // console.log(url)
+        xhr.open("get",url);
         xhr.send(null);
-
-        
     }
 
     prevBtn.css('display', 'block');
@@ -104,7 +120,6 @@ nextBtn.click(function() {
 
     if (index == stepsCount - 1) {
         $(this).text('送出');
-        // $('#next_btn').css('display','none');
     }
 });
 
@@ -159,16 +174,26 @@ function refreshMonth(){
     }
 }
 
-// 確認有無選擇日期與票券
-function choosePlay(){
-    if(oderDate == 0){
-        alert('未選擇日期');
-        return;
-    }else if(parseInt(adultsCount[0]) == 0 && parseInt(studentCount[0]) == 0 && parseInt(childCount[0]) == 0){
-        alert('未選擇票券');
-        return;
-    }
-}
+
+// 檢查有無登入
+// function uploadCheck() {
+//     var xhr = new XMLHttpRequest();
+//     xhr.onload = function () {
+//         if (xhr.status == 200) {
+//             if (xhr.responseText == 'login') {
+//                 // document.getElementById("photoUploadArea").display = 'block';
+//             } else if (xhr.responseText == 'logout') {
+//                 alert('請登入');
+//             }
+//         } else {
+//             alert(xhr.status);
+//         }
+//     }
+//     url = 'page/session.php';
+//     xhr.open("Get", url, true);
+//     xhr.send(null);
+// };
+
 
 // 儲存訂購門票內容
 var storage = sessionStorage;
@@ -209,8 +234,10 @@ function checkCredit(){
     }
 }
 
+let ticketChoosed = false;
 // 加減票
 function addTicket(){
+    ticketChoosed = true;
     add_temp = parseInt(this.previousElementSibling.innerHTML);
     // add_temp++;
     // this.previousElementSibling.innerHTML = add_temp;
@@ -222,6 +249,7 @@ function addTicket(){
     this.previousElementSibling.innerHTML = add_temp;
 }
 function lessTicket(){
+    let ticketChoosed = false;
     less_temp = parseInt(this.nextElementSibling.innerHTML);
     if(less_temp >= 1){
         less_temp--;
@@ -256,7 +284,7 @@ function checkMark(){
 }
 
 //點選擇行程
-function chooseOne(e){
+function chooseOne(){
     var check_x = document.getElementsByClassName("check_x");
     var check = document.getElementById('noPlan');
     var myTarget = this.nextElementSibling;
@@ -271,12 +299,11 @@ function chooseOne(e){
         document.getElementById("testPanel").innerHTML = xhr.responseText;
     }
     xhr.open("get", "page/order_ajax.php?planlist=" + planlist+"&planNo=" + planNo);
-    xhr.send(null)
+    xhr.send(null);
 
     //........................
     $('.heartBox').css('display','none');
     myTarget.style.display = 'block';
-    // console.log(check_x.length);
     if( check_x.length != 0){
         check.removeChild(check_x[0]);
         myTarget.style.display = 'block';
@@ -288,13 +315,19 @@ function use_point(){
     var memPoint = document.getElementById('memPoint');
     var discountPoint = document.getElementById('discountPoint');
     var use_point = document.getElementById('use_point');
+    var sumPayable = document.getElementById('sumPayable');
+    var tkt_total = document.getElementById('tkt_total').innerHTML.split('：');
+    var act_total = document.getElementById('act_total').innerHTML.split('：');
     if(use_point.checked == true){
-        // $('#discountPoint').html(`紅利折抵：${memPoint/10}`);
         discountPoint.innerText = '紅利折抵：'+memPoint.innerText/10;
+        sumPayable.innerHTML = parseInt(tkt_total[1]) + parseInt(act_total[1] - memPoint.innerText/10);
     }else{
         discountPoint.innerText = '';
+        sumPayable.innerHTML = parseInt(tkt_total[1]) + parseInt(act_total[1]);
     }
 }
+
+
 
 function init(){
     less = document.getElementsByClassName('t_less');
@@ -348,30 +381,6 @@ $('.owl-carousel').owlCarousel({
     },
 });
 
-
-// function createXHR() {
-//     var xhr = null;
-//     if (window.XMLHttpRequest) {
-//         xhr = new XMLHttpRequest();
-//     }else if (window.ActiveXObject) {
-//         xhr = new ActiveXObject('Microsoft.XMLHTTP');
-//     }
-//     return xhr
-// }
-
-// function showList() {
-//     xhr = createXHR();  // 建立請求物件
-//     if (xhr != null) {
-//         var url = "order_ajax.php";
-//         // 利用 GET 方法、請求目的地 url、true 為非同步
-//         xhr.open("GET", url, true);
-//         // 回應處理函式 displayResult，稍後定義
-//         // xhr.onreadystatechange = displayResult;
-//         xhr.send(null);  // 送出請求（由於為 GET 所以參數為 null）
-//     }
-// }
-
-// window.onload = showList;
 
 
 

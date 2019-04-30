@@ -76,8 +76,9 @@ function refreshDate() {
 }
 
 var oderDate = 0;
-
+let dateChoosed = false;
 mylist.addEventListener('click',  function(e){
+  dateChoosed = true;
   var tempDate = document.querySelectorAll("#days li");
   
   for (i = 0; i < tempDate.length; i++) {

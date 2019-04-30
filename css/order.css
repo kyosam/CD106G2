@@ -1571,7 +1571,7 @@ body {
   font-weight: 500;
 }
 
-.credit_container .all_total #point {
+.credit_container .all_total #discountPoint {
   padding-bottom: 2px;
   border-bottom: 2px solid #706456;
 }
